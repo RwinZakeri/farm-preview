@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="fa"><head><meta charset="utf-8" /><meta content="width=device-width, initial-scale=1.0" name="viewport" /><title>تسویه توکن - اپراتور دارک استور</title><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><link
+      href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
+      rel="stylesheet"
+    /><link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons+Round"
+      rel="stylesheet"
+    /><link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+      rel="stylesheet"
+    /><script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#335C41", // Deep green from screenshot
+              "primary-hover": "#2a4a35",
+              accent: "#EAB308", // Yellow accent
+              yellow: "#EAB308", // Yellow accent
+              "background-light": "#F3F4F6", // Light gray background
+              "background-dark": "#1F2937", // Dark gray background
+              "card-light": "#FFFFFF",
+              "card-dark": "#374151",
+              "text-light": "#111827",
+              "text-dark": "#F9FAFB",
+              "muted-light": "#6B7280",
+              "muted-dark": "#9CA3AF",
+            },
+            fontFamily: {
+              display: ["Vazirmatn", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.75rem", // Consistent rounded corners
+            },
+          },
+        },
+      };
+    </script><style>
+      body {
+        font-family: "Vazirmatn", sans-serif;
+      }
+    </style><script type="module"  src="../assets/feedback-screenshot-Drh0edyr.js"></script></head><body
+    class="bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark font-display min-h-screen flex overflow-hidden"
+  ><div class="flex h-full w-full"><aside
+        class="hidden md:flex flex-col w-72 bg-primary text-white h-screen shadow-xl z-20 transition-colors duration-300"
+      ><div class="p-8 flex items-center gap-3"><div
+            class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center backdrop-blur-sm"
+          ><span class="material-symbols-outlined text-yellow"
+              >storefront</span
+            ></div><h1 class="text-2xl font-bold tracking-tight">فارمتو</h1></div><nav class="flex-1 px-4 space-y-2 overflow-y-auto"><a
+            class="flex items-center gap-4 px-4 py-3 text-gray-300 hover:bg-white/5 hover:text-white rounded-xl transition-all"
+            href="index.html"
+          ><span class="material-symbols-outlined">dashboard</span><span class="font-medium">داشبورد</span></a><a
+            class="flex items-center gap-4 px-4 py-3 text-gray-300 hover:bg-white/5 hover:text-white rounded-xl transition-all"
+            href="scan-code.html"
+          ><span class="material-symbols-outlined">qr_code_scanner</span><span class="font-medium">اسکن کد</span></a><a
+            class="flex items-center gap-4 px-4 py-3 text-gray-300 hover:bg-white/5 hover:text-white rounded-xl transition-all"
+            href="token-validation.html"
+          ><span class="material-symbols-outlined">verified</span><span class="font-medium">تایید توکن</span></a><a
+            class="flex items-center gap-4 px-4 py-3 bg-white/10 text-white rounded-xl border-r-4 border-yellow transition-all shadow-lg shadow-black/5"
+            href="token-settlement.html"
+          ><span class="material-symbols-outlined">token</span><span class="font-medium">تسویه توکن</span></a><a
+            class="flex items-center gap-4 px-4 py-3 text-gray-300 hover:bg-white/5 hover:text-white rounded-xl transition-all"
+            href="local-store-dashboard.html"
+          ><span class="material-symbols-outlined">inventory_2</span><span class="font-medium">تحویل و موجودی</span></a><a
+            class="flex items-center gap-4 px-4 py-3 text-gray-300 hover:bg-white/5 hover:text-white rounded-xl transition-all"
+            href="inventory-management.html"
+          ><span class="material-symbols-outlined">warehouse</span><span class="font-medium">مدیریت موجودی</span></a><a
+            class="flex items-center gap-4 px-4 py-3 text-gray-300 hover:bg-white/5 hover:text-white rounded-xl transition-all"
+            href="personel.html"
+          ><span class="material-symbols-outlined">delivery_dining</span><span class="font-medium">مدیریت پیک‌ها</span></a><a
+            class="flex items-center gap-4 px-4 py-3 text-gray-300 hover:bg-white/5 hover:text-white rounded-xl transition-all"
+            href="customer-financial-update.html"
+          ><span class="material-symbols-outlined"
+              >account_balance_wallet</span
+            ><span class="font-medium">به‌روزرسانی مالی مشتری</span></a><a
+            class="flex items-center gap-4 px-4 py-3 text-gray-300 hover:bg-white/5 hover:text-white rounded-xl transition-all"
+            href="settings.html"
+          ><span class="material-symbols-outlined">settings</span><span class="font-medium">تنظیمات</span></a></nav><div class="p-6 border-t border-white/10"><div class="flex items-center gap-3"><img
+              alt="User Avatar"
+              class="w-10 h-10 rounded-full border-2 border-yellow shadow-sm"
+              src="/images/hen.png"
+            /><div class="flex-1 min-w-0"><p class="text-sm font-semibold truncate">کامران احمدی</p><p class="text-xs text-gray-400 truncate">اپراتور دارک استور</p></div><button class="text-gray-400 hover:text-white transition-colors"><span class="material-symbols-outlined text-sm">logout</span></button></div></div></aside><main class="flex-1 flex flex-col h-full overflow-hidden relative"><header
+          class="md:hidden flex items-center justify-between p-4 bg-primary text-white shadow-md z-10"
+        ><div class="flex items-center gap-2"><span class="material-symbols-outlined text-yellow"
+              >storefront</span
+            ><span class="font-bold">فارمتو</span></div><button class="p-2"><span class="material-symbols-outlined">menu</span></button></header><div class="flex-1 overflow-y-auto p-4 md:p-8 scroll-smooth"><div
+            class="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4"
+          ><div><h2 class="text-2xl font-bold text-gray-800 dark:text-white">
+                تسویه حساب توکن
+              </h2><p class="text-muted-light dark:text-muted-dark text-sm mt-1">
+                ثبت تحویل تخم‌مرغ و به‌روزرسانی موجودی مشتریان
+              </p></div><div class="flex gap-3"><button
+                class="bg-card-light dark:bg-card-dark p-2 rounded-lg text-muted-light dark:text-muted-dark hover:text-primary dark:hover:text-white shadow-sm border border-gray-100 dark:border-gray-700"
+              ><span class="material-icons-round">notifications</span></button></div></div><div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8"><div
+              class="bg-card-light dark:bg-card-dark p-6 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 relative overflow-hidden group"
+            ><div
+                class="absolute -left-6 -top-6 w-24 h-24 bg-primary/10 rounded-full group-hover:bg-primary/20 transition-all"
+              ></div><div class="flex justify-between items-start relative z-10"><div><p
+                    class="text-muted-light dark:text-muted-dark text-sm font-medium mb-1"
+                  >
+                    در انتظار تسویه
+                  </p><h3 class="text-3xl font-bold text-gray-800 dark:text-white">
+                    ۱۲ سفارش
+                  </h3></div><div
+                  class="bg-yellow-100 dark:bg-yellow-900 text-yellow-700 dark:text-yellow-300 p-2 rounded-lg"
+                ><span class="material-icons-round text-xl"
+                    >pending_actions</span
+                  ></div></div><div
+                class="mt-4 flex items-center text-xs text-muted-light dark:text-muted-dark relative z-10"
+              ><span class="text-red-500 font-bold ml-1">۴ مورد</span> نیاز به
+                اقدام فوری
+              </div></div><div
+              class="bg-card-light dark:bg-card-dark p-6 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 relative overflow-hidden group"
+            ><div
+                class="absolute -left-6 -top-6 w-24 h-24 bg-blue-500/10 rounded-full group-hover:bg-blue-500/20 transition-all"
+              ></div><div class="flex justify-between items-start relative z-10"><div><p
+                    class="text-muted-light dark:text-muted-dark text-sm font-medium mb-1"
+                  >
+                    تحویل‌های امروز
+                  </p><h3 class="text-3xl font-bold text-gray-800 dark:text-white">
+                    ۸۵۰ شانه
+                  </h3></div><div
+                  class="bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 p-2 rounded-lg"
+                ><span class="material-icons-round text-xl">egg</span></div></div><div
+                class="mt-4 flex items-center text-xs text-muted-light dark:text-muted-dark relative z-10"
+              ><span class="text-green-500 font-bold ml-1">+۱۵٪</span> نسبت به
+                دیروز
+              </div></div><div
+              class="bg-primary p-6 rounded-xl shadow-lg shadow-primary/30 relative overflow-hidden text-white"
+            ><div
+                class="absolute top-0 right-0 w-full h-full bg-gradient-to-bl from-white/10 to-transparent"
+              ></div><div class="flex justify-between items-start relative z-10"><div><p class="text-white/80 text-sm font-medium mb-1">
+                    ارزش کل تسویه شده
+                  </p><h3 class="text-3xl font-bold">
+                    ۲,۴۵۰,۰۰۰ <span class="text-sm font-normal">تومان</span></h3></div><div class="bg-white/20 p-2 rounded-lg backdrop-blur-sm"><span class="material-icons-round text-xl">payments</span></div></div><div
+                class="mt-4 flex items-center text-xs text-white/80 relative z-10"
+              ><span
+                  class="bg-accent text-primary-hover px-1.5 py-0.5 rounded text-[10px] font-bold ml-2"
+                  >فعال</span
+                >
+                نرخ تبدیل امروز: ۲۵۰۰ تومان
+              </div></div></div><div class="grid grid-cols-1 lg:grid-cols-3 gap-6"><div class="lg:col-span-2 space-y-6"><div
+                class="bg-card-light dark:bg-card-dark rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 p-6"
+              ><div
+                  class="flex items-center justify-between mb-6 border-b border-gray-100 dark:border-gray-700 pb-4"
+                ><h3 class="text-lg font-bold flex items-center gap-2"><span class="material-icons-round text-primary"
+                      >receipt_long</span
+                    >
+                    فرم ثبت تسویه
+                  </h3><span
+                    class="text-xs bg-gray-100 dark:bg-gray-800 px-3 py-1 rounded-full text-gray-500 dark:text-gray-400"
+                    >شناسه سفارش: #ORD-9921</span
+                  ></div><form class="space-y-6"><div><label
+                      class="block text-sm font-medium text-muted-light dark:text-muted-dark mb-2"
+                      >جستجوی مشتری</label
+                    ><div class="relative"><input
+                        class="w-full bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-600 rounded-lg pr-10 pl-4 py-3 focus:ring-2 focus:ring-primary focus:border-transparent dark:text-white transition-all"
+                        placeholder="شماره موبایل یا نام مشتری..."
+                        type="text"
+                      /><span
+                        class="material-icons-round absolute right-3 top-3.5 text-gray-400"
+                        >search</span
+                      ></div><div
+                      class="mt-2 bg-primary/5 border border-primary/20 p-3 rounded-lg flex justify-between items-center"
+                    ><div class="flex items-center gap-3"><div class="bg-primary/20 p-2 rounded-full"><span class="material-icons-round text-primary"
+                            >person</span
+                          ></div><div><p
+                            class="text-sm font-bold text-gray-800 dark:text-white"
+                          >
+                            رضا محمدی
+                          </p><p
+                            class="text-xs text-muted-light dark:text-muted-dark"
+                          >
+                            موجودی فعلی: ۱۵۰ توکن
+                          </p></div></div><button
+                        class="text-primary text-sm font-medium hover:underline"
+                        type="button"
+                      >
+                        تغییر
+                      </button></div></div><div class="grid grid-cols-1 md:grid-cols-2 gap-6"><div><label
+                        class="block text-sm font-medium text-muted-light dark:text-muted-dark mb-2"
+                        >تعداد تخم‌مرغ تحویلی</label
+                      ><div class="relative flex items-center"><button
+                          class="absolute left-2 w-8 h-8 bg-gray-200 dark:bg-gray-700 rounded-md flex items-center justify-center hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors"
+                          type="button"
+                        ><span class="material-icons-round text-sm">add</span></button><input
+                          class="w-full bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-600 rounded-lg text-center font-bold text-lg py-3 focus:ring-2 focus:ring-primary focus:border-transparent dark:text-white"
+                          type="number"
+                          value="30"
+                        /><button
+                          class="absolute right-2 w-8 h-8 bg-gray-200 dark:bg-gray-700 rounded-md flex items-center justify-center hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors"
+                          type="button"
+                        ><span class="material-icons-round text-sm"
+                            >remove</span
+                          ></button></div></div><div><label
+                        class="block text-sm font-medium text-muted-light dark:text-muted-dark mb-2"
+                        >کسر توکن</label
+                      ><div class="relative"><input
+                          class="w-full bg-gray-100 dark:bg-gray-900 border border-gray-200 dark:border-gray-600 rounded-lg pr-4 pl-12 py-3 text-gray-500 cursor-not-allowed"
+                          readonly=""
+                          type="text"
+                          value="30"
+                        /><span
+                          class="absolute left-3 top-3.5 text-xs font-bold text-gray-500"
+                          >توکن</span
+                        ></div><p class="text-xs text-green-600 mt-1 flex items-center"><span class="material-icons-round text-[14px] ml-1"
+                          >check_circle</span
+                        >
+                        موجودی کافی است
+                      </p></div></div><div><label
+                      class="block text-sm font-medium text-muted-light dark:text-muted-dark mb-3"
+                      >وضعیت کیفی محصول</label
+                    ><div class="grid grid-cols-3 gap-3"><label class="cursor-pointer"><input
+                          checked=""
+                          class="peer sr-only"
+                          name="quality"
+                          type="radio"
+                        /><div
+                          class="border border-gray-200 dark:border-gray-600 rounded-lg p-3 text-center hover:bg-gray-50 dark:hover:bg-gray-800 peer-checked:border-primary peer-checked:bg-primary/10 peer-checked:text-primary transition-all"
+                        ><span class="block text-sm font-bold">سالم</span></div></label><label class="cursor-pointer"><input
+                          class="peer sr-only"
+                          name="quality"
+                          type="radio"
+                        /><div
+                          class="border border-gray-200 dark:border-gray-600 rounded-lg p-3 text-center hover:bg-gray-50 dark:hover:bg-gray-800 peer-checked:border-yellow-500 peer-checked:bg-yellow-500/10 peer-checked:text-yellow-600 transition-all"
+                        ><span class="block text-sm font-bold"
+                            >شکستگی جزئی</span
+                          ></div></label><label class="cursor-pointer"><input
+                          class="peer sr-only"
+                          name="quality"
+                          type="radio"
+                        /><div
+                          class="border border-gray-200 dark:border-gray-600 rounded-lg p-3 text-center hover:bg-gray-50 dark:hover:bg-gray-800 peer-checked:border-red-500 peer-checked:bg-red-500/10 peer-checked:text-red-600 transition-all"
+                        ><span class="block text-sm font-bold">مرجوعی</span></div></label></div></div><div><label
+                      class="block text-sm font-medium text-muted-light dark:text-muted-dark mb-2"
+                      >توضیحات (اختیاری)</label
+                    ><textarea
+                      class="w-full bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-600 rounded-lg p-3 focus:ring-2 focus:ring-primary focus:border-transparent dark:text-white resize-none"
+                      placeholder="یادداشت در مورد تحویل..."
+                      rows="2"
+                    ></textarea></div><div
+                    class="flex gap-4 pt-4 border-t border-gray-100 dark:border-gray-700"
+                  ><button
+                      class="flex-1 bg-primary hover:bg-primary-hover text-white py-3 rounded-lg font-bold shadow-md shadow-primary/20 transition-transform active:scale-95 flex items-center justify-center gap-2"
+                      type="button"
+                    ><span class="material-icons-round">check_circle</span>
+                      تایید و کسر توکن
+                    </button><button
+                      class="px-6 py-3 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-lg font-medium hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
+                      type="button"
+                    >
+                      انصراف
+                    </button></div></form></div></div><div class="space-y-6"><div
+                class="bg-gradient-to-br from-gray-800 to-gray-900 text-white rounded-xl p-6 shadow-lg"
+              ><h4 class="text-lg font-bold mb-4">وضعیت انبار امروز</h4><div class="space-y-4"><div
+                    class="flex justify-between items-center border-b border-white/10 pb-3"
+                  ><span class="text-white/70 text-sm">موجودی اولیه</span><span class="font-bold">۱,۲۰۰ شانه</span></div><div
+                    class="flex justify-between items-center border-b border-white/10 pb-3"
+                  ><span class="text-white/70 text-sm">خروجی ثبت شده</span><span class="font-bold text-red-400">۳۵۰- شانه</span></div><div class="flex justify-between items-center pt-1"><span class="text-white/70 text-sm">مانده فعلی</span><span class="font-bold text-green-400 text-lg"
+                      >۸۵۰ شانه</span
+                    ></div></div></div><div
+                class="bg-card-light dark:bg-card-dark rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 p-6"
+              ><h3 class="text-lg font-bold mb-4">فعالیت‌های اخیر</h3><div class="space-y-4"><div class="flex items-start gap-3"><div
+                      class="w-10 h-10 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center flex-shrink-0"
+                    ><span
+                        class="material-icons-round text-green-600 dark:text-green-400 text-sm"
+                        >download</span
+                      ></div><div class="flex-1"><div class="flex justify-between mb-1"><p
+                          class="text-sm font-bold text-gray-800 dark:text-white"
+                        >
+                          دریافت توکن
+                        </p><span class="text-xs text-green-600 font-bold"
+                          >+۵۰</span
+                        ></div><p class="text-xs text-muted-light dark:text-muted-dark">
+                        علی حسینی • ۱۰:۲۳ صبح
+                      </p></div></div><div class="flex items-start gap-3"><div
+                      class="w-10 h-10 rounded-full bg-red-100 dark:bg-red-900/30 flex items-center justify-center flex-shrink-0"
+                    ><span
+                        class="material-icons-round text-red-600 dark:text-red-400 text-sm"
+                        >upload</span
+                      ></div><div class="flex-1"><div class="flex justify-between mb-1"><p
+                          class="text-sm font-bold text-gray-800 dark:text-white"
+                        >
+                          تسویه کالا
+                        </p><span class="text-xs text-red-500 font-bold">۳۰-</span></div><p class="text-xs text-muted-light dark:text-muted-dark">
+                        مریم کاظمی • ۱۰:۱۵ صبح
+                      </p></div></div><div class="flex items-start gap-3"><div
+                      class="w-10 h-10 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center flex-shrink-0"
+                    ><span
+                        class="material-icons-round text-blue-600 dark:text-blue-400 text-sm"
+                        >cached</span
+                      ></div><div class="flex-1"><div class="flex justify-between mb-1"><p
+                          class="text-sm font-bold text-gray-800 dark:text-white"
+                        >
+                          مرجوعی
+                        </p><span class="text-xs text-blue-500 font-bold">+۵</span></div><p class="text-xs text-muted-light dark:text-muted-dark">
+                        رضا پروری • ۰۹:۴۵ صبح
+                      </p></div></div><div class="flex items-start gap-3 opacity-60"><div
+                      class="w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center flex-shrink-0"
+                    ><span class="material-icons-round text-gray-500 text-sm"
+                        >history</span
+                      ></div><div class="flex-1"><div class="flex justify-between mb-1"><p
+                          class="text-sm font-bold text-gray-800 dark:text-white"
+                        >
+                          پایان شیفت
+                        </p></div><p class="text-xs text-muted-light dark:text-muted-dark">
+                        دیروز • ۲۲:۰۰ شب
+                      </p></div></div></div><button
+                  class="w-full mt-6 py-2 text-sm text-primary font-medium hover:bg-primary/5 rounded-lg transition-colors"
+                >
+                  مشاهده همه تراکنش‌ها
+                </button></div></div></div></div></main></div></body>
+</html>
+ص

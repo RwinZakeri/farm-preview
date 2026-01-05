@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="fa"><head><meta charset="utf-8" /><meta content="width=device-width, initial-scale=1.0" name="viewport" /><link rel="icon" type="image/svg+xml" href="/icon.svg" /><title>صفحه پروفایل و تنظیمات کاربری</title><script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script><link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    /><link
+      href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css"
+      rel="stylesheet"
+      type="text/css"
+    /><script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#11d452",
+              secondary: "#facc15", // Extracted yellow accent
+              "primary-dark": "#0ea640",
+              "background-light": "#f3f4f6", // Gray-100
+              "background-dark": "#1f2937", // Gray-800
+              "surface-light": "#ffffff",
+              "surface-dark": "#374151",
+              "text-light": "#1f2937",
+              "text-dark": "#f3f4f6",
+              "border-light": "#e5e7eb",
+              "border-dark": "#4b5563",
+            },
+            fontFamily: {
+              display: ["Vazirmatn", "Kalameh", "Tahoma", "sans-serif"], // Using Vazirmatn as closest free alternative to Kalameh if not locally available
+              body: ["Vazirmatn", "Kalameh", "Tahoma", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.75rem", // Consistent rounded corners
+              xl: "1rem",
+              "2xl": "1.5rem",
+            },
+            boxShadow: {
+              soft: "0 4px 20px -2px rgba(0, 0, 0, 0.05)",
+            },
+          },
+        },
+      };
+    </script><style>
+      body {
+        font-family: "Vazirmatn", sans-serif;
+      }
+      .security-icon-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .security-icon-container .material-symbols-outlined {
+        line-height: 1;
+        vertical-align: middle;
+        display: inline-block;
+      }
+    </style></head><body
+    class="bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark font-body min-h-screen transition-colors duration-200"
+  ><div class="flex h-screen overflow-hidden"><div id="sidebar-container"></div><main
+        class="flex-1 overflow-y-auto bg-background-light dark:bg-background-dark relative lg:mr-72"
+      ><header
+          class="sticky top-0 z-20 bg-surface-light dark:bg-surface-dark shadow-sm border-b border-border-light dark:border-border-dark px-6 py-4 flex items-center justify-between"
+        ><div class="flex items-center gap-4 lg:hidden"><button class="text-text-light dark:text-text-dark"><span class="material-symbols-outlined">menu</span></button><div class="flex items-center gap-2"><img
+                alt="لوگو فارمتو"
+                class="h-8 w-auto"
+                src="/icon.svg"
+                onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMTFkNDUyIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+PHBhdGggZD0iTTExIDEydjZoLTJ2LTZoLTJ2NmgtMnYtNmgybS0yIDBsMy01aDRsMyA1bS0xMCAwdjYiLz48L3N2Zz4='"
+              /><span class="font-bold text-lg text-primary">فارمتو</span></div></div><div
+            class="hidden lg:flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400"
+          ><span class="material-symbols-outlined text-base">home</span><span>/</span><span class="text-text-light dark:text-text-dark font-medium"
+              >تنظیمات و پروفایل</span
+            ></div><div class="flex items-center gap-4"><button
+              class="relative p-2 text-gray-500 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-full transition-colors"
+            ><span class="material-symbols-outlined">notifications</span><span
+                class="absolute top-2 right-2 w-2 h-2 bg-red-500 rounded-full border border-white dark:border-gray-800"
+              ></span></button><button
+              class="p-2 text-gray-500 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-full transition-colors"
+            ><span class="material-symbols-outlined">settings</span></button><div
+              class="hidden sm:flex items-center gap-2 bg-gray-100 dark:bg-gray-700 px-3 py-1.5 rounded-lg text-sm font-medium"
+            ><span class="material-symbols-outlined text-gray-500 text-xs"
+                >calendar_today</span
+              ><span>۱۴۰۳/۰۸/۲۵</span></div></div></header><div class="p-6 lg:p-10 max-w-7xl mx-auto space-y-8"><div
+            class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4"
+          ><div><h1 class="text-2xl font-bold text-gray-800 dark:text-white mb-2">
+                تنظیمات و پروفایل کاربری
+              </h1><p class="text-gray-500 dark:text-gray-400 text-sm">
+                مدیریت اطلاعات شخصی، امنیت حساب و تنظیمات عمومی سیستم
+              </p></div><div class="flex gap-3"><button
+                class="px-4 py-2 bg-white dark:bg-surface-dark border border-gray-200 dark:border-gray-600 rounded-xl text-sm font-medium hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors shadow-sm"
+              >
+                بازگشت به داشبورد
+              </button></div></div><div
+            class="bg-gradient-to-l from-primary to-primary-dark rounded-2xl p-6 md:p-8 text-white shadow-lg relative overflow-hidden"
+          ><div
+              class="absolute -top-10 -left-10 w-40 h-40 bg-white/5 rounded-full blur-3xl"
+            ></div><div
+              class="absolute bottom-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-3xl"
+            ></div><div
+              class="flex flex-col md:flex-row items-center gap-6 relative z-10"
+            ><div
+                class="w-24 h-24 rounded-full border-4 border-white/20 p-1 flex-shrink-0"
+              ><img
+                  alt="تصویر پروفایل"
+                  class="w-full h-full rounded-full object-cover bg-white"
+                  src="/images/hen.png"
+                /></div><div class="flex-1 text-center md:text-right"><h2 class="text-2xl font-bold mb-2">کامران احمدی</h2><div
+                  class="flex flex-wrap justify-center md:justify-start gap-3 text-sm text-white/80 mb-4"
+                ><span
+                    class="flex items-center gap-1 bg-white/10 px-3 py-1 rounded-full border border-white/10"
+                  ><a href="tel:989123456789" class="flex items-center gap-1"><span
+                        tel="989123456789"
+                        class="material-symbols-outlined text-base"
+                        >phone</span
+                      >
+                      ۰۹۱۲۳۴۵۶۷۸۹
+                    </a></span><a
+                    href="mailto:kamran.ahmadi@example.com"
+                    class="flex items-center gap-1"
+                  ><span class="material-symbols-outlined text-base">email</span>
+                    kamran.ahmadi@example.com
+                  </a><span
+                    class="flex items-center gap-1 bg-secondary text-black font-bold px-3 py-1 rounded-full"
+                  ><span class="material-symbols-outlined text-base"
+                      >verified</span
+                    >
+                    حساب تایید شده
+                  </span></div></div><div class="flex gap-3"><a
+                  href="profile-edit.html"
+                  class="flex items-center gap-2 bg-white/20 hover:bg-white/30 backdrop-blur-sm px-4 py-2.5 rounded-xl transition-colors text-sm font-medium"
+                ><span class="material-symbols-outlined">edit</span>
+                  ویرایش پروفایل
+                </a></div></div></div><div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6"><a
+              class="group bg-surface-light dark:bg-surface-dark p-6 rounded-2xl shadow-soft border border-transparent hover:border-primary/30 transition-all duration-300 hover:shadow-md"
+              href="profile-edit.html"
+            ><div class="flex items-start justify-between mb-4"><div
+                  class="w-12 h-12 rounded-xl bg-blue-50 dark:bg-blue-900/30 flex items-center justify-center text-blue-600 dark:text-blue-400 group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300"
+                ><span class="material-symbols-outlined text-2xl"
+                    >person_outline</span
+                  ></div><span
+                  class="material-symbols-outlined text-gray-300 group-hover:text-primary transition-colors"
+                  >arrow_back</span
+                ></div><h3 class="text-lg font-bold text-gray-800 dark:text-white mb-2">
+                اطلاعات کاربری
+              </h3><p class="text-sm text-gray-500 dark:text-gray-400 line-clamp-2">
+                ویرایش نام، نام خانوادگی، کد ملی، تاریخ تولد و سایر اطلاعات
+                هویتی شما.
+              </p></a><a
+              class="group bg-surface-light dark:bg-surface-dark p-6 rounded-2xl shadow-soft border border-transparent hover:border-primary/30 transition-all duration-300 hover:shadow-md"
+              href="change-password.html"
+            ><div class="flex items-center justify-between mb-4"><div
+                  class="w-12 h-12 rounded-xl bg-red-50 dark:bg-red-900/30 flex items-center justify-center text-red-600 dark:text-red-400 group-hover:bg-red-600 group-hover:text-white transition-colors duration-300 security-icon-container"
+                ><span class="material-symbols-outlined text-2xl">lock</span></div><span
+                  class="material-symbols-outlined text-gray-300 group-hover:text-primary transition-colors"
+                  >arrow_back</span
+                ></div><h3 class="text-lg font-bold text-gray-800 dark:text-white mb-2">
+                امنیت حساب
+              </h3><p class="text-sm text-gray-500 dark:text-gray-400 line-clamp-2">
+                تغییر رمز عبور، فعال‌سازی ورود دو مرحله‌ای و مدیریت دستگاه‌های
+                متصل.
+              </p></a><a
+              class="group bg-surface-light dark:bg-surface-dark p-6 rounded-2xl shadow-soft border border-transparent hover:border-primary/30 transition-all duration-300 hover:shadow-md"
+              href="financial-settings.html"
+            ><div class="flex items-start justify-between mb-4"><div
+                  class="w-12 h-12 rounded-xl bg-green-50 dark:bg-green-900/30 flex items-center justify-center text-green-600 dark:text-green-400 group-hover:bg-green-600 group-hover:text-white transition-colors duration-300"
+                ><span class="material-symbols-outlined text-2xl"
+                    >account_balance</span
+                  ></div><span
+                  class="material-symbols-outlined text-gray-300 group-hover:text-primary transition-colors"
+                  >arrow_back</span
+                ></div><h3 class="text-lg font-bold text-gray-800 dark:text-white mb-2">
+                اطلاعات مالی
+              </h3><p class="text-sm text-gray-500 dark:text-gray-400 line-clamp-2">
+                مدیریت شماره‌های شبا، حساب‌های بانکی و سوابق تراکنش‌های مالی.
+              </p></a><a
+              class="group bg-surface-light dark:bg-surface-dark p-6 rounded-2xl shadow-soft border border-dashed border-gray-300 dark:border-gray-600 hover:border-primary hover:border-solid transition-all duration-300 hover:shadow-md"
+              href="credit-settings.html"
+            ><div class="flex items-start justify-between mb-4"><div
+                  class="w-12 h-12 rounded-xl bg-yellow-50 dark:bg-yellow-900/30 flex items-center justify-center text-yellow-600 dark:text-yellow-400 group-hover:bg-yellow-500 group-hover:text-white transition-colors duration-300"
+                ><span class="material-symbols-outlined text-2xl"
+                    >credit_card</span
+                  ></div><div class="flex flex-col items-end gap-1"><span
+                    class="material-symbols-outlined text-gray-300 group-hover:text-primary transition-colors"
+                    >arrow_back</span
+                  ><span
+                    class="text-[10px] bg-gray-100 dark:bg-gray-700 text-gray-500 px-2 py-0.5 rounded-md"
+                    >مخصوص فروشندگان</span
+                  ></div></div><h3 class="text-lg font-bold text-gray-800 dark:text-white mb-2">
+                تنظیمات اعتباری
+              </h3><p class="text-sm text-gray-500 dark:text-gray-400 line-clamp-2">
+                مدیریت سقف اعتبار، شرایط بازپرداخت و تنظیمات مربوط به فروش
+                اعتباری.
+              </p></a><a
+              class="group bg-surface-light dark:bg-surface-dark p-6 rounded-2xl shadow-soft border border-transparent hover:border-primary/30 transition-all duration-300 hover:shadow-md"
+              href="contracts-documents-settings.html"
+            ><div class="flex items-start justify-between mb-4"><div
+                  class="w-12 h-12 rounded-xl bg-teal-50 dark:bg-teal-900/30 flex items-center justify-center text-teal-600 dark:text-teal-400 group-hover:bg-teal-600 group-hover:text-white transition-colors duration-300"
+                ><span class="material-symbols-outlined text-2xl"
+                    >description</span
+                  ></div><span
+                  class="material-symbols-outlined text-gray-300 group-hover:text-primary transition-colors"
+                  >arrow_back</span
+                ></div><h3 class="text-lg font-bold text-gray-800 dark:text-white mb-2">
+                قراردادها و اسناد
+              </h3><p class="text-sm text-gray-500 dark:text-gray-400 line-clamp-2">
+                آرشیو قراردادهای سرمایه‌گذاری، اسناد هویتی و مدارک بارگذاری شده.
+              </p></a><!-- <a
+              class="group bg-surface-light dark:bg-surface-dark p-6 rounded-2xl shadow-soft border border-transparent hover:border-primary/30 transition-all duration-300 hover:shadow-md"
+              href="#"
+            ><div class="flex items-start justify-between mb-4"><div
+                  class="w-12 h-12 rounded-xl bg-gray-100 dark:bg-gray-700 flex items-center justify-center text-gray-600 dark:text-gray-300 group-hover:bg-gray-600 group-hover:text-white transition-colors duration-300"
+                ><span class="material-symbols-outlined text-2xl">tune</span></div><span
+                  class="material-symbols-outlined text-gray-300 group-hover:text-primary transition-colors"
+                  >arrow_back</span
+                ></div><h3 class="text-lg font-bold text-gray-800 dark:text-white mb-2">
+                تنظیمات عمومی
+              </h3><p class="text-sm text-gray-500 dark:text-gray-400 line-clamp-2">
+                تغییر زبان، تم (روشن/تاریک) و سایر تنظیمات رابط کاربری.
+              </p></a> --></div><div
+            class="flex items-center justify-between text-xs text-gray-400 border-t border-border-light dark:border-border-dark pt-6 mt-8"
+          ><span>نسخه نرم‌افزار: ۲.۴.۱</span><span>آخرین ورود: امروز ۱۰:۳۰ صبح با IP: 192.168.1.1</span></div></div></main></div><script src="header.js"></script><script src="sidebar.js"></script><script>
+      // Simple script to demonstrate dark mode based on system preference or user toggle could go here.
+      // For this static output, we rely on tailwind 'dark:' classes which will activate if a parent has 'dark' class.
+      // To test dark mode, add class="dark" to the <html> tag.
+    </script></body>
+</html>

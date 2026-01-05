@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html class="light" dir="rtl" lang="fa"><head><meta charset="utf-8" /><meta content="width=device-width, initial-scale=1.0" name="viewport" /><link rel="icon" type="image/svg+xml" href="/icon.svg" /><title>پنل مدیریت گزارش‌ها فارمتو</title><link
+      href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100..900&amp;family=Work+Sans:wght@300..700&amp;display=swap"
+      rel="stylesheet"
+    /><link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    /><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#11d452",
+              "primary-dark": "#0ea640",
+              secondary: "#f6d449",
+              gold: "#D4AF37",
+              "background-light": "#f6f8f6",
+              "background-dark": "#102216",
+              surface: "#ffffff",
+              "accent-blue": "#4676b7",
+              "accent-red": "#ef4444",
+            },
+            fontFamily: {
+              display: ["Vazirmatn", "Work Sans", "sans-serif"],
+              sans: ["Vazirmatn", "Work Sans", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.5rem",
+              lg: "0.75rem",
+              xl: "1rem",
+              "2xl": "1.5rem",
+              full: "9999px",
+            },
+            boxShadow: {
+              soft: "0 4px 20px -2px rgba(52, 91, 59, 0.08)",
+              card: "0 0 0 1px rgba(0,0,0,0.03), 0 2px 8px rgba(0,0,0,0.04)",
+              "inner-lg": "inset 0 2px 4px 0 rgb(0 0 0 / 0.05)",
+            },
+          },
+        },
+      };
+    </script><style>
+      ::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #cbd5e1;
+        border-radius: 3px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #94a3b8;
+      }
+      .chart-bar {
+        animation: growUp 1s ease-out forwards;
+        transform-origin: bottom;
+        transform: scaleY(0);
+      }
+      @keyframes growUp {
+        to {
+          transform: scaleY(1);
+        }
+      }
+      .chart-pie {
+        animation: spinFade 1.2s ease-out forwards;
+      }
+      @keyframes spinFade {
+        from {
+          opacity: 0;
+          transform: rotate(-90deg);
+        }
+        to {
+          opacity: 1;
+          transform: rotate(0deg);
+        }
+      }
+    </style></head><body
+    class="bg-background-light text-[#131514] font-display h-screen flex overflow-hidden antialiased"
+  ><div id="sidebar-container"></div><div class="flex-1 flex flex-col h-full overflow-hidden relative lg:mr-72"><div id="header-container"></div><main
+        class="flex-1 overflow-y-auto p-4 lg:p-6 bg-background-light scroll-smooth"
+      ><div class="max-w-[1800px] mx-auto space-y-6"><div
+            class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4"
+          ><div><h2 class="text-2xl font-bold text-gray-800">مدیریت گزارش‌ها</h2><p class="text-gray-500 mt-1 text-sm">
+                بررسی عملکرد سیستم، وضعیت سفارش‌ها و آمار مالی
+              </p></div><div class="flex flex-wrap gap-2"><div
+                class="flex items-center bg-white rounded-xl border border-gray-200 p-1"
+              ><span class="px-2 text-xs text-gray-400 font-medium"
+                  >بازه زمانی:</span
+                ><select
+                  class="border-none text-xs font-bold text-gray-700 focus:ring-0 py-1 pl-8 pr-2 bg-transparent cursor-pointer"
+                ><option>۳۰ روز گذشته</option><option>هفته جاری</option><option>ماه جاری</option><option>سال جاری</option></select></div><button
+                class="flex items-center gap-2 bg-primary text-white px-4 py-2.5 rounded-xl text-sm font-medium shadow-soft hover:bg-primary-dark transition-all"
+              ><span class="material-symbols-outlined text-[20px]"
+                  >download</span
+                ><span>دانلود گزارش جامع</span></button></div></div><div class="grid grid-cols-1 md:grid-cols-3 gap-4"><div
+              class="bg-white p-5 rounded-xl shadow-card flex items-center justify-between border-r-4 border-r-primary"
+            ><div><span class="text-sm text-gray-500 block mb-1"
+                  >تعداد کل گزارش‌ها</span
+                ><span class="text-2xl font-bold text-gray-800 font-display"
+                  >542</span
+                ></div><div
+                class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary"
+              ><span class="material-symbols-outlined text-[28px]"
+                  >folder_open</span
+                ></div></div><div
+              class="bg-white p-5 rounded-xl shadow-card flex items-center justify-between border-r-4 border-r-secondary"
+            ><div><span class="text-sm text-gray-500 block mb-1"
+                  >گزارش‌های جدید امروز</span
+                ><span class="text-2xl font-bold text-gray-800 font-display"
+                  >15</span
+                ><span
+                  class="text-[10px] text-green-600 bg-green-50 px-1.5 py-0.5 rounded mr-2"
+                  >+۱۲٪ رشد</span
+                ></div><div
+                class="w-12 h-12 rounded-full bg-secondary/20 flex items-center justify-center text-yellow-700"
+              ><span class="material-symbols-outlined text-[28px]"
+                  >new_releases</span
+                ></div></div><div
+              class="bg-white p-5 rounded-xl shadow-card flex items-center justify-between border-r-4 border-r-accent-blue"
+            ><div><span class="text-sm text-gray-500 block mb-1"
+                  >باز و در انتظار بررسی</span
+                ><span class="text-2xl font-bold text-gray-800 font-display"
+                  >50</span
+                ></div><div
+                class="w-12 h-12 rounded-full bg-accent-blue/10 flex items-center justify-center text-accent-blue"
+              ><span class="material-symbols-outlined text-[28px]"
+                  >pending_actions</span
+                ></div></div></div><div class="grid grid-cols-1 xl:grid-cols-2 gap-6"><div
+              class="bg-white rounded-2xl shadow-soft border border-gray-100 flex flex-col h-full"
+            ><div
+                class="p-4 border-b border-gray-100 flex justify-between items-center bg-gray-50/50 rounded-t-2xl"
+              ><h3 class="font-bold text-gray-800 flex items-center gap-2"><span
+                    class="material-symbols-outlined text-primary text-[20px]"
+                    >shopping_cart</span
+                  >
+                  گزارش سفارش‌ها
+                </h3><button
+                  class="text-gray-400 hover:text-primary transition-colors"
+                ><span class="material-symbols-outlined text-[20px]"
+                    >file_download</span
+                  ></button></div><div class="p-4 grid grid-cols-1 sm:grid-cols-3 gap-4"><div class="sm:col-span-2 overflow-x-auto"><table class="w-full text-right text-xs"><thead
+                      class="text-gray-400 font-medium border-b border-gray-100"
+                    ><tr><th class="pb-2">شناسه</th><th class="pb-2">مشتری</th><th class="pb-2">مبلغ</th><th class="pb-2">وضعیت</th></tr></thead><tbody class="text-gray-600 divide-y divide-gray-50"><tr><td class="py-2 font-mono">ORD-992</td><td class="py-2">علی احمدی</td><td class="py-2">۲.۵ م</td><td class="py-2"><span
+                            class="text-green-600 bg-green-50 px-1.5 py-0.5 rounded text-[10px]"
+                            >تکمیل</span
+                          ></td></tr><tr><td class="py-2 font-mono">ORD-991</td><td class="py-2">فروشگاه رفاه</td><td class="py-2">۱۵ م</td><td class="py-2"><span
+                            class="text-yellow-600 bg-yellow-50 px-1.5 py-0.5 rounded text-[10px]"
+                            >پردازش</span
+                          ></td></tr><tr><td class="py-2 font-mono">ORD-990</td><td class="py-2">زهرا کاظمی</td><td class="py-2">۱.۲ م</td><td class="py-2"><span
+                            class="text-red-600 bg-red-50 px-1.5 py-0.5 rounded text-[10px]"
+                            >لغو</span
+                          ></td></tr></tbody></table></div><div class="flex items-center justify-center h-32 relative"><div
+                    class="flex items-end gap-2 h-full w-full justify-center px-4"
+                  ><div
+                      class="w-4 bg-green-500 rounded-t chart-bar"
+                      style="height: 70%"
+                    ></div><div
+                      class="w-4 bg-yellow-400 rounded-t chart-bar"
+                      style="height: 40%"
+                    ></div><div
+                      class="w-4 bg-red-400 rounded-t chart-bar"
+                      style="height: 20%"
+                    ></div></div><div
+                    class="absolute bottom-0 text-[10px] text-gray-400 w-full flex justify-between px-6"
+                  ><span>موفق</span><span>جاری</span><span>لغو</span></div></div></div></div><div
+              class="bg-white rounded-2xl shadow-soft border border-gray-100 flex flex-col h-full"
+            ><div
+                class="p-4 border-b border-gray-100 flex justify-between items-center bg-gray-50/50 rounded-t-2xl"
+              ><h3 class="font-bold text-gray-800 flex items-center gap-2"><span
+                    class="material-symbols-outlined text-primary text-[20px]"
+                    >payments</span
+                  >
+                  گزارش پرداخت‌ها
+                </h3><button
+                  class="text-gray-400 hover:text-primary transition-colors"
+                ><span class="material-symbols-outlined text-[20px]"
+                    >file_download</span
+                  ></button></div><div class="p-4 grid grid-cols-1 sm:grid-cols-3 gap-4"><div class="sm:col-span-2 overflow-x-auto"><table class="w-full text-right text-xs"><thead
+                      class="text-gray-400 font-medium border-b border-gray-100"
+                    ><tr><th class="pb-2">درگاه</th><th class="pb-2">تعداد</th><th class="pb-2">حجم (تومان)</th><th class="pb-2">موفقیت</th></tr></thead><tbody class="text-gray-600 divide-y divide-gray-50"><tr><td class="py-2">زرین‌پال</td><td class="py-2">۱,۲۰۰</td><td class="py-2">۸۰۰ م</td><td class="py-2 text-green-600">۹۸٪</td></tr><tr><td class="py-2">ملت</td><td class="py-2">۸۵۰</td><td class="py-2">۱.۲ م‌م</td><td class="py-2 text-green-600">۹۵٪</td></tr><tr><td class="py-2">کارت‌به‌کارت</td><td class="py-2">۱۵۰</td><td class="py-2">۲۰۰ م</td><td class="py-2 text-yellow-600">۸۰٪</td></tr></tbody></table></div><div class="flex items-center justify-center relative h-32"><svg class="w-24 h-24 chart-pie" viewBox="0 0 36 36"><path
+                      class="text-gray-200"
+                      d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="4"
+                    ></path><path
+                      class="text-accent-blue"
+                      d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-dasharray="60, 100"
+                      stroke-width="4"
+                    ></path><path
+                      class="text-primary"
+                      d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-dasharray="25, 100"
+                      stroke-dashoffset="-60"
+                      stroke-width="4"
+                    ></path><path
+                      class="text-secondary"
+                      d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-dasharray="15, 100"
+                      stroke-dashoffset="-85"
+                      stroke-width="4"
+                    ></path></svg><div
+                    class="absolute inset-0 flex items-center justify-center flex-col"
+                  ><span class="text-[10px] text-gray-400">روش‌ها</span></div></div></div></div><div
+              class="bg-white rounded-2xl shadow-soft border border-gray-100 flex flex-col h-full"
+            ><div
+                class="p-4 border-b border-gray-100 flex justify-between items-center bg-gray-50/50 rounded-t-2xl"
+              ><h3 class="font-bold text-gray-800 flex items-center gap-2"><span
+                    class="material-symbols-outlined text-primary text-[20px]"
+                    >monetization_on</span
+                  >
+                  گزارش سرمایه‌گذاری‌ها
+                </h3><button
+                  class="text-gray-400 hover:text-primary transition-colors"
+                ><span class="material-symbols-outlined text-[20px]"
+                    >file_download</span
+                  ></button></div><div class="p-4 grid grid-cols-1 sm:grid-cols-3 gap-4"><div class="sm:col-span-2 overflow-x-auto"><table class="w-full text-right text-xs"><thead
+                      class="text-gray-400 font-medium border-b border-gray-100"
+                    ><tr><th class="pb-2">طرح</th><th class="pb-2">سرمایه‌گذار</th><th class="pb-2">مبلغ</th></tr></thead><tbody class="text-gray-600 divide-y divide-gray-50"><tr><td class="py-2">پرورش مرغ تخم‌گذار فاز ۱</td><td class="py-2">۵۰ نفر</td><td class="py-2">۵ م‌م</td></tr><tr><td class="py-2">توسعه سالن ۳</td><td class="py-2">۲۰ نفر</td><td class="py-2">۲ م‌م</td></tr><tr><td class="py-2">خرید تجهیزات</td><td class="py-2">۱۰ نفر</td><td class="py-2">۸۰۰ م</td></tr></tbody></table></div><div class="flex items-center justify-center h-32"><svg
+                    class="w-full h-full overflow-visible p-2"
+                    viewBox="0 0 100 50"
+                  ><polyline
+                      fill="none"
+                      points="0,40 100,40"
+                      stroke="#e6e7e8"
+                      stroke-width="0.5"
+                    ></polyline><polyline
+                      fill="none"
+                      points="0,20 100,20"
+                      stroke="#e6e7e8"
+                      stroke-width="0.5"
+                    ></polyline><polyline
+                      fill="none"
+                      points="0,45 20,35 40,38 60,20 80,25 100,10"
+                      stroke="#345a3b"
+                      stroke-width="2"
+                    ></polyline><circle cx="20" cy="35" fill="#345a3b" r="2"></circle><circle cx="60" cy="20" fill="#345a3b" r="2"></circle><circle cx="100" cy="10" fill="#345a3b" r="2"></circle></svg></div></div></div><div
+              class="bg-white rounded-2xl shadow-soft border border-gray-100 flex flex-col h-full"
+            ><div
+                class="p-4 border-b border-gray-100 flex justify-between items-center bg-gray-50/50 rounded-t-2xl"
+              ><h3 class="font-bold text-gray-800 flex items-center gap-2"><span
+                    class="material-symbols-outlined text-primary text-[20px]"
+                    >savings</span
+                  >
+                  گزارش صندوق‌ها
+                </h3><button
+                  class="text-gray-400 hover:text-primary transition-colors"
+                ><span class="material-symbols-outlined text-[20px]"
+                    >file_download</span
+                  ></button></div><div class="p-4 grid grid-cols-1 sm:grid-cols-3 gap-4"><div class="sm:col-span-2 overflow-x-auto"><table class="w-full text-right text-xs"><thead
+                      class="text-gray-400 font-medium border-b border-gray-100"
+                    ><tr><th class="pb-2">نام صندوق</th><th class="pb-2">NAV</th><th class="pb-2">بازدهی</th></tr></thead><tbody class="text-gray-600 divide-y divide-gray-50"><tr><td class="py-2">صندوق رشد فارمتو</td><td class="py-2">۱,۲۵۰</td><td class="py-2 text-green-600">۱۵٪+</td></tr><tr><td class="py-2">صندوق ثابت</td><td class="py-2">۱,۰۸۰</td><td class="py-2 text-green-600">۲٪+</td></tr><tr><td class="py-2">صندوق جسورانه</td><td class="py-2">۹۵۰</td><td class="py-2 text-red-500">۵٪-</td></tr></tbody></table></div><div class="flex items-center justify-center h-32"><svg
+                    class="w-full h-full overflow-visible p-2"
+                    viewBox="0 0 100 50"
+                  ><polyline
+                      fill="none"
+                      points="0,40 100,40"
+                      stroke="#e6e7e8"
+                      stroke-width="0.5"
+                    ></polyline><polyline
+                      fill="none"
+                      points="0,20 100,20"
+                      stroke="#e6e7e8"
+                      stroke-width="0.5"
+                    ></polyline><polyline
+                      fill="none"
+                      points="0,30 25,35 50,25 75,30 100,15"
+                      stroke="#f6d449"
+                      stroke-width="2"
+                    ></polyline><circle cx="50" cy="25" fill="#f6d449" r="2"></circle><circle cx="100" cy="15" fill="#f6d449" r="2"></circle></svg></div></div></div><div
+              class="bg-white rounded-2xl shadow-soft border border-gray-100 flex flex-col h-full"
+            ><div
+                class="p-4 border-b border-gray-100 flex justify-between items-center bg-gray-50/50 rounded-t-2xl"
+              ><h3 class="font-bold text-gray-800 flex items-center gap-2"><span
+                    class="material-symbols-outlined text-primary text-[20px]"
+                    >stars</span
+                  >
+                  گزارش توکن‌ها
+                </h3><button
+                  class="text-gray-400 hover:text-primary transition-colors"
+                ><span class="material-symbols-outlined text-[20px]"
+                    >file_download</span
+                  ></button></div><div class="p-4 flex gap-4 items-center"><div class="flex-1 overflow-x-auto"><table class="w-full text-right text-xs"><thead
+                      class="text-gray-400 font-medium border-b border-gray-100"
+                    ><tr><th class="pb-2">توکن</th><th class="pb-2">عرضه کل</th><th class="pb-2">فروخته شده</th></tr></thead><tbody class="text-gray-600 divide-y divide-gray-50"><tr><td class="py-2">EGG-2024</td><td class="py-2">۱,۰۰۰,۰۰۰</td><td class="py-2">۸۵۰,۰۰۰</td></tr><tr><td class="py-2">CHICK-A</td><td class="py-2">۵۰۰,۰۰۰</td><td class="py-2">۵۰۰,۰۰۰</td></tr></tbody></table></div><div class="w-1/3 h-24 flex items-end justify-center gap-2"><div
+                    class="w-6 bg-accent-blue/30 relative h-full rounded-t-lg"
+                  ><div
+                      class="absolute bottom-0 w-full bg-accent-blue rounded-t-lg"
+                      style="height: 85%"
+                    ></div></div><div
+                    class="w-6 bg-accent-blue/30 relative h-full rounded-t-lg"
+                  ><div
+                      class="absolute bottom-0 w-full bg-accent-blue rounded-t-lg"
+                      style="height: 100%"
+                    ></div></div></div></div></div><div
+              class="bg-white rounded-2xl shadow-soft border border-gray-100 flex flex-col h-full"
+            ><div
+                class="p-4 border-b border-gray-100 flex justify-between items-center bg-gray-50/50 rounded-t-2xl"
+              ><h3 class="font-bold text-gray-800 flex items-center gap-2"><span
+                    class="material-symbols-outlined text-primary text-[20px]"
+                    >local_shipping</span
+                  >
+                  گزارش لجستیک
+                </h3><button
+                  class="text-gray-400 hover:text-primary transition-colors"
+                ><span class="material-symbols-outlined text-[20px]"
+                    >file_download</span
+                  ></button></div><div class="p-4 grid grid-cols-2 gap-4"><div class="flex flex-col gap-2"><div class="flex justify-between text-xs text-gray-600"><span>ناوگان فعال:</span><span class="font-bold">۱۲ خودرو</span></div><div class="flex justify-between text-xs text-gray-600"><span>سفارش‌های ارسالی:</span><span class="font-bold">۴۵ مورد</span></div><div class="flex justify-between text-xs text-gray-600"><span>در حال توزیع:</span><span class="font-bold text-yellow-600">۸ مورد</span></div></div><div class="flex items-center justify-center relative"><svg class="w-20 h-20 chart-pie" viewBox="0 0 36 36"><path
+                      class="text-gray-100"
+                      d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="4"
+                    ></path><path
+                      class="text-green-500"
+                      d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-dasharray="80, 100"
+                      stroke-width="4"
+                    ></path></svg><div
+                    class="absolute inset-0 flex items-center justify-center"
+                  ><span class="text-[10px] font-bold text-green-600"
+                      >۸۰٪</span
+                    ></div></div></div></div></div><div class="bg-white rounded-2xl shadow-soft border border-gray-100"><div
+              class="p-4 border-b border-gray-100 flex justify-between items-center bg-gray-50/50 rounded-t-2xl"
+            ><h3 class="font-bold text-gray-800 flex items-center gap-2"><span class="material-symbols-outlined text-primary text-[20px]"
+                  >group</span
+                >
+                گزارش کاربران
+              </h3><button
+                class="text-gray-400 hover:text-primary transition-colors"
+              ><span class="material-symbols-outlined text-[20px]"
+                  >file_download</span
+                ></button></div><div class="p-6 grid grid-cols-1 md:grid-cols-4 gap-6"><div class="md:col-span-3"><table class="w-full text-right text-xs md:text-sm"><thead
+                    class="text-gray-400 font-medium border-b border-gray-100"
+                  ><tr><th class="pb-3 pr-2">نقش</th><th class="pb-3">تعداد کل</th><th class="pb-3">فعال</th><th class="pb-3">غیرفعال</th><th class="pb-3">ثبت نام جدید (هفته)</th></tr></thead><tbody class="text-gray-600 divide-y divide-gray-50"><tr><td class="py-3 pr-2 font-bold">سرمایه‌گذار عادی</td><td class="py-3">۱,۵۰۰</td><td class="py-3 text-green-600">۱,۲۰۰</td><td class="py-3 text-red-400">۳۰۰</td><td class="py-3">+۲۵</td></tr><tr><td class="py-3 pr-2 font-bold">مشتری تخم‌مرغ</td><td class="py-3">۳,۲۰۰</td><td class="py-3 text-green-600">۲,۸۰۰</td><td class="py-3 text-red-400">۴۰۰</td><td class="py-3">+۴۰</td></tr><tr><td class="py-3 pr-2 font-bold">تأمین‌کننده</td><td class="py-3">۵۰</td><td class="py-3 text-green-600">۴۵</td><td class="py-3 text-red-400">۵</td><td class="py-3">+۲</td></tr></tbody></table></div><div
+                class="flex flex-col justify-center gap-4 border-r border-gray-100 pr-4"
+              ><div class="flex items-center gap-2"><span class="w-3 h-3 rounded-full bg-primary"></span><span class="text-xs text-gray-600">کاربران فعال (۸۵٪)</span></div><div class="flex items-center gap-2"><span class="w-3 h-3 rounded-full bg-gray-300"></span><span class="text-xs text-gray-600"
+                    >کاربران غیرفعال (۱۵٪)</span
+                  ></div><div
+                  class="h-2 w-full bg-gray-200 rounded-full overflow-hidden mt-2"
+                ><div class="h-full bg-primary w-[85%]"></div></div></div></div></div><div class="grid grid-cols-1 lg:grid-cols-3 gap-6 pb-6"><div
+              class="lg:col-span-2 bg-white rounded-2xl shadow-soft border border-gray-100 p-6 relative"
+            ><div class="flex justify-between items-center mb-6"><h3 class="font-bold text-gray-800 flex items-center gap-2"><span class="material-symbols-outlined text-accent-blue"
+                    >monitoring</span
+                  >
+                  عملکرد کل سیستم (رشد ماهانه)
+                </h3><button
+                  class="text-xs text-primary border border-primary/20 bg-primary/5 px-2 py-1 rounded-lg"
+                >
+                  Export CSV
+                </button></div><div class="h-64 w-full relative"><svg
+                  class="w-full h-full overflow-visible"
+                  preserveAspectRatio="none"
+                  viewBox="0 0 800 200"
+                ><line
+                    stroke="#f3f4f6"
+                    stroke-width="1"
+                    x1="0"
+                    x2="800"
+                    y1="0"
+                    y2="0"
+                  ></line><line
+                    stroke="#f3f4f6"
+                    stroke-width="1"
+                    x1="0"
+                    x2="800"
+                    y1="50"
+                    y2="50"
+                  ></line><line
+                    stroke="#f3f4f6"
+                    stroke-width="1"
+                    x1="0"
+                    x2="800"
+                    y1="100"
+                    y2="100"
+                  ></line><line
+                    stroke="#f3f4f6"
+                    stroke-width="1"
+                    x1="0"
+                    x2="800"
+                    y1="150"
+                    y2="150"
+                  ></line><line
+                    stroke="#e5e7eb"
+                    stroke-width="1"
+                    x1="0"
+                    x2="800"
+                    y1="200"
+                    y2="200"
+                  ></line><path
+                    d="M0 180 C 100 160, 200 190, 300 120 S 500 100, 600 80 S 700 40, 800 20 V 200 H 0 Z"
+                    fill="url(#gradientGreen)"
+                    opacity="0.1"
+                  ></path><path
+                    class="chart-path"
+                    d="M0 180 C 100 160, 200 190, 300 120 S 500 100, 600 80 S 700 40, 800 20"
+                    fill="none"
+                    stroke="#345a3b"
+                    stroke-width="3"
+                  ></path><defs><linearGradient
+                      id="gradientGreen"
+                      x1="0%"
+                      x2="0%"
+                      y1="0%"
+                      y2="100%"
+                    ><stop
+                        offset="0%"
+                        style="stop-color: #345a3b; stop-opacity: 1"
+                      ></stop><stop
+                        offset="100%"
+                        style="stop-color: #345a3b; stop-opacity: 0"
+                      ></stop></linearGradient></defs></svg><div
+                  class="absolute bottom-[-20px] left-0 right-0 flex justify-between text-[10px] text-gray-400 px-2"
+                ><span>هفته ۱</span><span>هفته ۲</span><span>هفته ۳</span
+                  ><span>هفته ۴</span></div></div></div><div class="flex flex-col gap-4"><div
+                class="bg-red-50 border border-red-100 rounded-xl p-5 flex flex-col gap-3 relative overflow-hidden shadow-sm"
+              ><div class="absolute -left-4 -top-4 text-red-100 opacity-60"><span class="material-symbols-outlined text-[100px]"
+                    >warning</span
+                  ></div><div
+                  class="flex items-center gap-2 text-red-700 font-bold text-sm z-10"
+                ><span class="material-symbols-outlined text-[20px]"
+                    >report_problem</span
+                  ><span>هشدارهای سیستم</span></div><div class="space-y-3 z-10"><div
+                    class="bg-white/60 p-2 rounded-lg text-xs text-red-800 border-r-2 border-red-400"
+                  ><span class="font-bold">تراکنش مشکوک:</span> ۵ مورد پرداخت
+                    ناموفق متوالی از IP ناشناس.
+                  </div><div
+                    class="bg-white/60 p-2 rounded-lg text-xs text-orange-800 border-r-2 border-orange-400"
+                  ><span class="font-bold">موجودی انبار:</span> موجودی تخم‌مرغ
+                    انبار مرکزی رو به اتمام است.
+                  </div></div><button
+                  class="text-xs text-red-600 font-bold hover:underline z-10 text-left mt-2"
+                >
+                  مشاهده همه هشدارها
+                </button></div><div
+                class="bg-primary text-white rounded-xl p-5 flex flex-col justify-between shadow-soft flex-1"
+              ><div><h4 class="font-bold mb-1">خروجی کامل سیستم</h4><p class="text-xs text-white/70 mb-4">
+                    شامل تمامی جداول، تراکنش‌ها و فعالیت کاربران در ۳۰ روز اخیر.
+                  </p></div><button
+                  class="bg-white text-primary w-full py-2 rounded-lg font-bold text-sm hover:bg-gray-100 transition-colors flex items-center justify-center gap-2"
+                ><span class="material-symbols-outlined text-[18px]"
+                    >download_for_offline</span
+                  >
+                  دانلود فایل Excel
+                </button></div></div></div></div></main></div><script src="header.js"></script><script src="sidebar.js"></script></body>
+</html>

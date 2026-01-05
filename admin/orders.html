@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html class="light" dir="rtl" lang="fa"><head><meta charset="utf-8" /><meta content="width=device-width, initial-scale=1.0" name="viewport" /><link rel="icon" type="image/svg+xml" href="/icon.svg" /><title>پنل مدیریت سفارش‌ها فارمتو</title><link
+      href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100..900&amp;family=Work+Sans:wght@300..700&amp;display=swap"
+      rel="stylesheet"
+    /><link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    /><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#11d452",
+              "primary-dark": "#0ea640",
+              secondary: "#f6d449",
+              gold: "#D4AF37",
+              "background-light": "#f6f8f6",
+              "background-dark": "#102216",
+              surface: "#ffffff",
+              "accent-blue": "#4676b7",
+              "accent-red": "#ef4444",
+            },
+            fontFamily: {
+              display: ["Vazirmatn", "Work Sans", "sans-serif"],
+              sans: ["Vazirmatn", "Work Sans", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.5rem",
+              lg: "0.75rem",
+              xl: "1rem",
+              "2xl": "1.5rem",
+              full: "9999px",
+            },
+            boxShadow: {
+              soft: "0 4px 20px -2px rgba(52, 91, 59, 0.08)",
+              card: "0 0 0 1px rgba(0,0,0,0.03), 0 2px 8px rgba(0,0,0,0.04)",
+              "inner-lg": "inset 0 2px 4px 0 rgb(0 0 0 / 0.05)",
+            },
+          },
+        },
+      };
+    </script><style>
+      ::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #cbd5e1;
+        border-radius: 3px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #94a3b8;
+      }
+      .chart-path {
+        stroke-dasharray: 1000;
+        stroke-dashoffset: 1000;
+        animation: dash 2s linear forwards;
+      }
+      @keyframes dash {
+        to {
+          stroke-dashoffset: 0;
+        }
+      }
+    </style></head><body
+    class="bg-background-light text-[#131514] font-display h-screen flex overflow-hidden antialiased"
+  ><div id="sidebar-container"></div><div class="flex-1 flex flex-col h-full overflow-hidden relative lg:mr-72"><div id="header-container"></div><main class="flex-1 overflow-y-auto p-4 lg:p-6 bg-background-light"><div class="max-w-[1800px] mx-auto space-y-6"><div
+            class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4"
+          ><div><h2 class="text-2xl font-bold text-gray-800">مدیریت سفارش‌ها</h2><p class="text-gray-500 mt-1 text-sm">
+                پیگیری و مدیریت کامل سفارشات تخم‌مرغ و محصولات فارمتو
+              </p></div><div class="flex flex-wrap gap-2"><div
+                class="flex items-center bg-white rounded-xl border border-gray-200 p-1"
+              ><button
+                  class="px-3 py-1.5 text-xs font-medium text-gray-600 hover:bg-gray-50 rounded-lg"
+                >
+                  روزانه
+                </button><button
+                  class="px-3 py-1.5 text-xs font-medium text-white bg-primary rounded-lg shadow-sm"
+                >
+                  هفتگی
+                </button><button
+                  class="px-3 py-1.5 text-xs font-medium text-gray-600 hover:bg-gray-50 rounded-lg"
+                >
+                  ماهانه
+                </button></div><button
+                class="flex items-center gap-2 bg-white text-gray-700 px-3 py-2.5 rounded-xl text-sm font-medium border border-gray-200 hover:bg-gray-50 hover:border-primary/30 hover:text-primary transition-all shadow-sm"
+              ><span class="material-symbols-outlined text-[20px]"
+                  >file_download</span
+                ><span>خروجی اکسل</span></button></div></div><div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-3"><div
+              class="bg-primary text-white p-3 rounded-xl shadow-soft flex flex-col items-center justify-center text-center"
+            ><span class="text-xs opacity-80 mb-1">کل سفارش‌ها</span><span class="text-xl font-bold font-display">1,500</span></div><div
+              class="bg-white p-3 rounded-xl shadow-card border border-gray-100 flex flex-col items-center justify-center text-center relative overflow-hidden group"
+            ><div
+                class="absolute top-0 right-0 w-2 h-2 bg-blue-500 rounded-bl-lg"
+              ></div><span class="text-xs text-gray-500 mb-1">جدید</span><span
+                class="text-xl font-bold text-gray-800 font-display group-hover:text-blue-600 transition-colors"
+                >25</span
+              ><span
+                class="text-[10px] bg-blue-50 text-blue-600 px-1.5 rounded mt-1"
+                >+5</span
+              ></div><div
+              class="bg-white p-3 rounded-xl shadow-card border border-gray-100 flex flex-col items-center justify-center text-center"
+            ><span class="text-xs text-gray-500 mb-1">در حال پردازش</span><span class="text-xl font-bold text-gray-800 font-display"
+                >100</span
+              ></div><div
+              class="bg-white p-3 rounded-xl shadow-card border border-gray-100 flex flex-col items-center justify-center text-center"
+            ><span class="text-xs text-gray-500 mb-1">آماده ارسال</span><span class="text-xl font-bold text-gray-800 font-display"
+                >50</span
+              ></div><div
+              class="bg-white p-3 rounded-xl shadow-card border border-gray-100 flex flex-col items-center justify-center text-center"
+            ><span class="text-xs text-gray-500 mb-1">ارسال شده</span><span class="text-xl font-bold text-gray-800 font-display"
+                >1,200</span
+              ></div><div
+              class="bg-white p-3 rounded-xl shadow-card border-b-2 border-b-green-500 flex flex-col items-center justify-center text-center"
+            ><span class="text-xs text-gray-500 mb-1">تحویل شده</span><span class="text-xl font-bold text-green-600 font-display"
+                >1,150</span
+              ></div><div
+              class="bg-white p-3 rounded-xl shadow-card border-b-2 border-b-red-500 flex flex-col items-center justify-center text-center"
+            ><span class="text-xs text-gray-500 mb-1">لغو / مرجوعی</span><span class="text-xl font-bold text-red-500 font-display"
+                >50</span
+              ></div></div><div class="grid grid-cols-1 md:grid-cols-4 gap-4"><div
+              class="md:col-span-3 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4"
+            ><div
+                class="bg-white p-4 rounded-xl shadow-soft border border-gray-100 flex items-center gap-3"
+              ><div class="p-2 bg-secondary/10 text-yellow-600 rounded-lg"><span class="material-symbols-outlined">attach_money</span></div><div><p class="text-xs text-gray-500">مبلغ کل سفارش‌ها</p><p class="text-lg font-bold text-gray-800">
+                    ۱۰
+                    <span class="text-xs font-normal text-gray-400"
+                      >میلیارد تومان</span
+                    ></p></div></div><div
+                class="bg-white p-4 rounded-xl shadow-soft border border-gray-100 flex items-center gap-3"
+              ><div class="p-2 bg-green-50 text-green-600 rounded-lg"><span class="material-symbols-outlined">check_circle</span></div><div><p class="text-xs text-gray-500">پرداخت شده</p><p class="text-lg font-bold text-gray-800">
+                    ۹
+                    <span class="text-xs font-normal text-gray-400"
+                      >میلیارد تومان</span
+                    ></p></div></div><div
+                class="bg-white p-4 rounded-xl shadow-soft border border-red-50 flex items-center gap-3"
+              ><div class="p-2 bg-red-50 text-red-500 rounded-lg"><span class="material-symbols-outlined">pending</span></div><div><p class="text-xs text-gray-500">پرداخت نشده</p><p class="text-lg font-bold text-gray-800">
+                    ۵۰۰
+                    <span class="text-xs font-normal text-gray-400"
+                      >میلیون</span
+                    ></p></div></div><div
+                class="bg-white p-4 rounded-xl shadow-soft border border-gray-100 flex items-center gap-3"
+              ><div class="p-2 bg-gray-100 text-gray-600 rounded-lg"><span class="material-symbols-outlined">local_shipping</span></div><div><p class="text-xs text-gray-500">پرداخت در محل</p><p class="text-lg font-bold text-gray-800">
+                    ۲۰۰
+                    <span class="text-xs font-normal text-gray-400"
+                      >میلیون</span
+                    ></p></div></div></div><div
+              class="bg-red-50 border border-red-100 rounded-xl p-4 flex flex-col justify-center gap-2"
+            ><div
+                class="flex items-center gap-2 text-red-700 font-bold text-sm"
+              ><span class="material-symbols-outlined text-[20px]"
+                  >warning</span
+                ><span>هشدار پیگیری</span></div><ul class="text-xs text-red-600 space-y-1 list-disc list-inside"><li>۵ سفارش با تاخیر بیش از ۲۴ ساعت</li><li>۳ سفارش بدون تخصیص ماشین</li></ul></div></div><div
+            class="grid grid-cols-1 xl:grid-cols-12 gap-6 h-[calc(100vh-380px)] min-h-[600px]"
+          ><div
+              class="xl:col-span-7 bg-white rounded-2xl shadow-soft border border-gray-100 flex flex-col overflow-hidden"
+            ><div
+                class="p-4 border-b border-gray-100 flex justify-between items-center bg-gray-50/50"
+              ><h3 class="font-bold text-gray-800">لیست سفارش‌ها</h3><div class="flex gap-2"><select
+                    class="bg-white border border-gray-200 text-xs text-gray-600 rounded-lg px-2 py-1.5 focus:ring-1 focus:ring-primary focus:border-primary"
+                  ><option>همه وضعیت‌ها</option><option>جدید</option><option>در حال پردازش</option></select><button
+                    class="bg-white border border-gray-200 p-1.5 rounded-lg text-gray-500 hover:text-primary"
+                  ><span class="material-symbols-outlined text-[20px]"
+                      >filter_list</span
+                    ></button></div></div><div class="overflow-auto flex-1"><table class="w-full text-right"><thead
+                    class="bg-gray-50 text-gray-500 text-xs sticky top-0 z-10"
+                  ><tr><th class="px-4 py-3 font-medium">کد</th><th class="px-4 py-3 font-medium">مشتری</th><th class="px-4 py-3 font-medium">محصول</th><th class="px-4 py-3 font-medium">مبلغ</th><th class="px-4 py-3 font-medium">وضعیت</th><th class="px-4 py-3 font-medium">تاریخ</th><th class="px-4 py-3 font-medium"></th></tr></thead><tbody class="divide-y divide-gray-100 text-sm"><tr
+                      class="bg-primary/5 border-l-4 border-l-primary cursor-pointer"
+                    ><td class="px-4 py-3 font-mono text-gray-600 text-xs">
+                        ORD-9821
+                      </td><td class="px-4 py-3"><div class="flex items-center gap-2"><div
+                            class="w-6 h-6 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-[10px] font-bold"
+                          >
+                            A
+                          </div><span class="font-medium text-primary"
+                            >احمد رضایی</span
+                          ></div></td><td class="px-4 py-3 text-gray-600">۱۰۰۰ تخم‌مرغ</td><td class="px-4 py-3 font-bold text-gray-800">
+                        ۵,۰۰۰,۰۰۰
+                      </td><td class="px-4 py-3"><span
+                          class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-blue-50 text-blue-600 border border-blue-100"
+                          >در حال آماده‌سازی</span
+                        ></td><td class="px-4 py-3 text-gray-500 text-xs">
+                        ۱۰:۳۰ امروز
+                      </td><td class="px-4 py-3"><span
+                          class="material-symbols-outlined text-primary text-[18px]"
+                          >chevron_left</span
+                        ></td></tr><tr
+                      class="hover:bg-gray-50 transition-colors cursor-pointer"
+                    ><td class="px-4 py-3 font-mono text-gray-400 text-xs">
+                        ORD-9820
+                      </td><td class="px-4 py-3"><div class="flex items-center gap-2"><div
+                            class="w-6 h-6 rounded-full bg-orange-100 text-orange-600 flex items-center justify-center text-[10px] font-bold"
+                          >
+                            S
+                          </div><span>سارا محبی</span></div></td><td class="px-4 py-3 text-gray-600">۵۰۰ تخم‌مرغ</td><td class="px-4 py-3 font-bold text-gray-800">
+                        ۲,۵۰۰,۰۰۰
+                      </td><td class="px-4 py-3"><span
+                          class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-green-50 text-green-600 border border-green-100"
+                          >تحویل شده</span
+                        ></td><td class="px-4 py-3 text-gray-500 text-xs">دیروز</td><td class="px-4 py-3"><span
+                          class="material-symbols-outlined text-gray-400 text-[18px]"
+                          >chevron_left</span
+                        ></td></tr><tr
+                      class="hover:bg-gray-50 transition-colors cursor-pointer"
+                    ><td class="px-4 py-3 font-mono text-gray-400 text-xs">
+                        ORD-9819
+                      </td><td class="px-4 py-3"><div class="flex items-center gap-2"><div
+                            class="w-6 h-6 rounded-full bg-purple-100 text-purple-600 flex items-center justify-center text-[10px] font-bold"
+                          >
+                            M
+                          </div><span>مهراد جم</span></div></td><td class="px-4 py-3 text-gray-600">۲۰۰۰ تخم‌مرغ</td><td class="px-4 py-3 font-bold text-gray-800">
+                        ۱۰,۰۰۰,۰۰۰
+                      </td><td class="px-4 py-3"><span
+                          class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-yellow-50 text-yellow-700 border border-yellow-100"
+                          >در انتظار تایید</span
+                        ></td><td class="px-4 py-3 text-gray-500 text-xs">دیروز</td><td class="px-4 py-3"><span
+                          class="material-symbols-outlined text-gray-400 text-[18px]"
+                          >chevron_left</span
+                        ></td></tr><tr
+                      class="hover:bg-gray-50 transition-colors cursor-pointer"
+                    ><td class="px-4 py-3 font-mono text-gray-400 text-xs">
+                        ORD-9818
+                      </td><td class="px-4 py-3"><div class="flex items-center gap-2"><div
+                            class="w-6 h-6 rounded-full bg-gray-100 text-gray-600 flex items-center justify-center text-[10px] font-bold"
+                          >
+                            K
+                          </div><span>کاوه یغمایی</span></div></td><td class="px-4 py-3 text-gray-600">۱۵۰ تخم‌مرغ</td><td class="px-4 py-3 font-bold text-gray-800">۷۵۰,۰۰۰</td><td class="px-4 py-3"><span
+                          class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-red-50 text-red-600 border border-red-100"
+                          >لغو شده</span
+                        ></td><td class="px-4 py-3 text-gray-500 text-xs">۲ روز پیش</td><td class="px-4 py-3"><span
+                          class="material-symbols-outlined text-gray-400 text-[18px]"
+                          >chevron_left</span
+                        ></td></tr><tr
+                      class="hover:bg-gray-50 transition-colors cursor-pointer"
+                    ><td class="px-4 py-3 font-mono text-gray-400 text-xs">
+                        ORD-9817
+                      </td><td class="px-4 py-3"><div class="flex items-center gap-2"><div
+                            class="w-6 h-6 rounded-full bg-teal-100 text-teal-600 flex items-center justify-center text-[10px] font-bold"
+                          >
+                            Z
+                          </div><span>زهرا کریمی</span></div></td><td class="px-4 py-3 text-gray-600">۳۰۰ تخم‌مرغ</td><td class="px-4 py-3 font-bold text-gray-800">
+                        ۱,۵۰۰,۰۰۰
+                      </td><td class="px-4 py-3"><span
+                          class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-gray-100 text-gray-600 border border-gray-200"
+                          >ارسال شده</span
+                        ></td><td class="px-4 py-3 text-gray-500 text-xs">۲ روز پیش</td><td class="px-4 py-3"><span
+                          class="material-symbols-outlined text-gray-400 text-[18px]"
+                          >chevron_left</span
+                        ></td></tr></tbody></table></div></div><div class="xl:col-span-5 flex flex-col gap-4 overflow-y-auto pr-1"><div
+                class="bg-white rounded-2xl shadow-soft border border-gray-100 p-5 relative"
+              ><div class="absolute top-4 left-4 flex gap-2"><button class="text-gray-400 hover:text-blue-600"><span class="material-symbols-outlined">edit</span></button><button class="text-gray-400 hover:text-red-500"><span class="material-symbols-outlined">print</span></button></div><div class="flex items-start justify-between mb-4"><div><div class="flex items-center gap-2 mb-1"><h3 class="text-lg font-bold text-gray-800 font-mono">
+                        ORD-9821
+                      </h3><span
+                        class="bg-green-100 text-primary text-[10px] px-2 py-0.5 rounded-full font-bold border border-green-200"
+                        >عمده‌فروش</span
+                      ></div><p class="text-xs text-gray-500">
+                      ثبت شده در ۱۴۰۳/۱۰/۰۵ ساعت ۱۰:۳۰
+                    </p></div></div><div
+                  class="flex items-center justify-between relative px-2 mb-6"
+                ><div
+                    class="absolute top-1/2 left-0 w-full h-0.5 bg-gray-100 -z-0"
+                  ></div><div
+                    class="flex flex-col items-center gap-1 z-10 bg-white px-1"
+                  ><div
+                      class="w-6 h-6 rounded-full bg-green-500 text-white flex items-center justify-center text-[10px]"
+                    ><span class="material-symbols-outlined text-[14px]"
+                        >check</span
+                      ></div><span class="text-[9px] text-green-600 font-medium"
+                      >تایید</span
+                    ></div><div
+                    class="flex flex-col items-center gap-1 z-10 bg-white px-1"
+                  ><div
+                      class="w-6 h-6 rounded-full bg-blue-500 text-white flex items-center justify-center text-[10px] shadow-lg shadow-blue-200 animate-pulse"
+                    >
+                      2
+                    </div><span class="text-[9px] text-blue-600 font-bold"
+                      >آماده‌سازی</span
+                    ></div><div
+                    class="flex flex-col items-center gap-1 z-10 bg-white px-1"
+                  ><div
+                      class="w-6 h-6 rounded-full bg-gray-200 text-gray-400 flex items-center justify-center text-[10px]"
+                    >
+                      3
+                    </div><span class="text-[9px] text-gray-400">ارسال</span></div><div
+                    class="flex flex-col items-center gap-1 z-10 bg-white px-1"
+                  ><div
+                      class="w-6 h-6 rounded-full bg-gray-200 text-gray-400 flex items-center justify-center text-[10px]"
+                    >
+                      4
+                    </div><span class="text-[9px] text-gray-400">تحویل</span></div></div><div
+                  class="bg-gray-50 rounded-xl p-3 grid grid-cols-2 gap-3 border border-gray-200/50"
+                ><div><span class="text-[10px] text-gray-500 block">محصول</span><span class="text-sm font-bold text-gray-800"
+                      >تخم‌مرغ محلی</span
+                    ></div><div><span class="text-[10px] text-gray-500 block">تعداد</span><span class="text-sm font-bold text-gray-800"
+                      >۱,۰۰۰
+                      <span class="text-[10px] font-normal text-gray-400"
+                        >عدد</span
+                      ></span
+                    ></div><div><span class="text-[10px] text-gray-500 block"
+                      >بسته‌بندی</span
+                    ><span
+                      class="text-xs bg-white border border-gray-200 px-2 py-0.5 rounded text-gray-600 inline-block"
+                      >کارتنی (۳۰ تایی)</span
+                    ></div><div><span class="text-[10px] text-gray-500 block"
+                      >وزن تقریبی</span
+                    ><span class="text-sm font-medium text-gray-800"
+                      >۶۵
+                      <span class="text-[10px] text-gray-400"
+                        >کیلوگرم</span
+                      ></span
+                    ></div></div><div
+                  class="mt-4 flex justify-between items-end border-t border-dashed border-gray-200 pt-3"
+                ><div class="text-xs text-gray-500">
+                    قیمت واحد: ۵,۰۰۰ تومان
+                  </div><div class="text-right"><span class="text-xs text-gray-500 block"
+                      >مبلغ کل سفارش</span
+                    ><span class="text-xl font-bold text-primary font-display"
+                      >۵,۰۰۰,۰۰۰
+                      <span class="text-xs text-gray-400">تومان</span></span
+                    ></div></div></div><div
+                class="bg-white rounded-2xl shadow-soft border border-gray-100 p-5 space-y-4"
+              ><h4
+                  class="font-bold text-gray-800 text-sm flex items-center gap-2"
+                ><span class="material-symbols-outlined text-gray-400"
+                    >local_shipping</span
+                  >
+                  اطلاعات لجستیک و انبار
+                </h4><div
+                  class="flex items-center gap-2 bg-green-50 border border-green-100 p-2.5 rounded-lg"
+                ><span
+                    class="material-symbols-outlined text-green-600 text-[18px]"
+                    >inventory_2</span
+                  ><div class="flex-1"><p class="text-xs font-medium text-gray-700">وضعیت انبار</p><p class="text-[10px] text-green-600">
+                      موجودی کافی است. کسر خودکار انجام شد.
+                    </p></div><span
+                    class="material-symbols-outlined text-green-600 text-[18px]"
+                    >check_circle</span
+                  ></div><div class="space-y-3"><div><label class="text-[11px] text-gray-500 mb-1 block"
+                      >روش ارسال</label
+                    ><select
+                      class="w-full text-xs border-gray-200 rounded-lg focus:border-primary focus:ring-primary"
+                    ><option>حمل و نقل اختصاصی فارمتو</option><option>پست پیشتاز</option><option>تیپاکس</option></select></div><div class="grid grid-cols-2 gap-3"><div><label class="text-[11px] text-gray-500 mb-1 block"
+                        >ماشین حمل‌ونقل</label
+                      ><select
+                        class="w-full text-xs border-gray-200 rounded-lg bg-red-50 border-red-200 text-red-600 focus:border-red-500 focus:ring-red-500"
+                      ><option>انتخاب نشده...</option><option>کامیونت ایسوزو - ۴۵۸ ع ۱۲</option><option>وانت مزدا - ۲۲۱ ج ۸۸</option></select><span class="text-[9px] text-red-500 mt-0.5 block"
+                        >لطفاً ماشین را تخصیص دهید.</span
+                      ></div><div><label class="text-[11px] text-gray-500 mb-1 block"
+                        >راننده</label
+                      ><select
+                        class="w-full text-xs border-gray-200 rounded-lg focus:border-primary focus:ring-primary"
+                      ><option>انتخاب راننده...</option><option>محمد حسینی</option><option>رضا کاظمی</option></select></div></div><div><label class="text-[11px] text-gray-500 mb-1 block"
+                      >آدرس تحویل</label
+                    ><textarea
+                      class="w-full text-xs border-gray-200 rounded-lg focus:border-primary focus:ring-primary text-gray-600"
+                      rows="2"
+                    >
+تهران، خیابان ولیعصر، بالاتر از پارک ساعی، کوچه ۳۴، پلاک ۱۲</textarea
+                    ></div></div></div><div
+                class="bg-white rounded-2xl shadow-soft border border-gray-100 p-4 flex gap-2 sticky bottom-0"
+              ><button
+                  class="flex-1 bg-primary text-white text-sm font-medium py-2 rounded-xl hover:bg-primary-dark transition-colors shadow-lg shadow-primary/20"
+                >
+                  ثبت ارسال دستی
+                </button><button
+                  class="flex-1 bg-white border border-red-200 text-red-500 text-sm font-medium py-2 rounded-xl hover:bg-red-50 transition-colors"
+                >
+                  لغو سفارش
+                </button></div></div></div><div class="grid grid-cols-1 lg:grid-cols-3 gap-6 pb-6"><div
+              class="lg:col-span-2 bg-white rounded-2xl shadow-soft border border-gray-100 p-6"
+            ><div class="flex justify-between items-center mb-6"><h3 class="font-bold text-gray-800 flex items-center gap-2"><span class="material-symbols-outlined text-accent-blue"
+                    >monitoring</span
+                  >
+                  فروش تخم‌مرغ (۳۰ روز گذشته)
+                </h3><div class="flex gap-2"><span class="text-xs text-gray-500">مجموع: ۱۵۰,۰۰۰ عدد</span></div></div><div class="h-48 w-full relative"><svg
+                  class="w-full h-full overflow-visible"
+                  preserveAspectRatio="none"
+                  viewBox="0 0 800 200"
+                ><line
+                    stroke="#f3f4f6"
+                    stroke-width="1"
+                    x1="0"
+                    x2="800"
+                    y1="0"
+                    y2="0"
+                  ></line><line
+                    stroke="#f3f4f6"
+                    stroke-width="1"
+                    x1="0"
+                    x2="800"
+                    y1="100"
+                    y2="100"
+                  ></line><line
+                    stroke="#e5e7eb"
+                    stroke-width="1"
+                    x1="0"
+                    x2="800"
+                    y1="200"
+                    y2="200"
+                  ></line><path
+                    class="chart-path"
+                    d="M0 150 C 100 180, 200 50, 300 100 S 500 120, 600 40 S 750 80, 800 20"
+                    fill="none"
+                    stroke="#4676b7"
+                    stroke-width="3"
+                  ></path><path
+                    d="M0 150 C 100 180, 200 50, 300 100 S 500 120, 600 40 S 750 80, 800 20 V 200 H 0 Z"
+                    fill="url(#gradientBlue)"
+                    opacity="0.1"
+                  ></path><defs><linearGradient
+                      id="gradientBlue"
+                      x1="0%"
+                      x2="0%"
+                      y1="0%"
+                      y2="100%"
+                    ><stop
+                        offset="0%"
+                        style="stop-color: #4676b7; stop-opacity: 1"
+                      ></stop><stop
+                        offset="100%"
+                        style="stop-color: #4676b7; stop-opacity: 0"
+                      ></stop></linearGradient></defs></svg></div></div><div
+              class="bg-white rounded-2xl shadow-soft border border-gray-100 p-4 flex flex-col gap-4"
+            ><div class="flex justify-between items-center"><h3 class="font-bold text-gray-800 text-sm">مناطق توزیع</h3><button class="text-xs text-primary">مشاهده کامل</button></div><div
+                class="bg-blue-50 w-full h-32 rounded-xl relative overflow-hidden border border-blue-100 flex items-center justify-center"
+              ><svg
+                  class="absolute inset-0 w-full h-full opacity-30 text-blue-200"
+                  fill="currentColor"
+                  viewBox="0 0 100 100"
+                ><path
+                    d="M20,20 Q40,5 60,20 T100,20 L100,100 L0,100 L0,20 Z"
+                  ></path><circle
+                    class="text-primary opacity-100"
+                    cx="40"
+                    cy="50"
+                    r="3"
+                  ></circle><circle
+                    class="text-primary opacity-100"
+                    cx="70"
+                    cy="30"
+                    r="3"
+                  ></circle><circle
+                    class="text-primary opacity-100"
+                    cx="20"
+                    cy="70"
+                    r="3"
+                  ></circle></svg><span
+                  class="text-xs text-blue-800 font-medium relative z-10 bg-white/80 px-2 py-1 rounded shadow-sm"
+                  >نقشه توزیع تهران و حومه</span
+                ></div><div class="mt-2"><h3 class="font-bold text-gray-800 text-sm mb-2">
+                  مشتریان برتر ماه
+                </h3><div class="space-y-2"><div
+                    class="flex items-center justify-between text-xs bg-gray-50 p-2 rounded-lg"
+                  ><div class="flex items-center gap-2"><div
+                        class="w-5 h-5 rounded-full bg-secondary text-white flex items-center justify-center font-bold text-[10px]"
+                      >
+                        1
+                      </div><span class="text-gray-700"
+                        >فروشگاه‌های زنجیره‌ای رفاه</span
+                      ></div><span class="font-bold text-gray-800">۵۰,۰۰۰ عدد</span></div><div
+                    class="flex items-center justify-between text-xs bg-gray-50 p-2 rounded-lg"
+                  ><div class="flex items-center gap-2"><div
+                        class="w-5 h-5 rounded-full bg-gray-300 text-gray-600 flex items-center justify-center font-bold text-[10px]"
+                      >
+                        2
+                      </div><span class="text-gray-700">هایپراستار</span></div><span class="font-bold text-gray-800">۳۵,۰۰۰ عدد</span></div></div></div></div></div></div></main></div><script src="header.js"></script><script src="sidebar.js"></script></body>
+</html>

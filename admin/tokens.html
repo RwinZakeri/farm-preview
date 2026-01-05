@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html class="light" dir="rtl" lang="fa"><head><meta charset="utf-8" /><meta content="width=device-width, initial-scale=1.0" name="viewport" /><link rel="icon" type="image/svg+xml" href="/icon.svg" /><title>پنل مدیریت توکن‌ها فارمتو</title><link
+      href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100..900&amp;family=Work+Sans:wght@300..700&amp;display=swap"
+      rel="stylesheet"
+    /><link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    /><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#11d452",
+              "primary-dark": "#0ea640",
+              secondary: "#f6d449",
+              gold: "#D4AF37",
+              "background-light": "#f6f8f6",
+              "background-dark": "#102216",
+              surface: "#ffffff",
+              "accent-blue": "#4676b7",
+              "accent-red": "#ef4444",
+            },
+            fontFamily: {
+              display: ["Vazirmatn", "Work Sans", "sans-serif"],
+              sans: ["Vazirmatn", "Work Sans", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.5rem",
+              lg: "0.75rem",
+              xl: "1rem",
+              "2xl": "1.5rem",
+              full: "9999px",
+            },
+            boxShadow: {
+              soft: "0 4px 20px -2px rgba(52, 91, 59, 0.08)",
+              card: "0 0 0 1px rgba(0,0,0,0.03), 0 2px 8px rgba(0,0,0,0.04)",
+              "inner-lg": "inset 0 2px 4px 0 rgb(0 0 0 / 0.05)",
+            },
+          },
+        },
+      };
+    </script><style>
+      ::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #cbd5e1;
+        border-radius: 3px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #94a3b8;
+      }
+      .chart-path {
+        stroke-dasharray: 1000;
+        stroke-dashoffset: 1000;
+        animation: dash 2s linear forwards;
+      }
+      @keyframes dash {
+        to {
+          stroke-dashoffset: 0;
+        }
+      }
+      .donut-segment {
+        transition: stroke-width 0.3s ease;
+      }
+      .donut-segment:hover {
+        stroke-width: 25;
+        cursor: pointer;
+      }
+    </style></head><body
+    class="bg-background-light text-[#131514] font-display h-screen flex overflow-hidden antialiased"
+  ><div id="sidebar-container"></div><div class="flex-1 flex flex-col h-full overflow-hidden relative lg:mr-72"><div id="header-container"></div><main class="flex-1 overflow-y-auto p-4 lg:p-8 bg-background-light"><div class="max-w-7xl mx-auto space-y-8"><div
+            class="flex flex-col md:flex-row justify-between items-start md:items-end gap-4"
+          ><div><h2 class="text-2xl font-bold text-gray-800">مدیریت توکن‌ها</h2><p class="text-gray-500 mt-1">
+                کنترل عرضه، مدیریت تراکنش‌ها و نظارت بر ارزش توکن‌های فارمتو
+              </p></div><div class="flex flex-wrap gap-2"><button
+                class="flex items-center gap-2 bg-primary text-white px-4 py-2.5 rounded-xl text-sm font-medium hover:bg-primary-dark transition-all shadow-soft hover:shadow-lg active:scale-95"
+              ><span class="material-symbols-outlined text-[20px]"
+                  >add_circle</span
+                ><span>افزودن عرضه</span></button><button
+                class="flex items-center gap-2 bg-white text-gray-700 px-3 py-2.5 rounded-xl text-sm font-medium border border-gray-200 hover:bg-gray-50 hover:border-primary/30 hover:text-primary transition-all shadow-sm active:scale-95"
+              ><span class="material-symbols-outlined text-[20px]"
+                  >file_download</span
+                ><span>خروجی گزارش</span></button></div></div><div
+            class="bg-yellow-50 border border-yellow-100 rounded-2xl p-4 flex items-start gap-4 shadow-sm"
+          ><div class="p-2 bg-yellow-100 rounded-lg text-yellow-600 shrink-0"><span class="material-symbols-outlined">warning</span></div><div class="flex-1 pt-1"><h4 class="text-sm font-bold text-gray-800">
+                هشدار موجودی صندوق
+              </h4><p class="text-xs text-gray-600 mt-1">
+                میزان توکن‌های در دسترس برای «طرح طلایی» به کمتر از ۵٪ رسیده
+                است. لطفاً نسبت به تخصیص مجدد اقدام کنید.
+              </p></div><button
+              class="text-sm font-bold text-yellow-700 hover:underline pt-1"
+            >
+              بررسی
+            </button></div><div
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6"
+          ><div
+              class="bg-white p-5 rounded-2xl shadow-soft border border-gray-100 group hover:border-primary/30 transition-colors"
+            ><div class="flex justify-between items-start mb-4"><div class="p-3 bg-green-50 text-primary rounded-xl"><span class="material-symbols-outlined"
+                    >generating_tokens</span
+                  ></div></div><div><span class="text-gray-500 text-sm font-medium"
+                  >تعداد کل توکن‌ها</span
+                ><h3 class="text-3xl font-bold text-gray-800 mt-1 font-display">
+                  ۱,۰۰۰,۰۰۰
+                </h3></div></div><div
+              class="bg-white p-5 rounded-2xl shadow-soft border border-gray-100 group hover:border-primary/30 transition-colors"
+            ><div class="flex justify-between items-start mb-4"><div class="p-3 bg-blue-50 text-accent-blue rounded-xl"><span class="material-symbols-outlined">donut_large</span></div><span
+                  class="text-xs font-bold text-gray-500 bg-gray-100 px-2 py-1 rounded-full"
+                  >۷۵۰,۰۰۰ عدد</span
+                ></div><div><span class="text-gray-500 text-sm font-medium"
+                  >توکن‌های در گردش</span
+                ><h3 class="text-3xl font-bold text-gray-800 mt-1 font-display">
+                  ۷۵٪
+                </h3></div></div><div
+              class="bg-white p-5 rounded-2xl shadow-soft border border-gray-100 group hover:border-primary/30 transition-colors"
+            ><div class="flex justify-between items-start mb-4"><div class="p-3 bg-yellow-50 text-yellow-600 rounded-xl"><span class="material-symbols-outlined">account_balance</span></div></div><div><span class="text-gray-500 text-sm font-medium"
+                  >ارزش کل توکن‌ها</span
+                ><div class="flex items-baseline gap-1 mt-1"><h3 class="text-3xl font-bold text-gray-800 font-display">
+                    ۵۰۰
+                  </h3><span class="text-xs text-gray-400 font-bold"
+                    >میلیارد تومان</span
+                  ></div></div></div><div
+              class="bg-gradient-to-br from-primary to-primary-dark text-white p-5 rounded-2xl shadow-lg relative overflow-hidden"
+            ><div
+                class="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full blur-2xl -mr-8 -mt-8"
+              ></div><div class="relative z-10 flex flex-col h-full justify-between"><div class="flex items-center gap-2 mb-4"><span class="material-symbols-outlined text-secondary"
+                    >egg</span
+                  ><span class="text-white/80 text-sm">نرخ تبدیل</span></div><div class="flex items-end gap-2"><div class="text-center"><span class="block text-2xl font-bold text-secondary"
+                      >۵</span
+                    ><span class="text-xs text-white/60">توکن</span></div><span class="text-white/40 mb-2">=</span><div class="text-center"><span class="block text-2xl font-bold text-white">۳۰</span><span class="text-xs text-white/60">تخم‌مرغ</span></div></div><p class="text-[10px] text-white/40 mt-3">
+                  بروزرسانی نرخ: ۲ ساعت پیش
+                </p></div></div><div
+              class="bg-white p-5 rounded-2xl shadow-soft border border-gray-100 group hover:border-primary/30 transition-colors"
+            ><div class="flex justify-between items-start mb-4"><div class="p-3 bg-gray-50 text-gray-600 rounded-xl"><span class="material-symbols-outlined">currency_lira</span></div><span
+                  class="flex items-center gap-1 text-xs font-bold text-green-600 bg-green-50 px-2 py-1 rounded-full"
+                >
+                  ↑ ۲.۵٪
+                </span></div><div><span class="text-gray-500 text-sm font-medium"
+                  >قیمت فعلی توکن</span
+                ><div class="flex items-baseline gap-1 mt-1"><h3 class="text-3xl font-bold text-gray-800 font-display">
+                    ۵,۰۰۰,۰۰۰
+                  </h3><span class="text-xs text-gray-400 font-bold">ریال</span></div></div></div><div
+              class="bg-white p-5 rounded-2xl shadow-soft border border-gray-100 group hover:border-primary/30 transition-colors flex flex-col justify-between"
+            ><span class="text-gray-500 text-sm font-medium"
+                >تغییرات قیمت</span
+              ><div class="space-y-4 mt-2"><div class="flex justify-between items-center"><span class="text-sm text-gray-600">۲۴ ساعت گذشته</span><span class="text-sm font-bold text-green-600 dir-ltr"
+                    >+ 3%</span
+                  ></div><div class="w-full bg-gray-100 rounded-full h-1"><div
+                    class="bg-green-500 h-1 rounded-full"
+                    style="width: 60%"
+                  ></div></div><div class="flex justify-between items-center"><span class="text-sm text-gray-600">۷ روز گذشته</span><span class="text-sm font-bold text-red-500 dir-ltr"
+                    >- 1%</span
+                  ></div><div class="w-full bg-gray-100 rounded-full h-1"><div
+                    class="bg-red-400 h-1 rounded-full"
+                    style="width: 20%"
+                  ></div></div></div></div></div><div class="grid grid-cols-1 lg:grid-cols-2 gap-6"><div
+              class="bg-white rounded-2xl shadow-soft border border-gray-100 overflow-hidden"
+            ><div class="p-6 border-b border-gray-100 bg-gray-50/50"><h3
+                  class="font-bold text-gray-800 text-lg flex items-center gap-2"
+                ><span class="material-symbols-outlined text-primary"
+                    >manage_accounts</span
+                  >
+                  مدیریت تخصیص توکن
+                </h3></div><div class="p-6"><div class="space-y-6"><div><h4 class="text-sm font-bold text-gray-700 mb-3">
+                      سقف توکن برای طرح‌ها
+                    </h4><div class="grid grid-cols-3 gap-3"><div class="space-y-1"><label class="text-xs text-gray-500">طرح اقتصادی</label><input
+                          class="w-full text-sm border-gray-200 rounded-xl focus:ring-primary focus:border-primary bg-gray-50"
+                          type="number"
+                          value="100000"
+                        /></div><div class="space-y-1"><label class="text-xs text-gray-500">طرح نقره‌ای</label><input
+                          class="w-full text-sm border-gray-200 rounded-xl focus:ring-primary focus:border-primary bg-gray-50"
+                          type="number"
+                          value="500000"
+                        /></div><div class="space-y-1"><label class="text-xs text-gray-500">طرح طلایی</label><input
+                          class="w-full text-sm border-gray-200 rounded-xl focus:ring-primary focus:border-primary bg-gray-50"
+                          type="number"
+                          value="1000000"
+                        /></div></div><div class="mt-3 flex justify-end"><button
+                        class="text-xs bg-gray-100 hover:bg-gray-200 text-gray-700 px-3 py-1.5 rounded-lg transition-colors"
+                      >
+                        ذخیره تغییرات
+                      </button></div></div><hr class="border-gray-100" /><div><h4 class="text-sm font-bold text-gray-700 mb-3">
+                      تخصیص توکن به کاربر
+                    </h4><div
+                      class="grid grid-cols-1 md:grid-cols-3 gap-3 items-end"
+                    ><div class="md:col-span-2 space-y-1"><label class="text-xs text-gray-500"
+                          >جستجوی کاربر</label
+                        ><input
+                          class="w-full text-sm border-gray-200 rounded-xl focus:ring-primary focus:border-primary"
+                          placeholder="نام یا شماره تماس..."
+                          type="text"
+                        /></div><div class="space-y-1"><label class="text-xs text-gray-500">تعداد</label><input
+                          class="w-full text-sm border-gray-200 rounded-xl focus:ring-primary focus:border-primary"
+                          placeholder="0"
+                          type="number"
+                        /></div></div><button
+                      class="mt-3 w-full bg-primary/10 text-primary hover:bg-primary hover:text-white border border-primary/20 rounded-xl py-2 text-sm font-medium transition-colors"
+                    >
+                      تخصیص توکن
+                    </button></div></div></div></div><div class="space-y-6"><div
+                class="bg-white rounded-2xl p-6 shadow-soft border border-gray-100 flex flex-col"
+              ><h3
+                  class="font-bold text-gray-800 text-lg mb-4 flex items-center gap-2"
+                ><span class="material-symbols-outlined text-secondary"
+                    >pie_chart</span
+                  >
+                  توزیع توکن‌ها
+                </h3><div
+                  class="flex-1 flex flex-col justify-center items-center relative"
+                ><svg height="180" viewBox="0 0 40 40" width="180"><circle
+                      class="donut-hole"
+                      cx="20"
+                      cy="20"
+                      fill="#fff"
+                      r="15.91549430918954"
+                    ></circle><circle
+                      class="donut-ring"
+                      cx="20"
+                      cy="20"
+                      fill="transparent"
+                      r="15.91549430918954"
+                      stroke="#f3f4f6"
+                      stroke-width="5"
+                    ></circle><circle
+                      class="donut-segment"
+                      cx="20"
+                      cy="20"
+                      fill="transparent"
+                      r="15.91549430918954"
+                      stroke="#345a3b"
+                      stroke-dasharray="60 40"
+                      stroke-dashoffset="25"
+                      stroke-width="5"
+                    ></circle><circle
+                      class="donut-segment"
+                      cx="20"
+                      cy="20"
+                      fill="transparent"
+                      r="15.91549430918954"
+                      stroke="#f6d449"
+                      stroke-dasharray="25 75"
+                      stroke-dashoffset="65"
+                      stroke-width="5"
+                    ></circle><circle
+                      class="donut-segment"
+                      cx="20"
+                      cy="20"
+                      fill="transparent"
+                      r="15.91549430918954"
+                      stroke="#4676b7"
+                      stroke-dasharray="15 85"
+                      stroke-dashoffset="90"
+                      stroke-width="5"
+                    ></circle><g class="chart-text"><text
+                        class="chart-number"
+                        dy=".3em"
+                        fill="#374151"
+                        font-size="0.4em"
+                        font-weight="bold"
+                        text-anchor="middle"
+                        x="50%"
+                        y="50%"
+                      >
+                        توزیع
+                      </text></g></svg><div class="w-full mt-4 space-y-2"><div class="flex justify-between text-xs"><span class="flex items-center gap-2"
+                        ><span class="w-2 h-2 rounded-full bg-primary"></span>
+                        سرمایه‌گذاران</span
+                      ><span class="font-bold">۶۰٪</span></div><div class="flex justify-between text-xs"><span class="flex items-center gap-2"
+                        ><span class="w-2 h-2 rounded-full bg-secondary"></span>
+                        ادمین/شرکت</span
+                      ><span class="font-bold">۲۵٪</span></div><div class="flex justify-between text-xs"><span class="flex items-center gap-2"
+                        ><span
+                          class="w-2 h-2 rounded-full bg-accent-blue"
+                        ></span>
+                        خرده‌فروشان</span
+                      ><span class="font-bold">۱۵٪</span></div></div></div></div><div
+                class="bg-white rounded-2xl shadow-soft border border-gray-100 p-6 flex flex-col justify-between"
+              ><div class="flex justify-between items-center mb-4"><h3
+                    class="font-bold text-gray-800 text-sm flex items-center gap-2"
+                  ><span class="material-symbols-outlined text-gray-500"
+                      >lock_clock</span
+                    >
+                    وضعیت قفل توکن‌ها
+                  </h3><label
+                    class="relative inline-flex items-center cursor-pointer"
+                  ><input class="sr-only peer" type="checkbox" value="" /><div
+                      class="w-9 h-5 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-primary"
+                    ></div></label></div><p class="text-xs text-gray-500 mb-4">
+                  فعال کردن مکانیزم قفل خودکار برای توکن‌های جدید صادر شده.
+                </p><div class="w-full bg-gray-100 rounded-full h-2 mb-2"><div
+                    class="bg-primary h-2 rounded-full"
+                    style="width: 45%"
+                  ></div></div><div class="flex justify-between text-[10px] text-gray-400"><span>۴۵٪ قفل شده</span><span>آزادسازی: ۱۴۰۴/۰۱/۰۱</span></div></div></div></div><div
+            class="bg-white rounded-2xl shadow-soft border border-gray-100 overflow-hidden flex flex-col"
+          ><div
+              class="p-6 border-b border-gray-100 flex justify-between items-center"
+            ><h3 class="font-bold text-gray-800 text-lg">
+                تاریخچه تراکنش‌های توکن
+              </h3><div class="flex gap-2"><select
+                  class="bg-gray-50 border-none text-xs text-gray-600 rounded-lg px-2 focus:ring-0 cursor-pointer"
+                ><option>همه وضعیت‌ها</option><option>موفق</option><option>ناموفق</option><option>معلق</option></select><input
+                  class="bg-gray-50 border-none text-xs rounded-lg px-3 py-1.5 focus:ring-1 ring-primary/30 w-40"
+                  placeholder="جستجو..."
+                /></div></div><div class="overflow-x-auto flex-1"><table class="w-full text-right"><thead class="bg-gray-50 text-gray-500 text-sm"><tr><th class="px-6 py-4 font-medium">شناسه تراکنش</th><th class="px-6 py-4 font-medium">کاربر / کیف‌پول</th><th class="px-6 py-4 font-medium">نوع عملیات</th><th class="px-6 py-4 font-medium">مقدار</th><th class="px-6 py-4 font-medium">تاریخ</th><th class="px-6 py-4 font-medium">وضعیت</th></tr></thead><tbody class="divide-y divide-gray-100 text-sm"><tr class="hover:bg-gray-50/50 transition-colors"><td class="px-6 py-4 font-mono text-gray-400 text-xs">
+                      TX-998877
+                    </td><td class="px-6 py-4"><div class="flex items-center gap-3"><div
+                          class="w-8 h-8 rounded-full bg-indigo-100 text-indigo-700 flex items-center justify-center text-xs font-bold"
+                        >
+                          A
+                        </div><div><p class="font-bold text-gray-800">Ali_Trader</p></div></div></td><td class="px-6 py-4 text-gray-600">خرید توکن</td><td
+                      class="px-6 py-4 font-bold text-gray-800 dir-ltr text-right"
+                    >
+                      500 FMT
+                    </td><td class="px-6 py-4 text-gray-500 text-xs">
+                      ۱۴۰۳/۱۰/۰۵ - ۱۰:۳۰
+                    </td><td class="px-6 py-4"><span
+                        class="px-2.5 py-1 rounded-full text-xs font-medium bg-green-50 text-green-600 border border-green-100"
+                        >موفق</span
+                      ></td></tr><tr class="hover:bg-gray-50/50 transition-colors"><td class="px-6 py-4 font-mono text-gray-400 text-xs">
+                      TX-998876
+                    </td><td class="px-6 py-4"><div class="flex items-center gap-3"><div
+                          class="w-8 h-8 rounded-full bg-orange-100 text-orange-700 flex items-center justify-center text-xs font-bold"
+                        >
+                          M
+                        </div><div><p class="font-bold text-gray-800">Mohammad.R</p></div></div></td><td class="px-6 py-4 text-gray-600">انتقال داخلی</td><td
+                      class="px-6 py-4 font-bold text-gray-800 dir-ltr text-right"
+                    >
+                      1,200 FMT
+                    </td><td class="px-6 py-4 text-gray-500 text-xs">
+                      ۱۴۰۳/۱۰/۰۵ - ۰۹:۱۵
+                    </td><td class="px-6 py-4"><span
+                        class="px-2.5 py-1 rounded-full text-xs font-medium bg-yellow-50 text-yellow-600 border border-yellow-100"
+                        >معلق</span
+                      ></td></tr><tr class="hover:bg-gray-50/50 transition-colors"><td class="px-6 py-4 font-mono text-gray-400 text-xs">
+                      TX-998875
+                    </td><td class="px-6 py-4"><div class="flex items-center gap-3"><div
+                          class="w-8 h-8 rounded-full bg-red-100 text-red-700 flex items-center justify-center text-xs font-bold"
+                        >
+                          S
+                        </div><div><p class="font-bold text-gray-800">Sara_Inv</p></div></div></td><td class="px-6 py-4 text-gray-600">فروش توکن</td><td
+                      class="px-6 py-4 font-bold text-gray-800 dir-ltr text-right"
+                    >
+                      200 FMT
+                    </td><td class="px-6 py-4 text-gray-500 text-xs">
+                      ۱۴۰۳/۱۰/۰۴ - ۱۸:۴۵
+                    </td><td class="px-6 py-4"><span
+                        class="px-2.5 py-1 rounded-full text-xs font-medium bg-red-50 text-red-600 border border-red-100"
+                        >ناموفق</span
+                      ></td></tr></tbody></table></div></div></div></main></div><script src="header.js"></script><script src="sidebar.js"></script></body>
+</html>

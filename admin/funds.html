@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html class="light" dir="rtl" lang="fa"><head><meta charset="utf-8" /><meta content="width=device-width, initial-scale=1.0" name="viewport" /><link rel="icon" type="image/svg+xml" href="/icon.svg" /><title>پنل مدیریت صندوق‌ها فارمتو</title><link
+      href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100..900&amp;family=Work+Sans:wght@300..700&amp;display=swap"
+      rel="stylesheet"
+    /><link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    /><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#11d452",
+              "primary-dark": "#0ea640",
+              secondary: "#f6d449",
+              gold: "#D4AF37",
+              "background-light": "#f6f8f6",
+              "background-dark": "#102216",
+              surface: "#ffffff",
+              "accent-blue": "#4676b7",
+              "accent-red": "#ef4444",
+            },
+            fontFamily: {
+              display: ["Vazirmatn", "Work Sans", "sans-serif"],
+              sans: ["Vazirmatn", "Work Sans", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.5rem",
+              lg: "0.75rem",
+              xl: "1rem",
+              "2xl": "1.5rem",
+              full: "9999px",
+            },
+            boxShadow: {
+              soft: "0 4px 20px -2px rgba(52, 91, 59, 0.08)",
+              card: "0 0 0 1px rgba(0,0,0,0.03), 0 2px 8px rgba(0,0,0,0.04)",
+              "inner-lg": "inset 0 2px 4px 0 rgb(0 0 0 / 0.05)",
+            },
+          },
+        },
+      };
+    </script><style>
+      ::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #cbd5e1;
+        border-radius: 3px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #94a3b8;
+      }
+      .chart-path {
+        stroke-dasharray: 1000;
+        stroke-dashoffset: 1000;
+        animation: dash 2s linear forwards;
+      }
+      @keyframes dash {
+        to {
+          stroke-dashoffset: 0;
+        }
+      }
+    </style></head><body
+    class="bg-background-light text-[#131514] font-display h-screen flex overflow-hidden antialiased"
+  ><div id="sidebar-container"></div><div class="flex-1 flex flex-col h-full overflow-hidden relative lg:mr-72"><div id="header-container"></div><main class="flex-1 overflow-y-auto p-4 lg:p-8 bg-background-light"><div class="max-w-[1600px] mx-auto space-y-8"><div
+            class="flex flex-col md:flex-row justify-between items-start md:items-end gap-4"
+          ><div><h2 class="text-2xl font-bold text-gray-800">مدیریت صندوق‌ها</h2><p class="text-gray-500 mt-1">
+                مدیریت موجودی، عملکرد و تخصیص سرمایه در صندوق‌های فارمتو
+              </p></div><div class="flex flex-wrap gap-2"><button
+                class="flex items-center gap-2 bg-primary text-white px-4 py-2.5 rounded-xl text-sm font-medium hover:bg-primary-dark transition-all shadow-soft hover:shadow-lg active:scale-95"
+              ><span class="material-symbols-outlined text-[20px]"
+                  >add_circle</span
+                ><span>افزودن صندوق جدید</span></button><button
+                class="flex items-center gap-2 bg-white text-gray-700 px-3 py-2.5 rounded-xl text-sm font-medium border border-gray-200 hover:bg-gray-50 hover:border-primary/30 hover:text-primary transition-all shadow-sm active:scale-95"
+              ><span class="material-symbols-outlined text-[20px]"
+                  >file_download</span
+                ><span>گزارش کامل</span></button></div></div><div
+            class="bg-red-50 border border-red-100 rounded-2xl p-4 flex items-start gap-4 shadow-sm"
+          ><div class="p-2 bg-red-100 rounded-lg text-red-600 shrink-0"><span class="material-symbols-outlined">warning</span></div><div class="flex-1 pt-1"><h4 class="text-sm font-bold text-gray-800">
+                هشدار موجودی بحرانی
+              </h4><p class="text-xs text-gray-600 mt-1">
+                موجودی «صندوق نقدینگی اضطراری» به کمتر از حد مجاز (۵٪) رسیده
+                است. لطفاً نسبت به انتقال وجه اقدام کنید.
+              </p></div><button class="text-sm font-bold text-red-700 hover:underline pt-1">
+              بررسی
+            </button></div><div
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6"
+          ><div
+              class="bg-white p-5 rounded-2xl shadow-soft border border-gray-100 group hover:border-primary/30 transition-colors"
+            ><div class="flex justify-between items-start mb-2"><div class="p-2 bg-gray-50 text-gray-600 rounded-xl"><span class="material-symbols-outlined">inventory_2</span></div><span
+                  class="text-xs font-bold text-green-600 bg-green-50 px-2 py-1 rounded-full flex items-center gap-1"
+                >
+                  ۱۰ فعال
+                </span></div><div class="mt-2"><span class="text-gray-500 text-xs font-medium"
+                  >تعداد کل صندوق‌ها</span
+                ><div class="flex items-baseline gap-2 mt-1"><h3 class="text-2xl font-bold text-gray-800 font-display">
+                    ۱۵
+                  </h3><span class="text-xs text-gray-400">صندوق</span></div><div class="mt-2 text-xs text-gray-400 flex items-center gap-1"><span class="w-2 h-2 bg-gray-300 rounded-full"></span><span>۵ صندوق بسته‌شده/غیرفعال</span></div></div></div><div
+              class="bg-white p-5 rounded-2xl shadow-soft border border-gray-100 group hover:border-primary/30 transition-colors"
+            ><div class="flex justify-between items-start mb-2"><div class="p-2 bg-secondary/20 text-yellow-700 rounded-xl"><span class="material-symbols-outlined"
+                    >account_balance_wallet</span
+                  ></div></div><div class="mt-2"><span class="text-gray-500 text-xs font-medium"
+                  >موجودی کل صندوق‌ها</span
+                ><div class="flex items-baseline gap-1 mt-1"><h3 class="text-2xl font-bold text-gray-800 font-display">
+                    ۳۰۰
+                  </h3><span class="text-xs text-gray-500 font-bold"
+                    >میلیارد تومان</span
+                  ></div><div
+                  class="flex items-center gap-1 mt-2 text-xs font-medium text-green-600"
+                ><span class="material-symbols-outlined text-[14px]"
+                    >trending_up</span
+                  ><span>۵٪ رشد نسبت به ماه قبل</span></div></div></div><div
+              class="bg-white p-5 rounded-2xl shadow-soft border border-gray-100 group hover:border-primary/30 transition-colors relative overflow-hidden"
+            ><div class="flex justify-between items-start mb-2 relative z-10"><div class="p-2 bg-green-50 text-primary rounded-xl"><span class="material-symbols-outlined">input</span></div></div><div class="mt-2 relative z-10"><span class="text-gray-500 text-xs font-medium"
+                  >ورودی سرمایه (ماه جاری)</span
+                ><div class="flex items-baseline gap-1 mt-1"><h3 class="text-2xl font-bold text-gray-800 font-display">
+                    ۱۵۰
+                  </h3><span class="text-xs text-gray-500 font-bold"
+                    >میلیارد تومان</span
+                  ></div></div><svg
+                class="absolute bottom-0 left-0 w-full h-16 opacity-10"
+                preserveAspectRatio="none"
+                viewBox="0 0 100 40"
+              ><path
+                  d="M0 40 L0 20 Q 20 5 40 25 T 80 20 L 100 10 V 40 Z"
+                  fill="#345a3b"
+                ></path></svg></div><div
+              class="bg-white p-5 rounded-2xl shadow-soft border border-gray-100 group hover:border-primary/30 transition-colors"
+            ><div class="flex justify-between items-start mb-2"><div class="p-2 bg-red-50 text-red-600 rounded-xl"><span class="material-symbols-outlined">output</span></div><span
+                  class="text-xs font-bold text-green-600 bg-green-50 px-2 py-1 rounded-full flex items-center gap-1"
+                >
+                  +۲۰٪ سود کل
+                </span></div><div class="mt-2"><span class="text-gray-500 text-xs font-medium"
+                  >خروجی سرمایه (ماه جاری)</span
+                ><div class="flex items-baseline gap-1 mt-1"><h3 class="text-2xl font-bold text-gray-800 font-display">
+                    ۵۰
+                  </h3><span class="text-xs text-gray-500 font-bold"
+                    >میلیارد تومان</span
+                  ></div></div></div></div><div class="grid grid-cols-1 lg:grid-cols-3 gap-6"><div
+              class="lg:col-span-2 bg-white rounded-2xl shadow-soft border border-gray-100 p-6"
+            ><div class="flex justify-between items-center mb-6"><h3 class="font-bold text-gray-800 flex items-center gap-2"><span class="material-symbols-outlined text-accent-blue"
+                    >monitoring</span
+                  >
+                  نمودار عملکرد صندوق‌ها
+                </h3><select
+                  class="bg-gray-50 border-none text-xs text-gray-600 rounded-lg px-3 py-1.5 cursor-pointer hover:bg-gray-100 transition-colors"
+                ><option>۳۰ روز گذشته</option><option>۳ ماه گذشته</option><option>سال جاری</option></select></div><div class="h-64 w-full relative"><svg
+                  class="w-full h-full overflow-visible"
+                  preserveAspectRatio="none"
+                  viewBox="0 0 800 200"
+                ><line
+                    stroke="#f3f4f6"
+                    stroke-width="1"
+                    x1="0"
+                    x2="800"
+                    y1="0"
+                    y2="0"
+                  ></line><line
+                    stroke="#f3f4f6"
+                    stroke-width="1"
+                    x1="0"
+                    x2="800"
+                    y1="50"
+                    y2="50"
+                  ></line><line
+                    stroke="#f3f4f6"
+                    stroke-width="1"
+                    x1="0"
+                    x2="800"
+                    y1="100"
+                    y2="100"
+                  ></line><line
+                    stroke="#f3f4f6"
+                    stroke-width="1"
+                    x1="0"
+                    x2="800"
+                    y1="150"
+                    y2="150"
+                  ></line><line
+                    stroke="#e5e7eb"
+                    stroke-width="1"
+                    x1="0"
+                    x2="800"
+                    y1="200"
+                    y2="200"
+                  ></line><path
+                    class="chart-path"
+                    d="M0 180 C 100 150, 200 190, 300 120 S 500 140, 600 80 S 750 40, 800 20"
+                    fill="none"
+                    stroke="#4676b7"
+                    stroke-width="3"
+                  ></path><path
+                    d="M0 180 C 100 150, 200 190, 300 120 S 500 140, 600 80 S 750 40, 800 20 V 200 H 0 Z"
+                    fill="url(#gradientBlue)"
+                    opacity="0.1"
+                  ></path><defs><linearGradient
+                      id="gradientBlue"
+                      x1="0%"
+                      x2="0%"
+                      y1="0%"
+                      y2="100%"
+                    ><stop
+                        offset="0%"
+                        style="stop-color: #4676b7; stop-opacity: 1"
+                      ></stop><stop
+                        offset="100%"
+                        style="stop-color: #4676b7; stop-opacity: 0"
+                      ></stop></linearGradient></defs></svg><div
+                  class="absolute -bottom-6 w-full flex justify-between text-xs text-gray-400 px-2"
+                ><span>۱</span><span>۵</span><span>۱۰</span><span>۱۵</span
+                  ><span>۲۰</span><span>۲۵</span><span>۳۰</span></div></div></div><div
+              class="bg-white rounded-2xl shadow-soft border border-gray-100 p-6 flex flex-col"
+            ><h3 class="font-bold text-gray-800 mb-6 flex items-center gap-2"><span class="material-symbols-outlined text-primary"
+                  >swap_vert</span
+                >
+                جریان سرمایه
+              </h3><div class="flex-1 flex flex-col justify-center gap-6"><div class="space-y-2"><div class="flex justify-between text-sm"><span class="text-gray-600 flex items-center gap-1"
+                      ><span class="w-2 h-2 rounded-full bg-primary"></span>
+                      ورودی</span
+                    ><span class="font-bold text-gray-800">۷۵٪</span></div><div
+                    class="w-full bg-gray-100 rounded-full h-2 overflow-hidden"
+                  ><div
+                      class="bg-primary h-full rounded-full"
+                      style="width: 75%"
+                    ></div></div><p class="text-xs text-gray-400">۱۵۰ میلیارد تومان</p></div><div class="space-y-2"><div class="flex justify-between text-sm"><span class="text-gray-600 flex items-center gap-1"
+                      ><span class="w-2 h-2 rounded-full bg-secondary"></span>
+                      خروجی</span
+                    ><span class="font-bold text-gray-800">۲۵٪</span></div><div
+                    class="w-full bg-gray-100 rounded-full h-2 overflow-hidden"
+                  ><div
+                      class="bg-secondary h-full rounded-full"
+                      style="width: 25%"
+                    ></div></div><p class="text-xs text-gray-400">۵۰ میلیارد تومان</p></div><div class="bg-blue-50 p-4 rounded-xl mt-4"><div class="flex items-center gap-2 mb-2"><span class="material-symbols-outlined text-accent-blue"
+                      >info</span
+                    ><span class="text-xs font-bold text-accent-blue"
+                      >تراز مثبت</span
+                    ></div><p class="text-xs text-gray-600 leading-relaxed">
+                    جریان نقدینگی صندوق‌ها در وضعیت مطلوب قرار دارد. نسبت ورودی
+                    به خروجی ۳ به ۱ است.
+                  </p></div></div></div></div><div class="grid grid-cols-1 xl:grid-cols-3 gap-6"><div
+              class="xl:col-span-2 bg-white rounded-2xl shadow-soft border border-gray-100 overflow-hidden flex flex-col"
+            ><div
+                class="p-6 border-b border-gray-100 flex justify-between items-center bg-gray-50/50"
+              ><h3 class="font-bold text-gray-800 text-lg">لیست صندوق‌ها</h3><div class="flex gap-2"><span
+                    class="bg-white border border-gray-200 text-xs px-2 py-1 rounded-lg text-gray-500 cursor-pointer hover:border-primary hover:text-primary transition-colors"
+                    >اقتصادی</span
+                  ><span
+                    class="bg-white border border-gray-200 text-xs px-2 py-1 rounded-lg text-gray-500 cursor-pointer hover:border-primary hover:text-primary transition-colors"
+                    >نقره‌ای</span
+                  ><span
+                    class="bg-white border border-gray-200 text-xs px-2 py-1 rounded-lg text-gray-500 cursor-pointer hover:border-primary hover:text-primary transition-colors"
+                    >طلایی</span
+                  ></div></div><div class="overflow-x-auto"><table class="w-full text-right"><thead class="bg-gray-50 text-gray-500 text-xs uppercase"><tr><th class="px-6 py-4 font-medium">نام صندوق</th><th class="px-6 py-4 font-medium">طرح مرتبط</th><th class="px-6 py-4 font-medium">موجودی (تومان)</th><th class="px-6 py-4 font-medium">عملکرد</th><th class="px-6 py-4 font-medium">وضعیت</th><th class="px-6 py-4 font-medium">عملیات</th></tr></thead><tbody class="divide-y divide-gray-100 text-sm"><tr
+                      class="hover:bg-gray-50/50 transition-colors group cursor-pointer"
+                    ><td
+                        class="px-6 py-4 font-medium text-gray-800 flex items-center gap-3"
+                      ><div
+                          class="w-8 h-8 rounded-lg bg-green-100 flex items-center justify-center text-primary"
+                        ><span class="material-symbols-outlined text-lg"
+                            >savings</span
+                          ></div>
+                        صندوق سرمایه گذاری طلایی
+                      </td><td class="px-6 py-4"><span
+                          class="px-2 py-1 rounded-md bg-yellow-100 text-yellow-700 text-xs font-bold"
+                          >طلایی</span
+                        ></td><td class="px-6 py-4 font-bold text-gray-700">
+                        ۵۰,۰۰۰,۰۰۰,۰۰۰
+                      </td><td
+                        class="px-6 py-4 text-green-600 dir-ltr text-right font-medium"
+                      >
+                        +15%
+                      </td><td class="px-6 py-4"><span
+                          class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium bg-green-50 text-green-600 border border-green-100"
+                        ><span
+                            class="w-1.5 h-1.5 rounded-full bg-green-500"
+                          ></span>
+                          فعال
+                        </span></td><td class="px-6 py-4"><button
+                          class="text-gray-400 hover:text-primary transition-colors"
+                        ><span class="material-symbols-outlined"
+                            >more_vert</span
+                          ></button></td></tr><tr
+                      class="hover:bg-gray-50/50 transition-colors group cursor-pointer"
+                    ><td
+                        class="px-6 py-4 font-medium text-gray-800 flex items-center gap-3"
+                      ><div
+                          class="w-8 h-8 rounded-lg bg-blue-100 flex items-center justify-center text-accent-blue"
+                        ><span class="material-symbols-outlined text-lg"
+                            >savings</span
+                          ></div>
+                        صندوق سرمایه گذاری نقره ای
+                      </td><td class="px-6 py-4"><span
+                          class="px-2 py-1 rounded-md bg-gray-100 text-gray-600 text-xs font-bold"
+                          >نقره‌ای</span
+                        ></td><td class="px-6 py-4 font-bold text-gray-700">
+                        ۲۰,۰۰۰,۰۰۰,۰۰۰
+                      </td><td
+                        class="px-6 py-4 text-green-600 dir-ltr text-right font-medium"
+                      >
+                        +8%
+                      </td><td class="px-6 py-4"><span
+                          class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium bg-green-50 text-green-600 border border-green-100"
+                        ><span
+                            class="w-1.5 h-1.5 rounded-full bg-green-500"
+                          ></span>
+                          فعال
+                        </span></td><td class="px-6 py-4"><button
+                          class="text-gray-400 hover:text-primary transition-colors"
+                        ><span class="material-symbols-outlined"
+                            >more_vert</span
+                          ></button></td></tr><tr
+                      class="hover:bg-gray-50/50 transition-colors group cursor-pointer"
+                    ><td
+                        class="px-6 py-4 font-medium text-gray-800 flex items-center gap-3"
+                      ><div
+                          class="w-8 h-8 rounded-lg bg-gray-100 flex items-center justify-center text-gray-500"
+                        ><span class="material-symbols-outlined text-lg"
+                            >lock</span
+                          ></div>
+                        صندوق سرمایه گذاری اقتصادی
+                      </td><td class="px-6 py-4"><span
+                          class="px-2 py-1 rounded-md bg-green-100 text-primary text-xs font-bold"
+                          >اقتصادی</span
+                        ></td><td class="px-6 py-4 font-bold text-gray-700">
+                        ۱۰,۰۰۰,۰۰۰,۰۰۰
+                      </td><td
+                        class="px-6 py-4 text-red-500 dir-ltr text-right font-medium"
+                      >
+                        -2%
+                      </td><td class="px-6 py-4"><span
+                          class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-500 border border-gray-200"
+                        ><span
+                            class="w-1.5 h-1.5 rounded-full bg-gray-400"
+                          ></span>
+                          غیرفعال
+                        </span></td><td class="px-6 py-4"><button
+                          class="text-gray-400 hover:text-primary transition-colors"
+                        ><span class="material-symbols-outlined"
+                            >more_vert</span
+                          ></button></td></tr></tbody></table></div></div><div class="space-y-6"><div
+                class="bg-white rounded-2xl shadow-soft border border-gray-100 p-6"
+              ><h3
+                  class="font-bold text-gray-800 mb-4 flex items-center gap-2"
+                ><span class="material-symbols-outlined text-gray-500"
+                    >settings_applications</span
+                  >
+                  عملیات صندوق
+                </h3><div class="space-y-4"><div><label class="text-xs text-gray-500 mb-1 block"
+                      >تخصیص به طرح</label
+                    ><select
+                      class="w-full text-sm border-gray-200 rounded-xl focus:ring-primary focus:border-primary bg-gray-50"
+                    ><option>انتخاب طرح...</option><option>طرح طلایی (تخم مرغ)</option><option>طرح نقره‌ای (خوراک دام)</option></select></div><div class="pt-2"><div class="flex items-center justify-between mb-2"><span class="text-sm text-gray-700">وضعیت صندوق</span><label
+                        class="relative inline-flex items-center cursor-pointer"
+                      ><input
+                          checked=""
+                          class="sr-only peer"
+                          type="checkbox"
+                          value=""
+                        /><div
+                          class="w-9 h-5 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-primary"
+                        ></div></label></div><p class="text-[10px] text-gray-400">
+                      با غیرفعال کردن، واریز وجه به صندوق متوقف می‌شود.
+                    </p></div><button
+                    class="w-full mt-2 bg-primary text-white py-2 rounded-xl text-sm font-medium hover:bg-primary-dark transition-colors shadow-md shadow-primary/20"
+                  >
+                    اعمال تغییرات
+                  </button></div></div><div
+                class="bg-white rounded-2xl shadow-soft border border-gray-100 p-6"
+              ><h3
+                  class="font-bold text-gray-800 mb-4 flex items-center gap-2"
+                ><span class="material-symbols-outlined text-secondary"
+                    >currency_exchange</span
+                  >
+                  انتقال سرمایه
+                </h3><div class="space-y-3"><div class="grid grid-cols-2 gap-3"><div><label class="text-[10px] text-gray-400 block mb-1"
+                        >مبدأ</label
+                      ><select class="w-full text-xs border-gray-200 rounded-lg"><option>صندوق ۱</option></select></div><div><label class="text-[10px] text-gray-400 block mb-1"
+                        >مقصد</label
+                      ><select class="w-full text-xs border-gray-200 rounded-lg"><option>صندوق ۲</option></select></div></div><div><label class="text-[10px] text-gray-400 block mb-1"
+                      >مبلغ (تومان)</label
+                    ><input
+                      class="w-full text-xs border-gray-200 rounded-lg"
+                      placeholder="مثلا: ۱,۰۰۰,۰۰۰"
+                      type="text"
+                    /></div><button
+                    class="w-full bg-white border border-gray-200 text-gray-600 hover:text-primary hover:border-primary py-2 rounded-xl text-xs font-bold transition-all"
+                  >
+                    ثبت انتقال
+                  </button></div></div></div></div><div
+            class="bg-white rounded-2xl shadow-soft border border-gray-100 overflow-hidden"
+          ><div
+              class="p-6 border-b border-gray-100 flex justify-between items-center"
+            ><h3 class="font-bold text-gray-800 text-lg">
+                تاریخچه تراکنش‌های صندوق‌ها
+              </h3><div class="flex gap-2"><select
+                  class="bg-gray-50 border-none text-xs text-gray-600 rounded-lg px-2 focus:ring-0 cursor-pointer"
+                ><option>همه تراکنش‌ها</option><option>موفق</option><option>ناموفق</option><option>معلق</option></select><input
+                  class="bg-gray-50 border-none text-xs rounded-lg px-3 py-1.5 focus:ring-1 ring-primary/30 w-40"
+                  placeholder="شناسه یا کاربر..."
+                /></div></div><div class="overflow-x-auto"><table class="w-full text-right"><thead class="bg-gray-50 text-gray-500 text-sm"><tr><th class="px-6 py-4 font-medium">شناسه</th><th class="px-6 py-4 font-medium">صندوق</th><th class="px-6 py-4 font-medium">نوع</th><th class="px-6 py-4 font-medium">سرمایه‌گذار</th><th class="px-6 py-4 font-medium">مبلغ</th><th class="px-6 py-4 font-medium">تاریخ</th><th class="px-6 py-4 font-medium">وضعیت</th></tr></thead><tbody class="divide-y divide-gray-100 text-sm"><tr class="hover:bg-gray-50/50 transition-colors"><td class="px-6 py-4 font-mono text-gray-400 text-xs">
+                      TRX-8541
+                    </td><td class="px-6 py-4 text-gray-700">صندوق رشد پایدار ۱</td><td class="px-6 py-4 text-green-600 font-medium">
+                      واریز (ورودی)
+                    </td><td class="px-6 py-4 flex items-center gap-2"><div
+                        class="w-6 h-6 rounded-full bg-indigo-100 text-indigo-600 flex items-center justify-center text-[10px] font-bold"
+                      >
+                        A
+                      </div><span>علی محمدی</span></td><td class="px-6 py-4 font-bold text-gray-800">
+                      ۵۰,۰۰۰,۰۰۰ ریال
+                    </td><td class="px-6 py-4 text-gray-500 text-xs">
+                      ۱۴۰۳/۱۰/۰۵ - ۱۰:۳۰
+                    </td><td class="px-6 py-4"><span
+                        class="px-2.5 py-1 rounded-full text-xs font-medium bg-green-50 text-green-600 border border-green-100"
+                        >موفق</span
+                      ></td></tr><tr class="hover:bg-gray-50/50 transition-colors"><td class="px-6 py-4 font-mono text-gray-400 text-xs">
+                      TRX-8542
+                    </td><td class="px-6 py-4 text-gray-700">صندوق درآمد ثابت</td><td class="px-6 py-4 text-red-500 font-medium">
+                      برداشت (خروجی)
+                    </td><td class="px-6 py-4 flex items-center gap-2"><div
+                        class="w-6 h-6 rounded-full bg-orange-100 text-orange-600 flex items-center justify-center text-[10px] font-bold"
+                      >
+                        S
+                      </div><span>سارا احمدی</span></td><td class="px-6 py-4 font-bold text-gray-800">
+                      ۱۰,۰۰۰,۰۰۰ ریال
+                    </td><td class="px-6 py-4 text-gray-500 text-xs">
+                      ۱۴۰۳/۱۰/۰۵ - ۱۱:۱۵
+                    </td><td class="px-6 py-4"><span
+                        class="px-2.5 py-1 rounded-full text-xs font-medium bg-yellow-50 text-yellow-600 border border-yellow-100"
+                        >معلق</span
+                      ></td></tr><tr class="hover:bg-gray-50/50 transition-colors"><td class="px-6 py-4 font-mono text-gray-400 text-xs">
+                      TRX-8543
+                    </td><td class="px-6 py-4 text-gray-700">صندوق ریسک بالا</td><td class="px-6 py-4 text-green-600 font-medium">
+                      واریز (ورودی)
+                    </td><td class="px-6 py-4 flex items-center gap-2"><div
+                        class="w-6 h-6 rounded-full bg-purple-100 text-purple-600 flex items-center justify-center text-[10px] font-bold"
+                      >
+                        M
+                      </div><span>محمدرضا کیانی</span></td><td class="px-6 py-4 font-bold text-gray-800">
+                      ۱۰۰,۰۰۰,۰۰۰ ریال
+                    </td><td class="px-6 py-4 text-gray-500 text-xs">
+                      ۱۴۰۳/۱۰/۰۴ - ۱۶:۲۰
+                    </td><td class="px-6 py-4"><span
+                        class="px-2.5 py-1 rounded-full text-xs font-medium bg-red-50 text-red-600 border border-red-100"
+                        >ناموفق</span
+                      ></td></tr></tbody></table></div><div
+              class="p-4 border-t border-gray-100 bg-gray-50 flex justify-center"
+            ><button
+                class="text-sm text-primary hover:text-primary-dark font-medium flex items-center gap-1 transition-colors"
+              >
+                مشاهده تمام تراکنش‌ها
+                <span class="material-symbols-outlined text-[16px] rotate-180"
+                  >arrow_right_alt</span
+                ></button></div></div></div></main></div><script src="header.js"></script><script src="sidebar.js"></script></body>
+</html>

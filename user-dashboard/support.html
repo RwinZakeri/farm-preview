@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="fa"><head><meta charset="utf-8" /><meta content="width=device-width, initial-scale=1.0" name="viewport" /><link rel="icon" type="image/svg+xml" href="/icon.svg" /><title>تنظیمات پشتیبانی و ارتباطات - فارمتو</title><script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script><link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    /><link
+      href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css"
+      rel="stylesheet"
+      type="text/css"
+    /><script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#11d452",
+              secondary: "#facc15",
+              "primary-dark": "#0ea640",
+              "background-light": "#f3f4f6",
+              "background-dark": "#1f2937",
+              "surface-light": "#ffffff",
+              "surface-dark": "#374151",
+              "text-light": "#1f2937",
+              "text-dark": "#f3f4f6",
+              "border-light": "#e5e7eb",
+              "border-dark": "#4b5563",
+            },
+            fontFamily: {
+              display: ["Vazirmatn", "Kalameh", "Tahoma", "sans-serif"],
+              body: ["Vazirmatn", "Kalameh", "Tahoma", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.75rem",
+              xl: "1rem",
+              "2xl": "1.5rem",
+            },
+            boxShadow: {
+              soft: "0 4px 20px -2px rgba(0, 0, 0, 0.05)",
+            },
+          },
+        },
+      };
+    </script><style>
+      body {
+        font-family: "Vazirmatn", sans-serif;
+      }
+      ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #cbd5e1;
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #94a3b8;
+      }
+      .dark ::-webkit-scrollbar-thumb {
+        background: #374151;
+      }
+      .dark ::-webkit-scrollbar-thumb:hover {
+        background: #4b5563;
+      }
+      .ticket-item {
+        transition: all 0.3s ease;
+      }
+      .ticket-item:hover {
+        transform: translateX(-4px);
+      }
+      .ticket-item.active {
+        border-right-color: #3c6e47;
+        background-color: rgba(60, 110, 71, 0.05);
+      }
+      .message-bubble {
+        animation: fadeInUp 0.3s ease-out;
+      }
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .chat-container {
+        scroll-behavior: smooth;
+      }
+    </style></head><body
+    class="bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark font-body min-h-screen transition-colors duration-200"
+  ><div class="flex h-screen overflow-hidden"><div id="sidebar-container"></div><main
+        class="flex-1 overflow-y-auto bg-background-light dark:bg-background-dark relative lg:mr-72"
+      ><header
+          class="sticky top-0 z-20 bg-surface-light dark:bg-surface-dark shadow-sm border-b border-border-light dark:border-border-dark px-6 py-4 flex items-center justify-between backdrop-blur-sm bg-opacity-95 dark:bg-opacity-95"
+        ><div class="flex items-center gap-4 lg:hidden"><button
+              class="text-text-light dark:text-text-dark"
+              id="mobile-menu-btn"
+            ><span class="material-symbols-outlined">menu</span></button><div class="flex items-center gap-2"><img
+                alt="لوگو فارمتو"
+                class="h-8 w-auto"
+                src="/icon.svg"
+                onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMTFkNDUyIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+PHBhdGggZD0iTTExIDEydjZoLTJ2LTZoLTJ2NmgtMnYtNmgybS0yIDBsMy01aDRsMyA1bS0xMCAwdjYiLz48L3N2Zz4='"
+              /><span class="font-bold text-lg text-primary">فارمتو</span></div></div><div
+            class="hidden lg:flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400"
+          ><span class="material-symbols-outlined text-base">home</span><span>/</span><span class="text-text-light dark:text-text-dark font-medium"
+              >پشتیبانی و ارتباطات</span
+            ></div><div class="flex items-center gap-4"><button
+              class="relative p-2 text-gray-500 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-full transition-colors"
+            ><span class="material-symbols-outlined">notifications</span><span
+                class="absolute top-2 right-2 w-2 h-2 bg-red-500 rounded-full border border-white dark:border-gray-800"
+              ></span></button><button
+              class="p-2 text-gray-500 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-full transition-colors"
+            ><span class="material-symbols-outlined">settings</span></button><div
+              class="hidden sm:flex items-center gap-2 bg-gray-100 dark:bg-gray-700 px-3 py-1.5 rounded-lg text-sm font-medium"
+            ><span class="material-symbols-outlined text-gray-500 text-xs"
+                >calendar_today</span
+              ><span>۱۴۰۳/۰۸/۲۵</span></div></div></header><div class="p-6 lg:p-10 max-w-7xl mx-auto space-y-6"><!-- Header Section --><div
+            class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4"
+          ><div><h1
+                class="text-2xl lg:text-3xl font-bold text-gray-800 dark:text-white mb-2"
+              >
+                تنظیمات پشتیبانی و ارتباطات
+              </h1><p class="text-gray-500 dark:text-gray-400 text-sm lg:text-base">
+                پیگیری تیکت‌ها، ارتباط با کارشناسان و مدیریت درخواست‌های
+                پشتیبانی
+              </p></div><button
+              class="px-4 py-2 bg-white dark:bg-surface-dark border border-gray-200 dark:border-gray-600 rounded-xl text-sm font-medium hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors shadow-sm flex items-center gap-2"
+              onclick="window.location.href='index.html'"
+            ><span class="material-symbols-outlined text-lg"
+                >arrow_forward</span
+              >
+              بازگشت به داشبورد
+            </button></div><!-- Main Content Grid --><div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start"><!-- Left Column: Contact Info & Ticket List --><div class="lg:col-span-4 space-y-6 order-2 lg:order-1"><!-- Create Ticket Button & Contact Info --><div
+                class="bg-surface-light dark:bg-surface-dark p-6 rounded-2xl shadow-soft border border-border-light dark:border-border-dark"
+              ><button
+                  class="w-full bg-primary hover:bg-primary-dark text-white py-3.5 px-4 rounded-xl shadow-lg shadow-primary/20 flex items-center justify-center gap-2 font-bold transition-all duration-300 transform hover:-translate-y-1 hover:shadow-xl"
+                  id="create-ticket-btn"
+                ><span class="material-symbols-outlined"
+                    >add_circle_outline</span
+                  >
+                  ایجاد تیکت جدید
+                </button><div class="mt-8 space-y-5"><!-- Useful Links --><div><h3
+                      class="font-bold text-gray-800 dark:text-white flex items-center gap-2 text-sm mb-3"
+                    ><span class="w-1 h-5 bg-secondary rounded-full"></span>
+                      لینک‌های مفید
+                    </h3><a
+                      class="flex items-center justify-between p-3 rounded-xl bg-gray-50 dark:bg-gray-700/50 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors group"
+                      href="#"
+                    ><div class="flex items-center gap-3"><div
+                          class="w-8 h-8 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 flex items-center justify-center"
+                        ><span class="material-symbols-outlined text-lg"
+                            >help_outline</span
+                          ></div><span
+                          class="text-sm text-gray-700 dark:text-gray-300 font-medium"
+                          >سوالات متداول (FAQ)</span
+                        ></div><span
+                        class="material-symbols-outlined text-gray-400 group-hover:text-primary text-sm transform rotate-180"
+                        >arrow_back</span
+                      ></a></div><!-- Contact Information --><div
+                    class="border-t border-border-light dark:border-border-dark pt-5"
+                  ><h3
+                      class="font-bold text-gray-800 dark:text-white flex items-center gap-2 text-sm mb-4"
+                    ><span class="w-1 h-5 bg-secondary rounded-full"></span>
+                      اطلاعات تماس با پشتیبان
+                    </h3><div class="space-y-3"><a
+                        href="tel:02188881234"
+                        class="flex items-center gap-3 text-sm text-gray-600 dark:text-gray-400 hover:text-primary transition-colors"
+                      ><span class="material-symbols-outlined text-lg"
+                          >phone</span
+                        ><span>۰۲۱-۸۸۸۸۱۲۳۴</span></a><a
+                        href="mailto:support@farmto.com"
+                        class="flex items-center gap-3 text-sm text-gray-600 dark:text-gray-400 hover:text-primary transition-colors"
+                      ><span class="material-symbols-outlined text-lg"
+                          >email</span
+                        ><span>support@farmto.com</span></a><div
+                        class="flex items-center gap-3 text-sm text-gray-600 dark:text-gray-400"
+                      ><span class="material-symbols-outlined text-lg"
+                          >schedule</span
+                        ><span>شنبه تا چهارشنبه، ۸ الی ۱۷</span></div></div></div></div></div><!-- Ticket List --><div
+                class="bg-surface-light dark:bg-surface-dark rounded-2xl shadow-soft border border-border-light dark:border-border-dark overflow-hidden"
+              ><div
+                  class="p-5 border-b border-border-light dark:border-border-dark flex items-center justify-between bg-gray-50 dark:bg-gray-800/50"
+                ><h3 class="font-bold text-gray-800 dark:text-white">
+                    لیست تیکت‌های قبلی
+                  </h3><span
+                    class="bg-primary/10 text-primary text-xs px-2 py-1 rounded-md font-bold"
+                    id="ticket-count"
+                    >۳ تیکت</span
+                  ></div><div
+                  class="divide-y divide-border-light dark:divide-border-dark max-h-[600px] overflow-y-auto"
+                  id="ticket-list"
+                ><!-- Tickets will be rendered here by JavaScript --></div></div></div><!-- Right Column: Ticket Detail View --><div class="lg:col-span-8 h-full order-1 lg:order-2"><div
+                class="bg-surface-light dark:bg-surface-dark rounded-2xl shadow-soft border border-border-light dark:border-border-dark flex flex-col h-[600px] lg:h-[calc(100vh-280px)]"
+                id="ticket-detail-container"
+              ><!-- Empty State --><div
+                  class="flex-1 flex items-center justify-center p-8 text-center"
+                  id="empty-state"
+                ><div class="max-w-md"><div
+                      class="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4"
+                    ><span
+                        class="material-symbols-outlined text-4xl text-primary"
+                        >support_agent</span
+                      ></div><h3
+                      class="text-xl font-bold text-gray-800 dark:text-white mb-2"
+                    >
+                      تیکتی انتخاب نشده است
+                    </h3><p class="text-gray-500 dark:text-gray-400 text-sm mb-6">
+                      برای مشاهده جزئیات و گفتگو، یک تیکت از لیست سمت راست
+                      انتخاب کنید یا تیکت جدیدی ایجاد کنید.
+                    </p><button
+                      class="bg-primary hover:bg-primary-dark text-white px-6 py-3 rounded-xl font-medium transition-colors flex items-center gap-2 mx-auto"
+                      id="create-ticket-btn-empty"
+                    ><span class="material-symbols-outlined">add_circle</span>
+                      ایجاد تیکت جدید
+                    </button></div></div><!-- Ticket Detail View (Hidden by default) --><div class="hidden flex-col h-full" id="ticket-detail-view"><!-- Ticket Header --><div
+                    class="p-5 border-b border-border-light dark:border-border-dark flex items-center justify-between bg-gray-50 dark:bg-gray-800/50 rounded-t-2xl"
+                  ><div class="flex items-center gap-4 flex-1"><div
+                        class="bg-white dark:bg-surface-dark p-2 rounded-lg shadow-sm text-primary"
+                      ><span class="material-symbols-outlined"
+                          >receipt_long</span
+                        ></div><div class="flex-1 min-w-0"><h2
+                          class="font-bold text-gray-800 dark:text-white text-base truncate"
+                          id="ticket-title"
+                        >
+                          عدم نمایش توکن‌ها در کیف پول
+                        </h2><div
+                          class="flex items-center gap-2 text-xs text-gray-500 mt-1 flex-wrap"
+                        ><span id="ticket-number">شماره تیکت: #۴۰۹۲</span><span class="w-1 h-1 bg-gray-300 rounded-full"></span><span id="ticket-department">دپارتمان فنی</span></div></div></div><span
+                      class="hidden sm:inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300 border border-green-200 dark:border-green-800"
+                      id="ticket-status-badge"
+                    ><span
+                        class="w-2 h-2 bg-green-500 rounded-full ml-2"
+                      ></span>
+                      پاسخ داده شده
+                    </span></div><!-- Chat Messages --><div
+                    class="flex-1 overflow-y-auto p-6 space-y-6 bg-gray-50/50 dark:bg-gray-900/20 chat-container"
+                    id="chat-messages"
+                  ><!-- Messages will be rendered here by JavaScript --></div><!-- Message Input --><div
+                    class="p-5 border-t border-border-light dark:border-border-dark bg-surface-light dark:bg-surface-dark rounded-b-2xl"
+                  ><div class="relative flex items-end gap-2"><button
+                        class="p-3 text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 transition-colors rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700"
+                        title="افزودن فایل"
+                      ><span class="material-symbols-outlined"
+                          >attach_file</span
+                        ></button><div class="relative flex-1"><textarea
+                          class="w-full bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-600 rounded-xl py-3 px-4 pr-10 text-sm focus:ring-2 focus:ring-primary focus:border-primary resize-none h-12 min-h-[48px] max-h-32 transition-all text-gray-800 dark:text-white placeholder-gray-400"
+                          placeholder="پیام خود را بنویسید..."
+                          id="message-input"
+                          rows="1"
+                        ></textarea><button
+                          class="absolute left-3 bottom-3 text-gray-400 hover:text-gray-600 cursor-pointer transition-colors"
+                          title="ایموجی"
+                        ><span class="material-symbols-outlined"
+                            >sentiment_satisfied</span
+                          ></button></div><button
+                        class="bg-primary hover:bg-primary-dark text-white p-3 rounded-xl shadow-md transition-colors flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed"
+                        id="send-message-btn"
+                      ><span
+                          class="material-symbols-outlined transform rotate-180"
+                          >send</span
+                        ></button></div><div class="text-center mt-2"><p class="text-[10px] text-gray-400">
+                        میانگین زمان پاسخگویی: کمتر از ۱ ساعت
+                      </p></div></div></div></div></div></div></div></main></div><!-- Create Ticket Modal --><div
+      class="hidden fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+      id="create-ticket-modal"
+    ><div
+        class="bg-surface-light dark:bg-surface-dark rounded-2xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto"
+      ><div
+          class="p-6 border-b border-border-light dark:border-border-dark flex items-center justify-between"
+        ><h3 class="text-xl font-bold text-gray-800 dark:text-white">
+            ایجاد تیکت جدید
+          </h3><button
+            class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
+            id="close-modal-btn"
+          ><span class="material-symbols-outlined">close</span></button></div><div class="p-6 space-y-4"><div><label
+              class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+              >موضوع تیکت</label
+            ><input
+              type="text"
+              class="w-full bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-600 rounded-xl py-2.5 px-4 text-sm focus:ring-2 focus:ring-primary focus:border-primary text-gray-800 dark:text-white"
+              placeholder="مثال: مشکل در نمایش توکن‌ها"
+              id="ticket-subject-input"
+            /></div><div><label
+              class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+              >دپارتمان مربوطه</label
+            ><select
+              class="w-full bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-600 rounded-xl py-2.5 px-4 text-sm focus:ring-2 focus:ring-primary focus:border-primary text-gray-800 dark:text-white"
+              id="ticket-department-select"
+            ><option value="technical">دپارتمان فنی</option><option value="sales">دپارتمان فروش</option><option value="financial">دپارتمان مالی</option><option value="investment">دپارتمان سرمایه‌گذاری</option></select></div><div><label
+              class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+              >توضیحات</label
+            ><textarea
+              class="w-full bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-600 rounded-xl py-2.5 px-4 text-sm focus:ring-2 focus:ring-primary focus:border-primary resize-none h-32 text-gray-800 dark:text-white"
+              placeholder="لطفاً مشکل یا سوال خود را به تفصیل شرح دهید..."
+              id="ticket-description-input"
+            ></textarea></div><div class="flex gap-3 pt-4"><button
+              class="flex-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 py-3 rounded-xl font-medium hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
+              id="cancel-ticket-btn"
+            >
+              انصراف
+            </button><button
+              class="flex-1 bg-primary hover:bg-primary-dark text-white py-3 rounded-xl font-medium transition-colors"
+              id="submit-ticket-btn"
+            >
+              ایجاد تیکت
+            </button></div></div></div></div><script src="header.js"></script><script src="sidebar.js"></script><script>
+      // Ticket Data
+      const tickets = [
+        {
+          id: 4092,
+          title: "عدم نمایش توکن‌ها",
+          date: "۱۴۰۳/۰۸/۲۴",
+          status: "answered",
+          statusText: "پاسخ داده شده",
+          department: "دپارتمان فنی",
+          messages: [
+            {
+              type: "user",
+              text: "من نمیتوانم توکن های خود را ببینم. بعد از خرید دیروز، موجودی کیف پولم هنوز صفر نشان داده می‌شود. لطفا بررسی کنید.",
+              time: "۱۰:۳۰ ق.ظ",
+              date: "۱۴۰۳/۰۸/۲۴",
+            },
+            {
+              type: "support",
+              text: "سلام، وقت بخیر.\n\nمقدار توکن های خود را میتوانید از طریق لینک زیر ببینید و مدیریت کنید. گاهی اوقات بروزرسانی موجودی در صفحه اصلی ممکن است چند دقیقه زمان ببرد.",
+              time: "۱۰:۴۵ ق.ظ",
+              date: "۱۴۰۳/۰۸/۲۴",
+              link: {
+                text: "مشاهده لیست دارایی‌ها در دارایی",
+                url: "#",
+              },
+            },
+          ],
+        },
+        {
+          id: 3851,
+          title: "مشکل در احراز هویت",
+          date: "۱۴۰۳/۰۸/۱۰",
+          status: "closed",
+          statusText: "بسته شده",
+          department: "دپارتمان فنی",
+          messages: [
+            {
+              type: "user",
+              text: "در فرآیند احراز هویت مشکل دارم.",
+              time: "۱۴:۲۰ ب.ظ",
+              date: "۱۴۰۳/۰۸/۱۰",
+            },
+            {
+              type: "support",
+              text: "مشکل شما برطرف شد.",
+              time: "۱۵:۰۰ ب.ظ",
+              date: "۱۴۰۳/۰۸/۱۰",
+            },
+          ],
+        },
+        {
+          id: 3220,
+          title: "خطای درگاه پرداخت",
+          date: "۱۴۰۳/۰۸/۰۲",
+          status: "closed",
+          statusText: "بسته شده",
+          department: "دپارتمان مالی",
+          messages: [
+            {
+              type: "user",
+              text: "در هنگام پرداخت خطا می‌گیرم.",
+              time: "۱۱:۱۵ ق.ظ",
+              date: "۱۴۰۳/۰۸/۰۲",
+            },
+            {
+              type: "support",
+              text: "مشکل برطرف شد.",
+              time: "۱۲:۰۰ ب.ظ",
+              date: "۱۴۰۳/۰۸/۰۲",
+            },
+          ],
+        },
+      ];
+
+      let selectedTicketId = null;
+
+      // Initialize
+      document.addEventListener("DOMContentLoaded", function () {
+        renderTicketList();
+        setupEventListeners();
+        // Select first ticket by default
+        if (tickets.length > 0) {
+          selectTicket(tickets[0].id);
+        }
+      });
+
+      // Render Ticket List
+      function renderTicketList() {
+        const ticketList = document.getElementById("ticket-list");
+        ticketList.innerHTML = tickets
+          .map((ticket) => {
+            const statusColors = {
+              answered:
+                "bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300",
+              closed:
+                "bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-300",
+              pending:
+                "bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-300",
+            };
+
+            return `
+              <button
+                class="w-full text-right p-4 ticket-item border-r-4 ${
+                  selectedTicketId === ticket.id
+                    ? "active border-primary bg-primary/5"
+                    : "border-transparent hover:bg-gray-50 dark:hover:bg-gray-700/50"
+                } transition-all"
+                onclick="selectTicket(${ticket.id})"
+              ><div class="flex justify-between items-start mb-1"><span class="font-bold text-gray-800 dark:text-white text-sm">${
+                    ticket.title
+                  }</span><span class="text-[10px] text-gray-400">${ticket.date}</span></div><div class="flex justify-between items-center"><span class="text-xs text-gray-500 dark:text-gray-400 line-clamp-1"
+                    >تیکت شماره #${ticket.id}</span
+                  ><span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium ${
+                    statusColors[ticket.status]
+                  }">
+                    ${ticket.statusText}
+                  </span></div></button>
+            `;
+          })
+          .join("");
+
+        document.getElementById(
+          "ticket-count"
+        ).textContent = `${tickets.length} تیکت`;
+      }
+
+      // Select Ticket
+      function selectTicket(ticketId) {
+        selectedTicketId = ticketId;
+        const ticket = tickets.find((t) => t.id === ticketId);
+        if (!ticket) return;
+
+        // Update UI
+        renderTicketList();
+        showTicketDetail(ticket);
+      }
+
+      // Show Ticket Detail
+      function showTicketDetail(ticket) {
+        const emptyState = document.getElementById("empty-state");
+        const ticketDetailView = document.getElementById("ticket-detail-view");
+
+        emptyState.classList.add("hidden");
+        ticketDetailView.classList.remove("hidden");
+        ticketDetailView.classList.add("flex");
+
+        // Update ticket info
+        document.getElementById("ticket-title").textContent = ticket.title;
+        document.getElementById(
+          "ticket-number"
+        ).textContent = `شماره تیکت: #${ticket.id}`;
+        document.getElementById("ticket-department").textContent =
+          ticket.department;
+
+        // Update status badge
+        const statusBadge = document.getElementById("ticket-status-badge");
+        const statusColors = {
+          answered:
+            "bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300 border-green-200 dark:border-green-800",
+          closed:
+            "bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-300 border-gray-200 dark:border-gray-600",
+          pending:
+            "bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-300 border-yellow-200 dark:border-yellow-600",
+        };
+        statusBadge.className = `hidden sm:inline-flex items-center px-3 py-1 rounded-full text-sm font-medium ${
+          statusColors[ticket.status]
+        } border`;
+        statusBadge.innerHTML = `<span class="w-2 h-2 ${
+          ticket.status === "answered"
+            ? "bg-green-500"
+            : ticket.status === "pending"
+            ? "bg-yellow-500"
+            : "bg-gray-500"
+        } rounded-full ml-2"></span>${ticket.statusText}`;
+
+        // Render messages
+        renderMessages(ticket.messages);
+      }
+
+      // Render Messages
+      function renderMessages(messages) {
+        const chatMessages = document.getElementById("chat-messages");
+        let currentDate = null;
+
+        chatMessages.innerHTML = messages
+          .map((message, index) => {
+            let html = "";
+
+            // Add date separator if needed
+            if (currentDate !== message.date) {
+              currentDate = message.date;
+              html += `
+                <div class="flex justify-center"><span class="text-xs text-gray-400 bg-gray-100 dark:bg-gray-800 px-3 py-1 rounded-full">${message.date}</span></div>
+              `;
+            }
+
+            if (message.type === "user") {
+              html += `
+                <div class="flex flex-col items-end mr-auto max-w-[85%] sm:max-w-[75%] message-bubble"><div class="flex items-end gap-2 flex-row-reverse"><div class="w-8 h-8 rounded-full overflow-hidden flex-shrink-0 border border-white dark:border-gray-700 shadow-sm"><img
+                        alt="User"
+                        class="w-full h-full object-cover"
+                        src="/images/hen.png"
+                      /></div><div class="bg-primary text-white p-4 rounded-2xl rounded-bl-none shadow-md"><p class="text-sm leading-relaxed whitespace-pre-line">${message.text}</p></div></div><span class="text-[10px] text-gray-400 mt-1 mr-10">${message.time}</span></div>
+              `;
+            } else {
+              html += `
+                <div class="flex flex-col items-start ml-auto max-w-[85%] sm:max-w-[75%] message-bubble"><div class="flex items-end gap-2"><div class="w-8 h-8 rounded-full bg-secondary flex items-center justify-center text-white font-bold text-xs flex-shrink-0 shadow-sm"><span>پ</span></div><div class="bg-white dark:bg-surface-dark border border-gray-100 dark:border-gray-600 p-4 rounded-2xl rounded-br-none shadow-sm text-gray-800 dark:text-gray-200"><p class="text-sm leading-relaxed whitespace-pre-line mb-2">${
+                        message.text
+                      }</p>
+                      ${
+                        message.link
+                          ? `
+                        <div class="mt-3"><a class="inline-flex items-center gap-1 text-blue-600 dark:text-blue-400 text-sm font-medium hover:underline bg-blue-50 dark:bg-blue-900/20 px-3 py-2 rounded-lg transition-colors" href="${message.link.url}"><span class="material-symbols-outlined text-base">link</span>
+                            ${message.link.text}
+                          </a></div>
+                      `
+                          : ""
+                      }
+                    </div></div><span class="text-[10px] text-gray-400 mt-1 ml-10">${
+                    message.time
+                  }</span></div>
+              `;
+            }
+
+            return html;
+          })
+          .join("");
+
+        // Scroll to bottom
+        setTimeout(() => {
+          chatMessages.scrollTop = chatMessages.scrollHeight;
+        }, 100);
+      }
+
+      // Setup Event Listeners
+      function setupEventListeners() {
+        // Create ticket buttons
+        const createTicketBtns = [
+          document.getElementById("create-ticket-btn"),
+          document.getElementById("create-ticket-btn-empty"),
+        ];
+        const modal = document.getElementById("create-ticket-modal");
+        const closeModalBtn = document.getElementById("close-modal-btn");
+        const cancelTicketBtn = document.getElementById("cancel-ticket-btn");
+        const submitTicketBtn = document.getElementById("submit-ticket-btn");
+
+        createTicketBtns.forEach((btn) => {
+          if (btn) {
+            btn.addEventListener("click", () => {
+              modal.classList.remove("hidden");
+            });
+          }
+        });
+
+        [closeModalBtn, cancelTicketBtn].forEach((btn) => {
+          if (btn) {
+            btn.addEventListener("click", () => {
+              modal.classList.add("hidden");
+              // Reset form
+              document.getElementById("ticket-subject-input").value = "";
+              document.getElementById("ticket-description-input").value = "";
+              document.getElementById("ticket-department-select").value =
+                "technical";
+            });
+          }
+        });
+
+        submitTicketBtn.addEventListener("click", () => {
+          const subject = document
+            .getElementById("ticket-subject-input")
+            .value.trim();
+          const description = document
+            .getElementById("ticket-description-input")
+            .value.trim();
+          const department = document.getElementById(
+            "ticket-department-select"
+          ).value;
+
+          if (!subject || !description) {
+            alert("لطفاً تمام فیلدها را پر کنید.");
+            return;
+          }
+
+          // Create new ticket
+          const newTicket = {
+            id: Math.max(...tickets.map((t) => t.id)) + 1,
+            title: subject,
+            date: "۱۴۰۳/۰۸/۲۵",
+            status: "pending",
+            statusText: "در انتظار پاسخ",
+            department:
+              department === "technical"
+                ? "دپارتمان فنی"
+                : department === "sales"
+                ? "دپارتمان فروش"
+                : department === "financial"
+                ? "دپارتمان مالی"
+                : "دپارتمان سرمایه‌گذاری",
+            messages: [
+              {
+                type: "user",
+                text: description,
+                time: new Date().toLocaleTimeString("fa-IR", {
+                  hour: "2-digit",
+                  minute: "2-digit",
+                }),
+                date: "۱۴۰۳/۰۸/۲۵",
+              },
+            ],
+          };
+
+          tickets.unshift(newTicket);
+          renderTicketList();
+          selectTicket(newTicket.id);
+          modal.classList.add("hidden");
+
+          // Reset form
+          document.getElementById("ticket-subject-input").value = "";
+          document.getElementById("ticket-description-input").value = "";
+          document.getElementById("ticket-department-select").value =
+            "technical";
+        });
+
+        // Send message
+        const messageInput = document.getElementById("message-input");
+        const sendMessageBtn = document.getElementById("send-message-btn");
+
+        function sendMessage() {
+          if (!selectedTicketId) return;
+
+          const messageText = messageInput.value.trim();
+          if (!messageText) return;
+
+          const ticket = tickets.find((t) => t.id === selectedTicketId);
+          if (!ticket) return;
+
+          // Add message
+          ticket.messages.push({
+            type: "user",
+            text: messageText,
+            time: new Date().toLocaleTimeString("fa-IR", {
+              hour: "2-digit",
+              minute: "2-digit",
+            }),
+            date: "۱۴۰۳/۰۸/۲۵",
+          });
+
+          // Update status if closed
+          if (ticket.status === "closed") {
+            ticket.status = "pending";
+            ticket.statusText = "در انتظار پاسخ";
+          }
+
+          renderTicketList();
+          renderMessages(ticket.messages);
+          messageInput.value = "";
+          messageInput.style.height = "48px";
+        }
+
+        sendMessageBtn.addEventListener("click", sendMessage);
+
+        messageInput.addEventListener("keydown", (e) => {
+          if (e.key === "Enter" && !e.shiftKey) {
+            e.preventDefault();
+            sendMessage();
+          }
+        });
+
+        // Auto-resize textarea
+        messageInput.addEventListener("input", function () {
+          this.style.height = "48px";
+          this.style.height = Math.min(this.scrollHeight, 128) + "px";
+        });
+
+        // Close modal on outside click
+        modal.addEventListener("click", (e) => {
+          if (e.target === modal) {
+            modal.classList.add("hidden");
+          }
+        });
+      }
+    </script></body>
+</html>

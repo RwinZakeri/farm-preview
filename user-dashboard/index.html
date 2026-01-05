@@ -1,0 +1,358 @@
+<!DOCTYPE html><html class="light" dir="rtl" lang="fa"><head><meta charset="utf-8" /><meta content="width=device-width, initial-scale=1.0" name="viewport" /><link rel="icon" type="image/svg+xml" href="/icon.svg" /><title>داشبورد سرمایه‌گذار فارمتو</title><link href="https://fonts.googleapis.com" rel="preconnect" /><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" /><link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&amp;family=Vazirmatn:wght@100..900&amp;display=swap"
+      rel="stylesheet"
+    /><link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    /><link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    /><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#11d452",
+              "primary-dark": "#0ea640",
+              "background-light": "#f6f8f6",
+              "background-dark": "#102216",
+              gold: "#D4AF37",
+              "gold-light": "#F9F1D8",
+            },
+            fontFamily: {
+              display: ["Vazirmatn", "Manrope", "sans-serif"],
+              body: ["Vazirmatn", "Manrope", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.5rem",
+              lg: "1rem",
+              xl: "1.5rem",
+              "2xl": "2rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script><style>
+      body {
+        font-family: "Vazirmatn", "Manrope", sans-serif;
+      }
+      .scrollbar-hide::-webkit-scrollbar {
+        display: none;
+      }
+      ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #cbd5e1;
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #94a3b8;
+      }
+      /* Force scrollbar to left side */
+      .scrollbar-left {
+        direction: ltr;
+      }
+      .scrollbar-left > div {
+        direction: rtl;
+      }
+      .glass-card {
+        background: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(10px);
+      }
+      /* Custom progress bar striping */
+      .progress-striped {
+        background-image: linear-gradient(
+          45deg,
+          rgba(255, 255, 255, 0.15) 25%,
+          transparent 25%,
+          transparent 50%,
+          rgba(255, 255, 255, 0.15) 50%,
+          rgba(255, 255, 255, 0.15) 75%,
+          transparent 75%,
+          transparent
+        );
+        background-size: 1rem 1rem;
+      }
+    </style></head><body
+    class="bg-background-light dark:bg-background-dark text-[#111813] dark:text-white transition-colors duration-200"
+  ><div class="relative flex min-h-screen w-full flex-row overflow-x-hidden"><!-- Sidebar (Right in RTL) --><div id="sidebar-container"></div><!-- Main Content --><main
+        class="flex-1 flex flex-col min-w-0 lg:mr-72 bg-background-light dark:bg-background-dark"
+      ><div
+          class="flex-1 overflow-y-auto scrollbar-left"
+          style="direction: ltr"
+        ><div style="direction: rtl"><!-- Top Header --><div id="header-container"></div><!-- Scrollable Content --><div class="flex-1 overflow-y-auto p-4 lg:p-8 space-y-8 pb-20"><!-- Welcome Section --><div
+                class="flex flex-col md:flex-row justify-between items-end md:items-center gap-4"
+              ><div><h1
+                    class="text-2xl lg:text-3xl font-bold text-[#111813] dark:text-white mb-2"
+                  >
+                    سلام، خوش آمدید 👋
+                  </h1><p class="text-gray-500 dark:text-gray-400">
+                    گزارش عملکرد مزارع و وضعیت دارایی‌های شما
+                  </p></div><div class="flex gap-3"><button
+                    class="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-white dark:bg-[#2a4030] border border-gray-100 dark:border-gray-700 text-[#111813] dark:text-white font-bold text-sm shadow-sm hover:bg-gray-50 dark:hover:bg-[#344d3b] transition-all"
+                  ><span class="material-symbols-outlined text-gray-500"
+                      >account_balance_wallet</span
+                    >
+                    برداشت سود
+                  </button><a
+                    href="investments.html"
+                    class="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-primary hover:bg-primary-dark text-white font-bold text-sm shadow-lg shadow-primary/25 transition-all"
+                  ><span class="material-symbols-outlined">add_circle</span>
+                    سرمایه‌گذاری جدید
+                  </a></div></div><!-- Stats Cards --><div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4"><!-- Card 1 --><div
+                  class="bg-white dark:bg-[#1a2e22] p-5 rounded-2xl shadow-sm border border-transparent hover:border-gray-100 dark:hover:border-gray-700 transition-all group"
+                ><div class="flex justify-between items-start mb-4"><div
+                      class="p-3 bg-green-50 dark:bg-green-900/20 rounded-xl text-primary group-hover:bg-primary group-hover:text-white transition-colors"
+                    ><span class="material-symbols-outlined"
+                        >monetization_on</span
+                      ></div><span
+                      class="flex items-center text-xs font-bold text-green-600 bg-green-100 dark:bg-green-900/40 px-2 py-1 rounded-lg"
+                    >
+                      +۵٪
+                      <span class="material-symbols-outlined text-[14px]"
+                        >arrow_upward</span
+                      ></span></div><p class="text-gray-500 text-sm font-medium mb-1">
+                    ارزش کل دارایی (ریال)
+                  </p><h3
+                    class="text-2xl font-extrabold text-[#111813] dark:text-white"
+                  >
+                    ۵۲۰,۰۰۰,۰۰۰
+                  </h3></div><!-- Card 2 --><div
+                  class="bg-white dark:bg-[#1a2e22] p-5 rounded-2xl shadow-sm border border-transparent hover:border-gray-100 dark:hover:border-gray-700 transition-all group"
+                ><div class="flex justify-between items-start mb-4"><div
+                      class="p-3 bg-orange-50 dark:bg-orange-900/20 rounded-xl text-orange-500 group-hover:bg-orange-500 group-hover:text-white transition-colors"
+                    ><span class="material-symbols-outlined">egg</span></div><span
+                      class="flex items-center text-xs font-bold text-green-600 bg-green-100 dark:bg-green-900/40 px-2 py-1 rounded-lg"
+                    >
+                      +۵۰۰
+                      <span class="material-symbols-outlined text-[14px]"
+                        >arrow_upward</span
+                      ></span></div><p class="text-gray-500 text-sm font-medium mb-1">
+                    توکن‌های تولید شده
+                  </p><h3
+                    class="text-2xl font-extrabold text-[#111813] dark:text-white"
+                  >
+                    ۱۲,۵۰۰
+                    <span class="text-sm font-normal text-gray-400">عدد</span></h3></div><!-- Card 3 --><div
+                  class="bg-white dark:bg-[#1a2e22] p-5 rounded-2xl shadow-sm border border-transparent hover:border-gray-100 dark:hover:border-gray-700 transition-all group"
+                ><div class="flex justify-between items-start mb-4"><div
+                      class="p-3 bg-blue-50 dark:bg-blue-900/20 rounded-xl text-blue-500 group-hover:bg-blue-500 group-hover:text-white transition-colors"
+                    ><span class="material-symbols-outlined"
+                        >pest_control</span
+                      ></div><span
+                      class="flex items-center text-xs font-bold text-green-600 bg-green-100 dark:bg-green-900/40 px-2 py-1 rounded-lg"
+                    >
+                      +۱۰
+                      <span class="material-symbols-outlined text-[14px]"
+                        >arrow_upward</span
+                      ></span></div><p class="text-gray-500 text-sm font-medium mb-1">
+                    تعداد مرغ‌های من
+                  </p><h3
+                    class="text-2xl font-extrabold text-[#111813] dark:text-white"
+                  >
+                    ۴۵۰
+                    <span class="text-sm font-normal text-gray-400">قطعه</span></h3></div><!-- Card 4 --><div
+                  class="bg-white dark:bg-[#1a2e22] p-5 rounded-2xl shadow-sm border border-transparent hover:border-gray-100 dark:hover:border-gray-700 transition-all group"
+                ><div class="flex justify-between items-start mb-4"><div
+                      class="p-3 bg-purple-50 dark:bg-purple-900/20 rounded-xl text-purple-500 group-hover:bg-purple-500 group-hover:text-white transition-colors"
+                    ><span class="material-symbols-outlined">trending_up</span></div><span
+                      class="flex items-center text-xs font-bold text-green-600 bg-green-100 dark:bg-green-900/40 px-2 py-1 rounded-lg"
+                    >
+                      سالانه
+                    </span></div><p class="text-gray-500 text-sm font-medium mb-1">
+                    بازدهی جاری
+                  </p><h3
+                    class="text-2xl font-extrabold text-[#111813] dark:text-white"
+                  >
+                    ۲۴.۵٪
+                  </h3></div></div><!-- Main Content Grid --><div class="grid grid-cols-1 xl:grid-cols-12 gap-8"><!-- Left Column (Active Plans & Chart) --><div class="xl:col-span-8 flex flex-col gap-8"><!-- Chart Section --><div
+                    class="bg-white dark:bg-[#1a2e22] p-6 rounded-2xl shadow-sm"
+                  ><div
+                      class="flex flex-wrap items-center justify-between mb-6 gap-4"
+                    ><div><h3
+                          class="text-lg font-bold text-[#111813] dark:text-white"
+                        >
+                          نمودار تولید تخم‌مرغ
+                        </h3><p class="text-sm text-gray-500">
+                          مقایسه تولید واقعی با پیش‌بینی در ۳۰ روز گذشته
+                        </p></div><select
+                        class="bg-gray-50 dark:bg-[#2a4030] border-none text-sm rounded-lg px-3 py-2 focus:ring-1 focus:ring-primary text-[#111813] dark:text-white"
+                      ><option>۳۰ روز اخیر</option><option>۳ ماه اخیر</option><option>۶ ماه اخیر</option></select></div><!-- Fake Chart Visualization --><div
+                      class="relative h-64 w-full flex items-end justify-between gap-2 px-2"
+                    ><!-- Grid Lines --><div
+                        class="absolute inset-0 flex flex-col justify-between pointer-events-none"
+                      ><div
+                          class="w-full h-px bg-gray-100 dark:bg-gray-700"
+                        ></div><div
+                          class="w-full h-px bg-gray-100 dark:bg-gray-700"
+                        ></div><div
+                          class="w-full h-px bg-gray-100 dark:bg-gray-700"
+                        ></div><div
+                          class="w-full h-px bg-gray-100 dark:bg-gray-700"
+                        ></div><div
+                          class="w-full h-px bg-gray-100 dark:bg-gray-700"
+                        ></div></div><!-- Bars (CSS only visualization) --><div
+                        class="w-full bg-primary/20 hover:bg-primary/30 rounded-t-sm h-[40%] transition-all relative group cursor-pointer"
+                      ><div
+                          class="absolute -top-8 left-1/2 -translate-x-1/2 bg-gray-800 text-white text-[10px] py-1 px-2 rounded opacity-0 group-hover:opacity-100 transition-opacity"
+                        >
+                          ۴۰٪
+                        </div></div><div
+                        class="w-full bg-primary/30 hover:bg-primary/40 rounded-t-sm h-[55%] transition-all relative group cursor-pointer"
+                      ></div><div
+                        class="w-full bg-primary/40 hover:bg-primary/50 rounded-t-sm h-[45%] transition-all relative group cursor-pointer"
+                      ></div><div
+                        class="w-full bg-primary/50 hover:bg-primary/60 rounded-t-sm h-[60%] transition-all relative group cursor-pointer"
+                      ></div><div
+                        class="w-full bg-primary/60 hover:bg-primary/70 rounded-t-sm h-[75%] transition-all relative group cursor-pointer"
+                      ><div
+                          class="absolute -top-8 left-1/2 -translate-x-1/2 bg-gray-800 text-white text-[10px] py-1 px-2 rounded opacity-0 group-hover:opacity-100 transition-opacity"
+                        >
+                          ۷۵٪
+                        </div></div><div
+                        class="w-full bg-primary/50 hover:bg-primary/60 rounded-t-sm h-[65%] transition-all relative group cursor-pointer"
+                      ></div><div
+                        class="w-full bg-primary/70 hover:bg-primary/80 rounded-t-sm h-[85%] transition-all relative group cursor-pointer"
+                      ></div><div
+                        class="w-full bg-primary hover:bg-primary-dark rounded-t-sm h-[90%] transition-all relative group cursor-pointer"
+                      ><div
+                          class="absolute -top-8 left-1/2 -translate-x-1/2 bg-gray-800 text-white text-[10px] py-1 px-2 rounded opacity-0 group-hover:opacity-100 transition-opacity"
+                        >
+                          ۹۰٪
+                        </div></div></div><div
+                      class="flex justify-between mt-2 text-xs text-gray-400 px-1"
+                    ><span>۱</span><span>۵</span><span>۱۰</span><span>۱۵</span><span>۲۰</span><span>۲۵</span><span>۳۰</span></div></div><!-- Active Plans List --><div class="flex flex-col gap-4"><h3
+                      class="text-lg font-bold text-[#111813] dark:text-white px-2"
+                    >
+                      طرح‌های فعال من
+                    </h3><!-- Plan Item 1 --><div
+                      class="bg-white dark:bg-[#1a2e22] p-5 rounded-2xl shadow-sm border border-transparent hover:border-primary/30 transition-all"
+                    ><div
+                        class="flex flex-col md:flex-row gap-6 items-start md:items-center"
+                      ><div
+                          class="size-16 rounded-xl bg-gray-100 bg-cover bg-center shrink-0"
+                          data-alt="Image showing a modern chicken farm hall"
+                          style="
+                            background-image: url('/images/hen.png');
+                          "
+                        ></div><div class="flex-1 w-full"><div class="flex justify-between items-center mb-2"><h4
+                              class="font-bold text-[#111813] dark:text-white"
+                            >
+                              طرح تولیدی شماره ۱۴۰۳ - قزوین
+                            </h4><span
+                              class="bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 text-xs font-bold px-2.5 py-1 rounded-lg"
+                              >فعال</span
+                            ></div><div
+                            class="flex justify-between text-sm text-gray-500 mb-3"
+                          ><span>پیشرفت دوره: هفته ۱۲ از ۲۰</span><span>۶۰٪</span></div><div
+                            class="w-full bg-gray-100 dark:bg-gray-700 rounded-full h-2.5 overflow-hidden"
+                          ><div
+                              class="bg-primary h-2.5 rounded-full progress-striped animate-pulse"
+                              style="width: 60%"
+                            ></div></div></div><div
+                          class="hidden md:flex flex-col items-end gap-1 min-w-[120px]"
+                        ><span class="text-xs text-gray-500">سود انباشته</span><span
+                            class="font-bold text-lg text-[#111813] dark:text-white"
+                            >۱۲,۴۰۰,۰۰۰</span
+                          ><span class="text-[10px] text-gray-400">ریال</span></div></div></div><!-- Plan Item 2 --><div
+                      class="bg-white dark:bg-[#1a2e22] p-5 rounded-2xl shadow-sm border border-transparent hover:border-primary/30 transition-all"
+                    ><div
+                        class="flex flex-col md:flex-row gap-6 items-start md:items-center"
+                      ><div
+                          class="size-16 rounded-xl bg-gray-100 bg-cover bg-center shrink-0"
+                          data-alt="Image showing close up of eggs in a basket"
+                          style="
+                            background-image: url('/images/hen.png');
+                          "
+                        ></div><div class="flex-1 w-full"><div class="flex justify-between items-center mb-2"><h4
+                              class="font-bold text-[#111813] dark:text-white"
+                            >
+                              طرح توسعه فاز ۲ - مزرعه البرز
+                            </h4><span
+                              class="bg-yellow-100 dark:bg-yellow-900/30 text-yellow-700 dark:text-yellow-400 text-xs font-bold px-2.5 py-1 rounded-lg"
+                              >تجهیز</span
+                            ></div><div
+                            class="flex justify-between text-sm text-gray-500 mb-3"
+                          ><span>مرحله: نصب تجهیزات</span><span>۲۰٪</span></div><div
+                            class="w-full bg-gray-100 dark:bg-gray-700 rounded-full h-2.5 overflow-hidden"
+                          ><div
+                              class="bg-yellow-500 h-2.5 rounded-full"
+                              style="width: 20%"
+                            ></div></div></div><div
+                          class="hidden md:flex flex-col items-end gap-1 min-w-[120px]"
+                        ><span class="text-xs text-gray-500">سود انباشته</span><span
+                            class="font-bold text-lg text-[#111813] dark:text-white"
+                            >۰</span
+                          ><span class="text-[10px] text-gray-400">ریال</span></div></div></div></div></div><!-- Right Column (Notifications & Info) --><div class="xl:col-span-4 flex flex-col gap-8"><!-- Notifications Widget --><div
+                    class="bg-white dark:bg-[#1a2e22] p-6 rounded-2xl shadow-sm h-full max-h-[500px] flex flex-col"
+                  ><div class="flex items-center justify-between mb-6"><h3
+                        class="text-lg font-bold text-[#111813] dark:text-white flex items-center gap-2"
+                      ><span class="material-symbols-outlined text-gold"
+                          >campaign</span
+                        >
+                        اطلاعیه‌های تولید
+                      </h3><a
+                        class="text-xs text-primary font-bold hover:underline"
+                        href="#"
+                        >مشاهده همه</a
+                      ></div><div
+                      class="space-y-6 overflow-y-auto pr-1 custom-scrollbar"
+                    ><!-- Notif 1 --><div
+                        class="relative pl-4 border-r-2 border-primary/30 dark:border-primary/20 pr-4 pb-1"
+                      ><span
+                          class="absolute -right-[5px] top-0 size-2.5 rounded-full bg-primary border border-white dark:border-[#1a2e22]"
+                        ></span><p class="text-xs text-gray-400 mb-1">
+                          امروز، ۱۰:۳۰ صبح
+                        </p><p
+                          class="text-sm font-bold text-[#111813] dark:text-white mb-1"
+                        >
+                          اتمام واکسیناسیون سالن B
+                        </p><p class="text-xs text-gray-500 leading-relaxed">
+                          عملیات واکسیناسیون طیور در سالن B با موفقیت به پایان
+                          رسید. پیش‌بینی کاهش ریسک بیماری در هفته‌های آتی.
+                        </p></div><!-- Notif 2 --><div
+                        class="relative pl-4 border-r-2 border-gray-100 dark:border-gray-700 pr-4 pb-1"
+                      ><span
+                          class="absolute -right-[5px] top-0 size-2.5 rounded-full bg-gray-300 dark:bg-gray-600 border border-white dark:border-[#1a2e22]"
+                        ></span><p class="text-xs text-gray-400 mb-1">دیروز</p><p
+                          class="text-sm font-bold text-[#111813] dark:text-white mb-1"
+                        >
+                          واریز سود ماهانه
+                        </p><p class="text-xs text-gray-500 leading-relaxed">
+                          سود ماهانه طرح قزوین به کیف پول شما واریز شد.
+                        </p></div><!-- Notif 3 --><div
+                        class="relative pl-4 border-r-2 border-gray-100 dark:border-gray-700 pr-4 pb-1"
+                      ><span
+                          class="absolute -right-[5px] top-0 size-2.5 rounded-full bg-gray-300 dark:bg-gray-600 border border-white dark:border-[#1a2e22]"
+                        ></span><p class="text-xs text-gray-400 mb-1">۲ روز پیش</p><p
+                          class="text-sm font-bold text-[#111813] dark:text-white mb-1"
+                        >
+                          تغییر جیره غذایی
+                        </p><p class="text-xs text-gray-500 leading-relaxed">
+                          جهت بهبود کیفیت پوسته تخم‌مرغ، مکمل کلسیم به جیره
+                          غذایی اضافه گردید.
+                        </p></div></div></div><!-- Mini Promo Card --><div
+                    class="bg-white dark:bg-[#1a2e22] rounded-2xl p-4 shadow-sm border border-transparent hover:border-gray-100 dark:hover:border-gray-700 transition-all"
+                  ><div
+                      class="flex flex-col items-center text-center gap-2.5"
+                    ><div
+                        class="size-12 rounded-full bg-yellow-50 dark:bg-yellow-900/20 flex items-center justify-center text-yellow-600 dark:text-yellow-400 border border-yellow-100 dark:border-yellow-800/30 shadow-sm"
+                      ><span class="material-symbols-outlined text-2xl"
+                          >savings</span
+                        ></div><div class="flex flex-col gap-1.5"><h4 class="font-bold text-lg text-[#111813] dark:text-white">
+                          صندوق درآمد ثابت
+                        </h4><p class="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">
+                          سرمایه‌گذاری امن با سود روزشمار ۲۶٪
+                        </p></div><button
+                        class="w-full py-2.5 bg-primary hover:bg-primary-dark text-white font-bold rounded-xl text-xs transition-all shadow-sm hover:shadow-md"
+                      >
+                        مشاهده جزئیات
+                      </button></div></div></div></div></div></div></div></main></div><script src="header.js"></script><script src="sidebar.js"></script></body>
+</html>

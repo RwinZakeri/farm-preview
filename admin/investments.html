@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html class="light" dir="rtl" lang="fa"><head><meta charset="utf-8" /><meta content="width=device-width, initial-scale=1.0" name="viewport" /><link rel="icon" type="image/svg+xml" href="/icon.svg" /><title>فارمتو | مدیریت طرح‌های سرمایه‌گذاری</title><link href="https://fonts.googleapis.com" rel="preconnect" /><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" /><link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;family=Vazirmatn:wght@300;400;500;700;900&amp;display=swap"
+      rel="stylesheet"
+    /><link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    /><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#11d452",
+              "background-light": "#f6f8f6",
+              "background-dark": "#102216",
+              "accent-gold": "#fbbf24",
+              "secondary-dark": "#1a332a",
+            },
+            fontFamily: {
+              display: ["Vazirmatn", "Manrope", "sans-serif"],
+              body: ["Vazirmatn", "Manrope", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.5rem",
+              lg: "1rem",
+              xl: "1.5rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script><style>
+      body {
+        font-family: "Vazirmatn", "Manrope", sans-serif;
+      }
+      .material-symbols-outlined {
+        font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+        font-size: 24px;
+        vertical-align: middle;
+      }
+      ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #cbd5e1;
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #94a3b8;
+      }
+    </style></head><body
+    class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white font-display h-screen flex overflow-hidden antialiased"
+  ><div id="sidebar-container"></div><div class="flex-1 flex flex-col h-full overflow-hidden relative lg:mr-72"><div id="header-container"></div><main class="flex-1 overflow-y-auto p-4 lg:p-8"><div class="max-w-7xl mx-auto"><div
+            class="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-8"
+          ><div><h1
+                class="text-2xl md:text-3xl font-black text-slate-900 dark:text-white mb-2"
+              >
+                مدیریت طرح‌های سرمایه‌گذاری
+              </h1><p class="text-slate-500 dark:text-slate-400">
+                مشاهده، ویرایش و مدیریت وضعیت چرخه‌های سرمایه‌گذاری فارمتو
+              </p></div><div class="flex items-center gap-3"><button
+                class="bg-white dark:bg-white/5 hover:bg-slate-50 border border-slate-200 dark:border-white/10 text-slate-700 dark:text-white font-bold py-3 px-5 rounded-xl transition-all flex items-center gap-2"
+              ><span class="material-symbols-outlined">download</span><span class="hidden sm:inline">خروجی اکسل</span></button><a
+                href="edit-create-invensment.html"
+                class="bg-primary text-white px-4 py-2 rounded-xl transition-all flex items-center gap-2"
+              ><span class="material-symbols-outlined">add</span><span class="hidden sm:inline">ثبت طرح جدید</span></a></div></div><div
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8"
+          ><div
+              class="bg-white dark:bg-secondary-dark p-5 rounded-2xl border border-slate-200 dark:border-white/5 shadow-sm flex items-center justify-between"
+            ><div><p
+                  class="text-slate-500 dark:text-slate-400 text-sm font-bold mb-1"
+                >
+                  کل طرح‌ها
+                </p><p class="text-2xl font-black text-slate-900 dark:text-white">
+                  ۴۵
+                </p></div><div
+                class="size-12 rounded-xl bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 flex items-center justify-center"
+              ><span class="material-symbols-outlined">inventory_2</span></div></div><div
+              class="bg-white dark:bg-secondary-dark p-5 rounded-2xl border border-slate-200 dark:border-white/5 shadow-sm flex items-center justify-between"
+            ><div><p
+                  class="text-slate-500 dark:text-slate-400 text-sm font-bold mb-1"
+                >
+                  طرح‌های فعال
+                </p><p class="text-2xl font-black text-primary">۱۲</p></div><div
+                class="size-12 rounded-xl bg-green-50 dark:bg-green-900/20 text-primary flex items-center justify-center"
+              ><span class="material-symbols-outlined">play_circle</span></div></div><div
+              class="bg-white dark:bg-secondary-dark p-5 rounded-2xl border border-slate-200 dark:border-white/5 shadow-sm flex items-center justify-between"
+            ><div><p
+                  class="text-slate-500 dark:text-slate-400 text-sm font-bold mb-1"
+                >
+                  تکمیل ظرفیت
+                </p><p class="text-2xl font-black text-slate-900 dark:text-white">
+                  ۳۰
+                </p></div><div
+                class="size-12 rounded-xl bg-orange-50 dark:bg-orange-900/20 text-orange-600 dark:text-orange-400 flex items-center justify-center"
+              ><span class="material-symbols-outlined">check_circle</span></div></div><div
+              class="bg-white dark:bg-secondary-dark p-5 rounded-2xl border border-slate-200 dark:border-white/5 shadow-sm flex items-center justify-between"
+            ><div><p
+                  class="text-slate-500 dark:text-slate-400 text-sm font-bold mb-1"
+                >
+                  مجموع سرمایه
+                </p><p class="text-2xl font-black text-accent-gold">
+                  ۱۲۵
+                  <span class="text-sm font-normal text-slate-400"
+                    >میلیارد</span
+                  ></p></div><div
+                class="size-12 rounded-xl bg-yellow-50 dark:bg-yellow-900/20 text-accent-gold flex items-center justify-center"
+              ><span class="material-symbols-outlined">monetization_on</span></div></div></div><div
+            class="bg-white dark:bg-secondary-dark rounded-3xl border border-slate-200 dark:border-white/5 shadow-xl overflow-hidden"
+          ><div
+              class="p-5 border-b border-slate-200 dark:border-white/5 bg-slate-50/50 dark:bg-white/5"
+            ><div
+                class="flex flex-col lg:flex-row gap-4 justify-between items-center"
+              ><div class="relative w-full lg:max-w-md group"><div
+                    class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none text-slate-400 group-focus-within:text-primary transition-colors"
+                  ><span class="material-symbols-outlined">search</span></div><input
+                    class="block w-full rounded-xl border-slate-200 dark:border-white/10 bg-white dark:bg-background-dark py-3 pr-10 pl-4 text-sm font-medium placeholder-slate-400 focus:border-primary focus:ring-primary dark:focus:ring-primary dark:focus:border-primary transition-all"
+                    placeholder="جستجو بر اساس نام طرح، کد یا نوع..."
+                    type="text"
+                  /></div><div
+                  class="flex flex-wrap items-center gap-3 w-full lg:w-auto justify-end"
+                ><div
+                    class="flex items-center gap-2 bg-white dark:bg-background-dark rounded-xl border border-slate-200 dark:border-white/10 p-1"
+                  ><button
+                      class="px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-white/10 text-slate-900 dark:text-white text-xs font-bold shadow-sm"
+                    >
+                      همه
+                    </button><button
+                      class="px-3 py-1.5 rounded-lg text-slate-500 hover:text-primary hover:bg-slate-50 dark:hover:bg-white/5 transition text-xs font-medium"
+                    >
+                      فعال
+                    </button><button
+                      class="px-3 py-1.5 rounded-lg text-slate-500 hover:text-primary hover:bg-slate-50 dark:hover:bg-white/5 transition text-xs font-medium"
+                    >
+                      تکمیل شده
+                    </button><button
+                      class="px-3 py-1.5 rounded-lg text-slate-500 hover:text-primary hover:bg-slate-50 dark:hover:bg-white/5 transition text-xs font-medium"
+                    >
+                      پیش‌نویس
+                    </button></div><div class="relative inline-block text-left min-w-[140px]"><select
+                      class="block w-full rounded-xl border-slate-200 dark:border-white/10 bg-white dark:bg-background-dark py-2.5 pl-3 pr-10 text-xs font-bold focus:border-primary focus:ring-primary cursor-pointer text-slate-600 dark:text-slate-300"
+                    ><option>مرتب‌سازی: جدیدترین</option><option>پرسودترین</option><option>بیشترین ظرفیت</option><option>قدیمی‌ترین</option></select></div></div></div></div><div class="overflow-x-auto"><table class="w-full text-right border-collapse"><thead><tr
+                    class="bg-slate-50 dark:bg-white/5 text-slate-500 dark:text-slate-400 text-xs uppercase tracking-wider border-b border-slate-200 dark:border-white/5"
+                  ><th class="px-6 py-5 font-bold">مشخصات طرح</th><th class="px-6 py-5 font-bold">سود و قیمت</th><th class="px-6 py-5 font-bold">وضعیت تکمیل</th><th class="px-6 py-5 font-bold">تاریخ ایجاد</th><th class="px-6 py-5 font-bold text-center">وضعیت</th><th class="px-6 py-5 font-bold text-left pl-8">عملیات</th></tr></thead><tbody
+                  class="divide-y divide-slate-200 dark:divide-white/5 text-sm"
+                ><tr
+                    class="group hover:bg-slate-50 dark:hover:bg-white/5 transition-colors"
+                  ><td class="px-6 py-4"><div class="flex items-center gap-4"><div
+                          class="size-10 rounded-lg bg-orange-100 dark:bg-orange-900/20 flex items-center justify-center text-orange-600 dark:text-orange-400 shrink-0"
+                        ><span class="material-symbols-outlined text-xl"
+                            >egg_alt</span
+                          ></div><div><div
+                            class="font-bold text-slate-900 dark:text-white text-base"
+                          >
+                            چرخه ۴۲ - تخم‌مرغ بومی
+                          </div><div class="text-xs text-slate-500 mt-1">
+                            کد: <span class="font-mono">FRM-42</span> |
+                            <span class="text-blue-500">صنعتی</span></div></div></div></td><td class="px-6 py-4"><div class="flex flex-col gap-1"><div
+                          class="flex items-center gap-1 text-primary font-black"
+                        ><span class="material-symbols-outlined text-base"
+                            >trending_up</span
+                          ><span>۳۵٪ سالانه</span></div><div class="text-slate-500 dark:text-slate-400 text-xs">
+                          هر سهم:
+                          <span class="font-bold text-slate-900 dark:text-white"
+                            >۱۰۰,۰۰۰</span
+                          >
+                          تومان
+                        </div></div></td><td class="px-6 py-4 min-w-[200px]"><div class="flex justify-between text-xs mb-1.5"><span
+                          class="font-bold text-slate-700 dark:text-slate-300"
+                          >۷۵٪</span
+                        ><span class="text-slate-400">۷,۵۰۰ / ۱۰,۰۰۰</span></div><div
+                        class="w-full bg-slate-200 dark:bg-white/10 rounded-full h-1.5 overflow-hidden"
+                      ><div
+                          class="bg-primary h-1.5 rounded-full"
+                          style="width: 75%"
+                        ></div></div></td><td
+                      class="px-6 py-4 text-slate-500 dark:text-slate-400 font-medium"
+                    >
+                      ۱۴۰۳/۰۸/۱۵
+                    </td><td class="px-6 py-4 text-center"><span
+                        class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 text-xs font-bold border border-green-200 dark:border-green-800"
+                      ><span
+                          class="size-1.5 rounded-full bg-green-500 animate-pulse"
+                        ></span>
+                        فعال
+                      </span></td><td class="px-6 py-4"><div class="flex items-center justify-end gap-2"><a
+                          href="edit-create-invensment.html"
+                          class="p-2 text-slate-400 hover:text-blue-500 hover:bg-blue-50 dark:hover:bg-blue-900/20 rounded-lg transition-colors"
+                          title="ویرایش"
+                        ><span class="material-symbols-outlined text-[20px]"
+                            >edit_square</span
+                          ></a><a
+                          href="edit-create-invensment.html"
+                          class="p-2 text-slate-400 hover:text-slate-700 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-white/10 rounded-lg transition-colors"
+                          title="مشاهده جزئیات"
+                        ><span class="material-symbols-outlined text-[20px]"
+                            >visibility</span
+                          ></a><button
+                          class="relative inline-flex h-6 w-11 items-center rounded-full bg-primary transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 dark:focus:ring-offset-gray-900 ml-2"
+                          title="تغییر وضعیت"
+                        ><span class="sr-only">Enable</span><span
+                            class="inline-block h-4 w-4 transform rounded-full bg-white transition-transform -translate-x-1"
+                          ></span></button></div></td></tr><tr
+                    class="group hover:bg-slate-50 dark:hover:bg-white/5 transition-colors bg-slate-50/30 dark:bg-white/[0.02]"
+                  ><td class="px-6 py-4"><div class="flex items-center gap-4"><div
+                          class="size-10 rounded-lg bg-slate-200 dark:bg-white/10 flex items-center justify-center text-slate-500 shrink-0"
+                        ><span class="material-symbols-outlined text-xl"
+                            >factory</span
+                          ></div><div><div
+                            class="font-bold text-slate-900 dark:text-white text-base opacity-75"
+                          >
+                            چرخه ۴۳ - صنعتی
+                          </div><div class="text-xs text-slate-500 mt-1">
+                            کد: <span class="font-mono">FRM-43</span> |
+                            <span class="text-purple-500">توسعه‌ای</span></div></div></div></td><td class="px-6 py-4 opacity-75"><div class="flex flex-col gap-1"><div
+                          class="flex items-center gap-1 text-slate-600 dark:text-slate-300 font-bold"
+                        ><span class="material-symbols-outlined text-base"
+                            >trending_up</span
+                          ><span>۴۰٪ سالانه</span></div><div class="text-slate-500 dark:text-slate-400 text-xs">
+                          هر سهم:
+                          <span class="font-bold text-slate-900 dark:text-white"
+                            >۵۰,۰۰۰</span
+                          >
+                          تومان
+                        </div></div></td><td class="px-6 py-4 min-w-[200px] opacity-75"><div class="flex justify-between text-xs mb-1.5"><span class="font-bold text-slate-500">۱۰۰٪</span><span class="text-slate-400">۲۰,۰۰۰ / ۲۰,۰۰۰</span></div><div
+                        class="w-full bg-slate-200 dark:bg-white/10 rounded-full h-1.5 overflow-hidden"
+                      ><div
+                          class="bg-slate-400 h-1.5 rounded-full"
+                          style="width: 100%"
+                        ></div></div></td><td
+                      class="px-6 py-4 text-slate-500 dark:text-slate-400 font-medium"
+                    >
+                      ۱۴۰۳/۰۸/۱۰
+                    </td><td class="px-6 py-4 text-center"><span
+                        class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-slate-100 dark:bg-white/10 text-slate-600 dark:text-slate-400 text-xs font-bold border border-slate-200 dark:border-white/10"
+                      ><span class="material-symbols-outlined text-[16px]"
+                          >lock</span
+                        >
+                        تکمیل شده
+                      </span></td><td class="px-6 py-4"><div class="flex items-center justify-end gap-2"><a
+                          href="edit-create-invensment.html"
+                          class="p-2 text-slate-400 hover:text-blue-500 hover:bg-blue-50 dark:hover:bg-blue-900/20 rounded-lg transition-colors"
+                          title="ویرایش"
+                        ><span class="material-symbols-outlined text-[20px]"
+                            >edit_square</span
+                          ></a><a
+                          href="edit-create-invensment.html"
+                          class="p-2 text-slate-400 hover:text-slate-700 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-white/10 rounded-lg transition-colors"
+                          title="مشاهده جزئیات"
+                        ><span class="material-symbols-outlined text-[20px]"
+                            >visibility</span
+                          ></a><button
+                          class="relative inline-flex h-6 w-11 items-center rounded-full bg-slate-300 dark:bg-white/20 transition-colors focus:outline-none ml-2"
+                        ><span
+                            class="inline-block h-4 w-4 transform rounded-full bg-white transition-transform -translate-x-6"
+                          ></span></button></div></td></tr><tr
+                    class="group hover:bg-slate-50 dark:hover:bg-white/5 transition-colors border-l-4 border-l-accent-gold bg-amber-50/30 dark:bg-amber-900/10"
+                  ><td class="px-6 py-4"><div class="flex items-center gap-4"><div
+                          class="size-10 rounded-lg bg-blue-100 dark:bg-blue-900/20 flex items-center justify-center text-blue-600 dark:text-blue-400 shrink-0 relative"
+                        ><span class="material-symbols-outlined text-xl"
+                            >public</span
+                          ><span class="absolute -top-1 -right-1 flex h-3 w-3"><span
+                              class="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75"
+                            ></span><span
+                              class="relative inline-flex rounded-full h-3 w-3 bg-sky-500"
+                            ></span></span></div><div><div
+                            class="font-bold text-slate-900 dark:text-white text-base"
+                          >
+                            چرخه ۴۴ - صادراتی
+                          </div><div class="text-xs text-slate-500 mt-1">
+                            کد: <span class="font-mono">EXP-01</span> |
+                            <span class="text-amber-500">ویژه</span></div></div></div></td><td class="px-6 py-4"><div class="flex flex-col gap-1"><div
+                          class="flex items-center gap-1 text-primary font-black"
+                        ><span class="material-symbols-outlined text-base"
+                            >trending_up</span
+                          ><span>۴۵٪ سالانه</span></div><div class="text-slate-500 dark:text-slate-400 text-xs">
+                          هر سهم:
+                          <span class="font-bold text-slate-900 dark:text-white"
+                            >۲۰۰,۰۰۰</span
+                          >
+                          تومان
+                        </div></div></td><td class="px-6 py-4 min-w-[200px]"><div class="flex justify-between text-xs mb-1.5"><span
+                          class="font-bold text-slate-700 dark:text-slate-300"
+                          >۱۲٪</span
+                        ><span class="text-slate-400">۶۰۰ / ۵,۰۰۰</span></div><div
+                        class="w-full bg-slate-200 dark:bg-white/10 rounded-full h-1.5 overflow-hidden"
+                      ><div
+                          class="bg-primary h-1.5 rounded-full"
+                          style="width: 12%"
+                        ></div></div></td><td
+                      class="px-6 py-4 text-slate-500 dark:text-slate-400 font-medium"
+                    >
+                      ۱۴۰۳/۰۸/۲۰
+                    </td><td class="px-6 py-4 text-center"><span
+                        class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 text-xs font-bold border border-green-200 dark:border-green-800"
+                      >
+                        فعال
+                      </span></td><td class="px-6 py-4"><div class="flex items-center justify-end gap-2"><a
+                          href="edit-create-invensment.html"
+                          class="p-2 text-slate-400 hover:text-blue-500 hover:bg-blue-50 dark:hover:bg-blue-900/20 rounded-lg transition-colors"
+                          title="ویرایش"
+                        ><span class="material-symbols-outlined text-[20px]"
+                            >edit_square</span
+                          ></a><a
+                          href="edit-create-invensment.html"
+                          class="p-2 text-slate-400 hover:text-slate-700 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-white/10 rounded-lg transition-colors"
+                          title="مشاهده جزئیات"
+                        ><span class="material-symbols-outlined text-[20px]"
+                            >visibility</span
+                          ></a><button
+                          class="relative inline-flex h-6 w-11 items-center rounded-full bg-primary transition-colors focus:outline-none ml-2"
+                        ><span
+                            class="inline-block h-4 w-4 transform rounded-full bg-white transition-transform -translate-x-1"
+                          ></span></button></div></td></tr><tr
+                    class="group hover:bg-slate-50 dark:hover:bg-white/5 transition-colors"
+                  ><td class="px-6 py-4"><div class="flex items-center gap-4"><div
+                          class="size-10 rounded-lg bg-purple-100 dark:bg-purple-900/20 flex items-center justify-center text-purple-600 dark:text-purple-400 shrink-0"
+                        ><span class="material-symbols-outlined text-xl"
+                            >science</span
+                          ></div><div><div
+                            class="font-bold text-slate-900 dark:text-white text-base"
+                          >
+                            چرخه ۴۵ - اصلاح نژاد
+                          </div><div class="text-xs text-slate-500 mt-1">
+                            کد: <span class="font-mono">RND-05</span> |
+                            <span class="text-slate-500">تحقیقاتی</span></div></div></div></td><td class="px-6 py-4"><div class="flex flex-col gap-1"><div
+                          class="flex items-center gap-1 text-slate-400 font-bold"
+                        ><span class="material-symbols-outlined text-base"
+                            >trending_up</span
+                          ><span>۳۸٪ سالانه</span></div><div class="text-slate-500 dark:text-slate-400 text-xs">
+                          هر سهم:
+                          <span class="font-bold text-slate-900 dark:text-white"
+                            >۱۵۰,۰۰۰</span
+                          >
+                          تومان
+                        </div></div></td><td class="px-6 py-4 min-w-[200px]"><div class="flex justify-between text-xs mb-1.5"><span class="font-bold text-slate-400">۰٪</span><span class="text-slate-400">-</span></div><div
+                        class="w-full bg-slate-200 dark:bg-white/10 rounded-full h-1.5 overflow-hidden"
+                      ><div
+                          class="bg-slate-300 h-1.5 rounded-full"
+                          style="width: 0%"
+                        ></div></div></td><td
+                      class="px-6 py-4 text-slate-500 dark:text-slate-400 font-medium"
+                    >
+                      ۱۴۰۳/۰۸/۲۲
+                    </td><td class="px-6 py-4 text-center"><span
+                        class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-yellow-100 dark:bg-yellow-900/30 text-yellow-700 dark:text-yellow-500 text-xs font-bold border border-yellow-200 dark:border-yellow-800"
+                      ><span class="material-symbols-outlined text-[16px]"
+                          >edit_document</span
+                        >
+                        پیش‌نویس
+                      </span></td><td class="px-6 py-4"><div class="flex items-center justify-end gap-2"><a
+                          href="edit-create-invensment.html"
+                          class="p-2 text-slate-400 hover:text-blue-500 hover:bg-blue-50 dark:hover:bg-blue-900/20 rounded-lg transition-colors"
+                          title="ویرایش"
+                        ><span class="material-symbols-outlined text-[20px]"
+                            >edit_square</span
+                          ></a><a
+                          href="edit-create-invensment.html"
+                          class="p-2 text-slate-400 hover:text-slate-700 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-white/10 rounded-lg transition-colors"
+                          title="مشاهده جزئیات"
+                        ><span class="material-symbols-outlined text-[20px]"
+                            >visibility</span
+                          ></a><button
+                          class="relative inline-flex h-6 w-11 items-center rounded-full bg-slate-300 dark:bg-white/20 transition-colors focus:outline-none ml-2"
+                        ><span
+                            class="inline-block h-4 w-4 transform rounded-full bg-white transition-transform -translate-x-6"
+                          ></span></button></div></td></tr></tbody></table></div><div
+              class="bg-slate-50 dark:bg-white/5 border-t border-slate-200 dark:border-white/5 px-6 py-4 flex flex-col sm:flex-row items-center justify-between gap-4"
+            ><p
+                class="text-sm text-slate-500 dark:text-slate-400 text-center sm:text-right"
+              >
+                نمایش
+                <span class="font-bold text-slate-900 dark:text-white">۱</span>
+                تا
+                <span class="font-bold text-slate-900 dark:text-white">۴</span>
+                از
+                <span class="font-bold text-slate-900 dark:text-white">۴۵</span>
+                طرح
+              </p><nav class="flex items-center gap-2"><button
+                  class="size-9 flex items-center justify-center rounded-lg border border-slate-200 dark:border-white/10 text-slate-400 hover:text-slate-600 hover:bg-white dark:hover:bg-white/10 disabled:opacity-50"
+                ><span class="material-symbols-outlined text-[20px]"
+                    >chevron_right</span
+                  ></button><button
+                  class="size-9 flex items-center justify-center rounded-lg bg-primary text-background-dark font-bold text-sm shadow-sm"
+                >
+                  ۱
+                </button><button
+                  class="size-9 flex items-center justify-center rounded-lg border border-slate-200 dark:border-white/10 text-slate-600 dark:text-slate-300 hover:bg-white dark:hover:bg-white/10 text-sm font-medium"
+                >
+                  ۲
+                </button><button
+                  class="size-9 flex items-center justify-center rounded-lg border border-slate-200 dark:border-white/10 text-slate-600 dark:text-slate-300 hover:bg-white dark:hover:bg-white/10 text-sm font-medium"
+                >
+                  ۳
+                </button><span class="text-slate-400 px-1 text-sm">...</span><button
+                  class="size-9 flex items-center justify-center rounded-lg border border-slate-200 dark:border-white/10 text-slate-400 hover:text-slate-600 hover:bg-white dark:hover:bg-white/10"
+                ><span class="material-symbols-outlined text-[20px]"
+                    >chevron_left</span
+                  ></button></nav></div></div></div></main></div><script src="header.js"></script><script src="sidebar.js"></script></body>
+</html>

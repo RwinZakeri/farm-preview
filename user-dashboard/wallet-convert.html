@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="fa"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link rel="icon" type="image/svg+xml" href="/icon.svg" />
+<title>تبدیل توکن به ریال | فارمتو</title>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography,container-queries"></script>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#11d452",
+                        "primary-dark": "#0ea640",
+                        "accent-yellow": "#FFC93C",
+                        "background-light": "#F3F5F7",
+                        "background-dark": "#111827",
+                        "card-light": "#FFFFFF",
+                        "card-dark": "#1F2937",
+                        "text-light": "#374151",
+                        "text-dark": "#E5E7EB",
+                    },
+                    fontFamily: {
+                        display: ["Vazirmatn", "sans-serif"],
+                        body: ["Vazirmatn", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.75rem",
+                        'xl': '1rem',
+                        '2xl': '1.5rem',
+                        '3xl': '2rem',
+                    },
+                },
+            },
+        };
+    </script>
+<style>
+        body {
+            font-family: 'Vazirmatn', sans-serif;
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8; 
+        }
+        .dark ::-webkit-scrollbar-thumb {
+            background: #374151; 
+        }
+        .dark ::-webkit-scrollbar-thumb:hover {
+            background: #4b5563; 
+        }input[type=number]::-webkit-inner-spin-button, 
+        input[type=number]::-webkit-outer-spin-button { 
+            -webkit-appearance: none; 
+            margin: 0; 
+        }
+        input[type=number] {
+            -moz-appearance: textfield;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark antialiased selection:bg-primary selection:text-white">
+<div class="flex h-screen overflow-hidden">
+<div id="sidebar-container"></div>
+<main class="flex-1 flex flex-col min-w-0 overflow-hidden bg-background-light dark:bg-background-dark">
+<header class="h-20 flex items-center justify-between px-6 lg:px-10 bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm sticky top-0 z-20 border-b border-gray-200 dark:border-gray-700">
+<div class="flex items-center text-sm text-gray-500 dark:text-gray-400">
+<span class="material-symbols-outlined text-lg ml-2">home</span>
+<span class="mx-2">/</span>
+<a class="text-gray-500 hover:text-primary transition-colors" href="wallet.html">کیف پول</a>
+<span class="mx-2">/</span>
+<span class="text-primary font-bold dark:text-emerald-400">تبدیل توکن به ریال</span>
+</div>
+<div class="flex items-center space-x-4 space-x-reverse">
+<div class="hidden md:flex items-center bg-white dark:bg-gray-700 px-3 py-1.5 rounded-lg text-sm text-gray-600 dark:text-gray-300 shadow-sm border border-gray-100 dark:border-gray-600 ml-4">
+<span class="material-symbols-outlined text-base ml-2">calendar_today</span>
+                ۱۴۰۳/۰۸/۲۵
+            </div>
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-500 dark:text-gray-300 transition-colors">
+<span class="material-symbols-outlined">settings</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-500 dark:text-gray-300 transition-colors relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2.5 right-2.5 w-2 h-2 bg-red-500 rounded-full border-2 border-white dark:border-gray-800"></span>
+</button>
+<button class="lg:hidden w-10 h-10 flex items-center justify-center rounded-full bg-primary text-white">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</header>
+<div class="flex-1 overflow-y-auto p-6 lg:p-10 scroll-smooth">
+<div class="max-w-xl mx-auto mt-4 lg:mt-10">
+<div class="bg-card-light dark:bg-card-dark rounded-3xl p-8 shadow-xl border border-gray-100 dark:border-gray-800">
+<div class="text-center mb-8">
+<div class="w-16 h-16 bg-primary/10 text-primary dark:bg-primary-dark/50 dark:text-emerald-400 rounded-2xl flex items-center justify-center mx-auto mb-4">
+<span class="material-symbols-outlined text-3xl">currency_exchange</span>
+</div>
+<h2 class="text-2xl font-extrabold text-gray-800 dark:text-white">تبدیل توکن به ریال</h2>
+<p class="text-gray-500 dark:text-gray-400 mt-2 text-sm">موجودی فعلی شما: <span class="font-bold text-gray-800 dark:text-gray-200">۲,۵۰۰ توکن</span></p>
+</div>
+<form class="space-y-6" onsubmit="return false;">
+<div class="bg-white dark:bg-gray-900 rounded-2xl p-2 border border-gray-200 dark:border-gray-700 shadow-sm focus-within:ring-2 focus-within:ring-primary/50 transition-all">
+<div class="px-3 pt-2 flex justify-between text-xs text-gray-400 font-bold uppercase tracking-wider">
+<label for="token-amount">تعداد توکن</label>
+<span class="text-primary cursor-pointer hover:underline">استفاده از کل موجودی</span>
+</div>
+<div class="flex items-center px-1">
+<input class="w-full bg-transparent border-none text-3xl font-bold text-gray-800 dark:text-white focus:ring-0 px-2 py-3 placeholder-gray-300 dark:placeholder-gray-600 outline-none text-left ltr" id="token-amount" placeholder="0" type="number" value="100"/>
+<div class="flex flex-col items-center justify-center mr-2 pl-2">
+<span class="text-xs font-bold text-gray-400">TOKEN</span>
+</div>
+</div>
+</div>
+<div class="flex justify-center -my-2 relative z-10">
+<div class="bg-gray-50 dark:bg-gray-800 rounded-full p-2 border border-gray-100 dark:border-gray-700 text-gray-400">
+<span class="material-symbols-outlined block">arrow_downward</span>
+</div>
+</div>
+<div class="bg-green-50 dark:bg-green-900/20 border border-green-100 dark:border-green-800/30 rounded-2xl p-5 flex items-center justify-between shadow-sm">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-green-200/50 dark:bg-green-900/50 text-green-700 dark:text-green-400 flex items-center justify-center">
+<span class="material-symbols-outlined">payments</span>
+</div>
+<div>
+<span class="block text-green-800 dark:text-green-300 font-bold text-sm">مبلغ دریافتی</span>
+<span class="text-[10px] text-green-600 dark:text-green-500">نرخ: ۱ توکن = ۸,۰۰۰ ریال</span>
+</div>
+</div>
+<div class="text-left">
+<span class="text-2xl font-black text-green-700 dark:text-green-400 tracking-tight">۸۰۰,۰۰۰</span>
+<span class="text-xs font-bold text-green-600 dark:text-green-500 mr-1">ریال</span>
+</div>
+</div>
+<div class="px-2 space-y-2">
+<div class="flex justify-between text-xs text-gray-400">
+<span>کارمزد شبکه</span>
+<span>رایگان</span>
+</div>
+</div>
+<div class="pt-6 flex flex-col gap-4">
+<button class="w-full bg-primary hover:bg-primary-dark text-white font-bold text-lg py-4 rounded-2xl transition-all shadow-lg shadow-primary/20 transform active:scale-[0.98] flex justify-center items-center gap-2">
+<span>تایید و تبدیل</span>
+<span class="material-symbols-outlined">check_circle</span>
+</button>
+<a class="w-full text-center text-gray-500 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200 font-medium py-2 transition-colors flex items-center justify-center gap-1 group" href="wallet.html">
+<span class="material-symbols-outlined text-lg group-hover:-translate-x-1 transition-transform">arrow_right_alt</span>
+                            بازگشت به کیف پول
+                        </a>
+</div>
+</form>
+</div>
+<div class="mt-6 text-center">
+<p class="text-xs text-gray-400 flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-sm">lock</span>
+                    تراکنش‌های شما با پروتکل‌های امنیتی محافظت می‌شود
+                </p>
+</div>
+</div>
+</div>
+</main>
+</div>
+<script src="header.js"></script><script src="sidebar.js"></script>
+</body></html>
+

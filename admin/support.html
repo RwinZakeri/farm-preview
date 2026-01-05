@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html class="light" dir="rtl" lang="fa"><head><meta charset="utf-8" /><meta content="width=device-width, initial-scale=1.0" name="viewport" /><link rel="icon" type="image/svg+xml" href="/icon.svg" /><title>پنل مدیریت پشتیبانی فارمتو</title><link
+      href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100..900&amp;family=Work+Sans:wght@300..700&amp;display=swap"
+      rel="stylesheet"
+    /><link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    /><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#11d452",
+              "primary-dark": "#0ea640",
+              secondary: "#f6d449",
+              gold: "#D4AF37",
+              "background-light": "#f6f8f6",
+              "background-dark": "#102216",
+              surface: "#ffffff",
+              "accent-blue": "#3b82f6",
+              "accent-red": "#ef4444",
+            },
+            fontFamily: {
+              display: ["Vazirmatn", "Work Sans", "sans-serif"],
+              sans: ["Vazirmatn", "Work Sans", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.5rem",
+              lg: "0.75rem",
+              xl: "1rem",
+              "2xl": "1.5rem",
+              full: "9999px",
+            },
+            boxShadow: {
+              soft: "0 4px 20px -2px rgba(52, 91, 59, 0.08)",
+              card: "0 0 0 1px rgba(0,0,0,0.03), 0 2px 8px rgba(0,0,0,0.04)",
+              "inner-lg": "inset 0 2px 4px 0 rgb(0 0 0 / 0.05)",
+            },
+          },
+        },
+      };
+    </script><style>
+      ::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #cbd5e1;
+        border-radius: 3px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #94a3b8;
+      }
+      .message-bubble {
+        animation: fadeInUp 0.3s ease-out;
+      }
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .chat-container {
+        scroll-behavior: smooth;
+      }
+      .ticket-item {
+        transition: all 0.2s ease;
+      }
+      .ticket-item:hover {
+        transform: translateX(-2px);
+      }
+      .ticket-item.active {
+        border-right-color: #345b3b;
+        background-color: rgba(52, 91, 59, 0.05);
+      }
+    </style></head><body
+    class="bg-background-light text-[#131514] font-display h-screen flex overflow-hidden antialiased"
+  ><div id="sidebar-container"></div><div class="flex-1 flex flex-col h-full overflow-hidden relative lg:mr-72"><div id="header-container"></div><main
+        class="flex-1 overflow-y-auto p-4 lg:p-6 bg-background-light scroll-smooth"
+      ><div class="max-w-[1800px] mx-auto space-y-6"><!-- Stats Cards --><div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4"><div
+              class="bg-white p-5 rounded-xl shadow-card flex items-center justify-between border-r-4 border-r-primary"
+            ><div><span class="text-sm text-gray-500 block mb-1"
+                  >تیکت‌های باز</span
+                ><span class="text-2xl font-bold text-gray-800 font-display"
+                  >24</span
+                ></div><div
+                class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary"
+              ><span class="material-symbols-outlined text-[28px]"
+                  >pending_actions</span
+                ></div></div><div
+              class="bg-white p-5 rounded-xl shadow-card flex items-center justify-between border-r-4 border-r-secondary"
+            ><div><span class="text-sm text-gray-500 block mb-1"
+                  >تیکت‌های جدید امروز</span
+                ><span class="text-2xl font-bold text-gray-800 font-display"
+                  >8</span
+                ><span
+                  class="text-[10px] text-green-600 bg-green-50 px-1.5 py-0.5 rounded mr-2"
+                  >+۳</span
+                ></div><div
+                class="w-12 h-12 rounded-full bg-secondary/20 flex items-center justify-center text-yellow-700"
+              ><span class="material-symbols-outlined text-[28px]"
+                  >new_releases</span
+                ></div></div><div
+              class="bg-white p-5 rounded-xl shadow-card flex items-center justify-between border-r-4 border-r-accent-blue"
+            ><div><span class="text-sm text-gray-500 block mb-1"
+                  >در انتظار پاسخ</span
+                ><span class="text-2xl font-bold text-gray-800 font-display"
+                  >12</span
+                ></div><div
+                class="w-12 h-12 rounded-full bg-accent-blue/10 flex items-center justify-center text-accent-blue"
+              ><span class="material-symbols-outlined text-[28px]"
+                  >schedule</span
+                ></div></div><div
+              class="bg-white p-5 rounded-xl shadow-card flex items-center justify-between border-r-4 border-r-green-500"
+            ><div><span class="text-sm text-gray-500 block mb-1"
+                  >میانگین زمان پاسخ</span
+                ><span class="text-2xl font-bold text-gray-800 font-display"
+                  >45</span
+                ><span class="text-xs text-gray-400">دقیقه</span></div><div
+                class="w-12 h-12 rounded-full bg-green-50 flex items-center justify-center text-green-600"
+              ><span class="material-symbols-outlined text-[28px]"
+                  >timer</span
+                ></div></div></div><!-- Filters --><div
+            class="bg-white p-4 rounded-xl shadow-sm border border-gray-100 flex flex-wrap items-center gap-4 justify-between"
+          ><div class="flex items-center gap-2 text-gray-500 text-sm"><span class="material-symbols-outlined text-primary"
+                >filter_list</span
+              ><span>فیلتر:</span></div><div class="flex items-center gap-3 overflow-x-auto pb-2 sm:pb-0"><select
+                class="form-select bg-gray-50 border-gray-200 rounded-lg text-sm text-gray-600 focus:ring-primary focus:border-primary py-2 pr-8 pl-3"
+                id="status-filter"
+              ><option value="all">همه وضعیت‌ها</option><option value="pending">در حال بررسی</option><option value="answered">پاسخ داده شده</option><option value="closed">بسته شده</option></select><select
+                class="form-select bg-gray-50 border-gray-200 rounded-lg text-sm text-gray-600 focus:ring-primary focus:border-primary py-2 pr-8 pl-3"
+                id="department-filter"
+              ><option value="all">همه دپارتمان‌ها</option><option value="technical">دپارتمان فنی</option><option value="sales">دپارتمان فروش</option><option value="financial">دپارتمان مالی</option><option value="investment">دپارتمان سرمایه‌گذاری</option></select><select
+                class="form-select bg-gray-50 border-gray-200 rounded-lg text-sm text-gray-600 focus:ring-primary focus:border-primary py-2 pr-8 pl-3"
+                id="date-filter"
+              ><option value="all">همه زمان‌ها</option><option value="today">امروز</option><option value="week">این هفته</option><option value="month">این ماه</option></select></div></div><!-- Main Content Grid --><div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start"><!-- Left Column: Ticket List --><div class="lg:col-span-4 space-y-4"><div
+                class="bg-white rounded-2xl shadow-soft border border-gray-100 overflow-hidden flex flex-col"
+              ><div
+                  class="p-4 border-b border-gray-100 bg-gray-50/50 space-y-3"
+                ><div class="flex justify-between items-center"><h3 class="font-bold text-gray-800 flex items-center gap-2"><span class="material-symbols-outlined text-primary text-[20px]"
+                        >support_agent</span
+                      >
+                      لیست تیکت‌ها
+                    </h3><span
+                      class="bg-primary/10 text-primary text-xs px-2 py-1 rounded-md font-bold"
+                      id="ticket-count"
+                      >24 تیکت</span
+                    ></div><div class="relative"><input
+                      type="text"
+                      class="w-full bg-white border border-gray-200 rounded-lg py-2.5 pr-10 pl-4 text-sm focus:ring-2 focus:ring-primary focus:border-primary text-gray-800 placeholder-gray-400"
+                      placeholder="جستجو تیکت (شماره، کاربر، موضوع)..."
+                      id="ticket-search-input"
+                    /><span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 text-[20px] pointer-events-none"
+                      >search</span
+                    ></div></div><div
+                  class="divide-y divide-gray-100 max-h-[calc(100vh-450px)] overflow-y-auto"
+                  id="ticket-list"
+                ><!-- Tickets will be rendered here --></div></div></div><!-- Right Column: Ticket Detail View --><div class="lg:col-span-8"><div
+                class="bg-white rounded-2xl shadow-soft border border-gray-100 flex flex-col h-[calc(100vh-280px)]"
+                id="ticket-detail-container"
+              ><!-- Empty State --><div
+                  class="flex-1 flex items-center justify-center p-8 text-center"
+                  id="empty-state"
+                ><div class="max-w-md"><div
+                      class="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4"
+                    ><span
+                        class="material-symbols-outlined text-4xl text-primary"
+                        >support_agent</span
+                      ></div><h3
+                      class="text-xl font-bold text-gray-800 mb-2"
+                    >
+                      تیکتی انتخاب نشده است
+                    </h3><p class="text-gray-500 text-sm">
+                      برای مشاهده جزئیات و پاسخ دادن، یک تیکت از لیست سمت راست انتخاب کنید.
+                    </p></div></div><!-- Ticket Detail View (Hidden by default) --><div class="hidden flex-col h-full" id="ticket-detail-view"><!-- Ticket Header --><div
+                    class="p-5 border-b border-gray-100 flex items-center justify-between bg-gray-50/50 rounded-t-2xl"
+                  ><div class="flex items-center gap-4 flex-1 min-w-0"><div
+                        class="bg-white p-2 rounded-lg shadow-sm text-primary flex-shrink-0"
+                      ><span class="material-symbols-outlined"
+                          >receipt_long</span
+                        ></div><div class="flex-1 min-w-0"><h2
+                          class="font-bold text-gray-800 text-base truncate"
+                          id="ticket-title"
+                        >
+                          عدم نمایش توکن‌ها در کیف پول
+                        </h2><div
+                          class="flex items-center gap-2 text-xs text-gray-500 mt-1 flex-wrap"
+                        ><span id="ticket-number">شماره تیکت: #۴۰۹۲</span><span class="w-1 h-1 bg-gray-300 rounded-full"></span><span id="ticket-user">کاربر: علی محمدی</span><span class="w-1 h-1 bg-gray-300 rounded-full"></span><span id="ticket-department">دپارتمان فنی</span></div></div></div><div class="flex items-center gap-2 flex-shrink-0"><span
+                        class="hidden sm:inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-yellow-100 text-yellow-800 border border-yellow-200"
+                        id="ticket-status-badge"
+                      ><span
+                          class="w-2 h-2 bg-yellow-500 rounded-full ml-2"
+                        ></span>
+                        در انتظار پاسخ
+                      </span></div></div><!-- Status Control Section --><div class="px-5 py-3 border-b border-gray-100 bg-white"><div class="flex items-center justify-between"><div class="flex items-center gap-2 text-gray-600 text-sm"><span class="material-symbols-outlined text-[18px]">settings</span><span class="font-medium">تغییر وضعیت تیکت:</span></div><div class="flex items-center gap-4"><label class="flex items-center gap-2 cursor-pointer group"><input
+                            type="radio"
+                            name="ticket-status"
+                            value="pending"
+                            class="w-4 h-4 text-yellow-600 border-gray-300 focus:ring-yellow-600 focus:ring-2"
+                            id="ticket-status-pending"
+                          /><span class="text-sm text-gray-700 group-hover:text-yellow-600 transition-colors flex items-center gap-1.5"><span class="w-2 h-2 bg-yellow-500 rounded-full"></span>
+                            در حال بررسی
+                          </span></label><label class="flex items-center gap-2 cursor-pointer group"><input
+                            type="radio"
+                            name="ticket-status"
+                            value="answered"
+                            class="w-4 h-4 text-green-600 border-gray-300 focus:ring-green-600 focus:ring-2"
+                            id="ticket-status-answered"
+                          /><span class="text-sm text-gray-700 group-hover:text-green-600 transition-colors flex items-center gap-1.5"><span class="w-2 h-2 bg-green-500 rounded-full"></span>
+                            پاسخ داده شده
+                          </span></label><label class="flex items-center gap-2 cursor-pointer group"><input
+                            type="radio"
+                            name="ticket-status"
+                            value="closed"
+                            class="w-4 h-4 text-gray-600 border-gray-300 focus:ring-gray-600 focus:ring-2"
+                            id="ticket-status-closed"
+                          /><span class="text-sm text-gray-700 group-hover:text-gray-600 transition-colors flex items-center gap-1.5"><span class="w-2 h-2 bg-gray-500 rounded-full"></span>
+                            بسته شده
+                          </span></label></div></div></div><!-- Chat Messages --><div
+                    class="flex-1 overflow-y-auto p-6 space-y-6 bg-gray-50/50 chat-container"
+                    id="chat-messages"
+                  ><!-- Messages will be rendered here --></div><!-- Message Input --><div
+                    class="p-5 border-t border-gray-100 bg-white rounded-b-2xl"
+                  ><div class="relative flex items-end gap-2"><button
+                        class="p-3 text-gray-400 hover:text-gray-600 transition-colors rounded-lg hover:bg-gray-100"
+                        title="افزودن فایل"
+                      ><span class="material-symbols-outlined">attach_file</span></button><div class="relative flex-1"><textarea
+                          class="w-full bg-gray-50 border border-gray-200 rounded-xl py-3 px-4 pr-10 text-sm focus:ring-2 focus:ring-primary focus:border-primary resize-none h-12 min-h-[48px] max-h-32 transition-all text-gray-800 placeholder-gray-400"
+                          placeholder="پاسخ خود را بنویسید..."
+                          id="message-input"
+                          rows="1"
+                        ></textarea></div><button
+                        class="bg-primary hover:bg-primary-dark text-white p-3 rounded-xl shadow-md transition-colors flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed"
+                        id="send-message-btn"
+                      ><span
+                          class="material-symbols-outlined transform rotate-180"
+                          >send</span
+                        ></button></div><div class="text-center mt-2"><p class="text-[10px] text-gray-400">
+                        میانگین زمان پاسخگویی: کمتر از ۱ ساعت
+                      </p></div></div></div></div></div></div></div></main></div><script src="header.js"></script><script src="sidebar.js"></script><script>
+      // Ticket Data - Sample data from users
+      const tickets = [
+        {
+          id: 4092,
+          userId: 1,
+          userName: "علی محمدی",
+          userEmail: "ali.mohammadi@example.com",
+          title: "عدم نمایش توکن‌ها در کیف پول",
+          date: "۱۴۰۳/۰۸/۲۴",
+          status: "pending",
+          statusText: "در انتظار پاسخ",
+          department: "دپارتمان فنی",
+          priority: "high",
+          messages: [
+            {
+              type: "user",
+              text: "من نمی‌توانم توکن‌های خود را ببینم. بعد از خرید دیروز، موجودی کیف پولم هنوز صفر نشان داده می‌شود. لطفاً بررسی کنید.",
+              time: "۱۰:۳۰ ق.ظ",
+              date: "۱۴۰۳/۰۸/۲۴",
+            },
+          ],
+        },
+        {
+          id: 4085,
+          userId: 2,
+          userName: "سارا کریمی",
+          userEmail: "sara.karimi@example.com",
+          title: "مشکل در پرداخت",
+          date: "۱۴۰۳/۰۸/۲۵",
+          status: "pending",
+          statusText: "در انتظار پاسخ",
+          department: "دپارتمان مالی",
+          priority: "high",
+          messages: [
+            {
+              type: "user",
+              text: "هنگام پرداخت با کارت بانکی خطا می‌گیرم. لطفاً راهنمایی کنید.",
+              time: "۱۴:۲۰ ب.ظ",
+              date: "۱۴۰۳/۰۸/۲۵",
+            },
+          ],
+        },
+        {
+          id: 4078,
+          userId: 3,
+          userName: "مهدی رضایی",
+          userEmail: "m.rezaei@example.com",
+          title: "سوال در مورد سرمایه‌گذاری",
+          date: "۱۴۰۳/۰۸/۲۳",
+          status: "answered",
+          statusText: "پاسخ داده شده",
+          department: "دپارتمان سرمایه‌گذاری",
+          priority: "medium",
+          messages: [
+            {
+              type: "user",
+              text: "می‌خواهم در مورد بسته طلایی اطلاعات بیشتری بگیرم.",
+              time: "۱۱:۱۵ ق.ظ",
+              date: "۱۴۰۳/۰۸/۲۳",
+            },
+            {
+              type: "admin",
+              text: "سلام، وقت بخیر.\n\nبسته طلایی شامل ۲۰ قطعه مرغ تخم‌گذار است و بازدهی سالانه حدود ۳۵٪ دارد. برای اطلاعات بیشتر می‌توانید با شماره ۰۲۱-۸۸۸۸۱۲۳۴ تماس بگیرید.",
+              time: "۱۱:۴۵ ق.ظ",
+              date: "۱۴۰۳/۰۸/۲۳",
+              adminName: "مدیر سیستم",
+            },
+          ],
+        },
+        {
+          id: 4065,
+          userId: 4,
+          userName: "فاطمه احمدی",
+          userEmail: "f.ahmadi@example.com",
+          title: "مشکل در احراز هویت",
+          date: "۱۴۰۳/۰۸/۲۲",
+          status: "closed",
+          statusText: "بسته شده",
+          department: "دپارتمان فنی",
+          priority: "low",
+          messages: [
+            {
+              type: "user",
+              text: "در فرآیند احراز هویت مشکل دارم.",
+              time: "۱۴:۲۰ ب.ظ",
+              date: "۱۴۰۳/۰۸/۲۲",
+            },
+            {
+              type: "admin",
+              text: "مشکل شما برطرف شد. لطفاً دوباره تلاش کنید.",
+              time: "۱۵:۰۰ ب.ظ",
+              date: "۱۴۰۳/۰۸/۲۲",
+              adminName: "مدیر سیستم",
+            },
+            {
+              type: "user",
+              text: "ممنون، مشکل حل شد.",
+              time: "۱۵:۳۰ ب.ظ",
+              date: "۱۴۰۳/۰۸/۲۲",
+            },
+          ],
+        },
+        {
+          id: 4050,
+          userId: 5,
+          userName: "رضا حسینی",
+          userEmail: "r.hosseini@example.com",
+          title: "سوال در مورد صندوق‌ها",
+          date: "۱۴۰۳/۰۸/۲۰",
+          status: "answered",
+          statusText: "پاسخ داده شده",
+          department: "دپارتمان سرمایه‌گذاری",
+          priority: "medium",
+          messages: [
+            {
+              type: "user",
+              text: "تفاوت بین صندوق رشد و صندوق ثابت چیست؟",
+              time: "۱۰:۰۰ ق.ظ",
+              date: "۱۴۰۳/۰۸/۲۰",
+            },
+            {
+              type: "admin",
+              text: "صندوق رشد برای سرمایه‌گذاری‌های با ریسک بالاتر و بازدهی بیشتر است، در حالی که صندوق ثابت برای سرمایه‌گذاری‌های کم‌ریسک و با بازدهی ثابت طراحی شده است.",
+              time: "۱۰:۳۰ ق.ظ",
+              date: "۱۴۰۳/۰۸/۲۰",
+              adminName: "مدیر سیستم",
+            },
+          ],
+        },
+      ];
+
+      let selectedTicketId = null;
+      let filteredTickets = [...tickets];
+
+      // Initialize
+      document.addEventListener("DOMContentLoaded", function () {
+        renderTicketList();
+        setupEventListeners();
+      });
+
+      // Render Ticket List
+      function renderTicketList() {
+        const ticketList = document.getElementById("ticket-list");
+        ticketList.innerHTML = filteredTickets
+          .map((ticket) => {
+            const statusColors = {
+              answered:
+                "bg-green-100 text-green-800 border-green-200",
+              closed:
+                "bg-gray-100 text-gray-800 border-gray-200",
+              pending:
+                "bg-yellow-100 text-yellow-800 border-yellow-200",
+            };
+
+            const priorityColors = {
+              high: "bg-red-100 text-red-700",
+              medium: "bg-yellow-100 text-yellow-700",
+              low: "bg-blue-100 text-blue-700",
+            };
+
+            return `
+              <button
+                class="w-full text-right p-4 ticket-item border-r-4 ${
+                  selectedTicketId === ticket.id
+                    ? "active border-primary bg-primary/5"
+                    : "border-transparent hover:bg-gray-50"
+                } transition-all"
+                onclick="selectTicket(${ticket.id})"
+              ><div class="flex justify-between items-start mb-2"><div class="flex-1 min-w-0"><div class="flex items-center gap-2 mb-1"><span class="font-bold text-gray-800 text-sm truncate">${
+                        ticket.title
+                      }</span>
+                      ${
+                        ticket.priority === "high"
+                          ? '<span class="w-2 h-2 bg-red-500 rounded-full flex-shrink-0"></span>'
+                          : ""
+                      }
+                    </div><div class="flex items-center gap-2 text-xs text-gray-500"><span>${ticket.userName}</span><span class="w-1 h-1 bg-gray-300 rounded-full"></span><span>#${ticket.id}</span></div></div><span class="text-[10px] text-gray-400 flex-shrink-0 mr-2">${
+                    ticket.date
+                  }</span></div><div class="flex justify-between items-center"><span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium border ${
+                    statusColors[ticket.status]
+                  }">
+                    ${ticket.statusText}
+                  </span><span class="text-xs text-gray-500">${
+                    ticket.department
+                  }</span></div></button>
+            `;
+          })
+          .join("");
+
+        document.getElementById(
+          "ticket-count"
+        ).textContent = `${filteredTickets.length} تیکت`;
+      }
+
+      // Select Ticket
+      function selectTicket(ticketId) {
+        selectedTicketId = ticketId;
+        const ticket = tickets.find((t) => t.id === ticketId);
+        if (!ticket) return;
+
+        // Update UI
+        renderTicketList();
+        showTicketDetail(ticket);
+      }
+
+      // Show Ticket Detail
+      function showTicketDetail(ticket) {
+        const emptyState = document.getElementById("empty-state");
+        const ticketDetailView = document.getElementById("ticket-detail-view");
+
+        emptyState.classList.add("hidden");
+        ticketDetailView.classList.remove("hidden");
+        ticketDetailView.classList.add("flex");
+
+        // Update ticket info
+        document.getElementById("ticket-title").textContent = ticket.title;
+        document.getElementById(
+          "ticket-number"
+        ).textContent = `شماره تیکت: #${ticket.id}`;
+        document.getElementById("ticket-user").textContent = `کاربر: ${ticket.userName}`;
+        document.getElementById("ticket-department").textContent =
+          ticket.department;
+
+        // Update status badge
+        const statusBadge = document.getElementById("ticket-status-badge");
+        const statusColors = {
+          answered:
+            "bg-green-100 text-green-800 border-green-200",
+          closed:
+            "bg-gray-100 text-gray-800 border-gray-200",
+          pending:
+            "bg-yellow-100 text-yellow-800 border-yellow-200",
+        };
+        statusBadge.className = `hidden sm:inline-flex items-center px-3 py-1 rounded-full text-sm font-medium ${
+          statusColors[ticket.status]
+        } border`;
+        statusBadge.innerHTML = `<span class="w-2 h-2 ${
+          ticket.status === "answered"
+            ? "bg-green-500"
+            : ticket.status === "pending"
+            ? "bg-yellow-500"
+            : "bg-gray-500"
+        } rounded-full ml-2"></span>${ticket.statusText}`;
+
+        // Update status radio buttons
+        const statusRadioButtons = document.querySelectorAll('input[name="ticket-status"]');
+        statusRadioButtons.forEach(radio => {
+          radio.checked = radio.value === ticket.status;
+        });
+
+        // Render messages
+        renderMessages(ticket.messages, ticket.userName);
+      }
+
+      // Render Messages
+      function renderMessages(messages, userName) {
+        const chatMessages = document.getElementById("chat-messages");
+        let currentDate = null;
+
+        chatMessages.innerHTML = messages
+          .map((message, index) => {
+            let html = "";
+
+            // Add date separator if needed
+            if (currentDate !== message.date) {
+              currentDate = message.date;
+              html += `
+                <div class="flex justify-center"><span class="text-xs text-gray-400 bg-gray-100 px-3 py-1 rounded-full">${message.date}</span></div>
+              `;
+            }
+
+            if (message.type === "user") {
+              html += `
+                <div class="flex flex-col items-end mr-auto max-w-[85%] sm:max-w-[75%] message-bubble"><div class="flex items-end gap-2 flex-row-reverse"><div class="w-8 h-8 rounded-full overflow-hidden flex-shrink-0 border border-white shadow-sm bg-gray-200 flex items-center justify-center"><span class="text-xs font-bold text-gray-600">${userName.charAt(0)}</span></div><div class="bg-gray-200 text-gray-800 p-4 rounded-2xl rounded-bl-none shadow-sm"><p class="text-sm leading-relaxed whitespace-pre-line">${message.text}</p></div></div><div class="flex items-center gap-2 mt-1 mr-10"><span class="text-[10px] text-gray-400">${userName}</span><span class="text-[10px] text-gray-400">${message.time}</span></div></div>
+              `;
+            } else {
+              html += `
+                <div class="flex flex-col items-start ml-auto max-w-[85%] sm:max-w-[75%] message-bubble"><div class="flex items-end gap-2"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white font-bold text-xs flex-shrink-0 shadow-sm"><span>م</span></div><div class="bg-primary text-white p-4 rounded-2xl rounded-br-none shadow-md"><p class="text-sm leading-relaxed whitespace-pre-line">${
+                        message.text
+                      }</p></div></div><div class="flex items-center gap-2 mt-1 ml-10"><span class="text-[10px] text-gray-400">${message.adminName || "مدیر سیستم"}</span><span class="text-[10px] text-gray-400">${
+                      message.time
+                    }</span></div></div>
+              `;
+            }
+
+            return html;
+          })
+          .join("");
+
+        // Scroll to bottom
+        setTimeout(() => {
+          chatMessages.scrollTop = chatMessages.scrollHeight;
+        }, 100);
+      }
+
+      // Setup Event Listeners
+      function setupEventListeners() {
+        // Send message
+        const messageInput = document.getElementById("message-input");
+        const sendMessageBtn = document.getElementById("send-message-btn");
+
+        function sendMessage() {
+          if (!selectedTicketId) return;
+
+          const messageText = messageInput.value.trim();
+          if (!messageText) return;
+
+          const ticket = tickets.find((t) => t.id === selectedTicketId);
+          if (!ticket) return;
+
+          // Add admin message
+          ticket.messages.push({
+            type: "admin",
+            text: messageText,
+            time: new Date().toLocaleTimeString("fa-IR", {
+              hour: "2-digit",
+              minute: "2-digit",
+            }),
+            date: "۱۴۰۳/۰۸/۲۵",
+            adminName: "مدیر سیستم",
+          });
+
+          // Update status
+          if (ticket.status === "pending") {
+            ticket.status = "answered";
+            ticket.statusText = "پاسخ داده شده";
+          }
+
+          renderTicketList();
+          renderMessages(ticket.messages, ticket.userName);
+          messageInput.value = "";
+          messageInput.style.height = "48px";
+        }
+
+        sendMessageBtn.addEventListener("click", sendMessage);
+
+        messageInput.addEventListener("keydown", (e) => {
+          if (e.key === "Enter" && !e.shiftKey) {
+            e.preventDefault();
+            sendMessage();
+          }
+        });
+
+        // Auto-resize textarea
+        messageInput.addEventListener("input", function () {
+          this.style.height = "48px";
+          this.style.height = Math.min(this.scrollHeight, 128) + "px";
+        });
+
+        // Change ticket status via radio buttons
+        document.querySelectorAll('input[name="ticket-status"]').forEach(radio => {
+          radio.addEventListener("change", function() {
+            if (!selectedTicketId) return;
+            
+            const ticket = tickets.find((t) => t.id === selectedTicketId);
+            if (!ticket) return;
+            
+            const newStatus = this.value;
+            const statusTexts = {
+              pending: "در حال بررسی",
+              answered: "پاسخ داده شده",
+              closed: "بسته شده"
+            };
+            
+            ticket.status = newStatus;
+            ticket.statusText = statusTexts[newStatus];
+            
+            // Update UI
+            renderTicketList();
+            showTicketDetail(ticket);
+          });
+        });
+
+        // Search in ticket list
+        document.getElementById("ticket-search-input").addEventListener("input", function(e) {
+          applyFilters();
+        });
+
+        // Status filter dropdown
+        document.getElementById("status-filter").addEventListener("change", function() {
+          applyFilters();
+        });
+
+        // Department and date filters
+        document.getElementById("department-filter").addEventListener("change", function() {
+          applyFilters();
+        });
+        document.getElementById("date-filter").addEventListener("change", function() {
+          applyFilters();
+        });
+
+        // Apply all filters
+        function applyFilters() {
+          const searchTerm = document.getElementById("ticket-search-input").value.toLowerCase();
+          const statusFilter = document.getElementById("status-filter").value;
+          const departmentFilter = document.getElementById("department-filter").value;
+          const dateFilter = document.getElementById("date-filter").value;
+          
+          filteredTickets = tickets.filter(ticket => {
+            let match = true;
+            
+            // Search filter
+            if (searchTerm) {
+              const matchesSearch = 
+                ticket.title.toLowerCase().includes(searchTerm) ||
+                ticket.userName.toLowerCase().includes(searchTerm) ||
+                ticket.userEmail.toLowerCase().includes(searchTerm) ||
+                ticket.id.toString().includes(searchTerm) ||
+                ticket.department.toLowerCase().includes(searchTerm);
+              if (!matchesSearch) {
+                match = false;
+              }
+            }
+            
+            // Status filter
+            if (statusFilter !== "all" && ticket.status !== statusFilter) {
+              match = false;
+            }
+            
+            // Department filter
+            const departmentMap = {
+              technical: "دپارتمان فنی",
+              sales: "دپارتمان فروش",
+              financial: "دپارتمان مالی",
+              investment: "دپارتمان سرمایه‌گذاری"
+            };
+            
+            if (departmentFilter !== "all" && ticket.department !== departmentMap[departmentFilter]) {
+              match = false;
+            }
+            
+            // Date filter (simplified - you can enhance this)
+            if (dateFilter !== "all") {
+              // This is a simplified date filter - you can enhance it based on actual dates
+              // For now, it just passes through
+            }
+            
+            return match;
+          });
+          
+          renderTicketList();
+          
+          // If selected ticket is not in filtered list, clear selection
+          if (selectedTicketId && !filteredTickets.find(t => t.id === selectedTicketId)) {
+            selectedTicketId = null;
+            document.getElementById("empty-state").classList.remove("hidden");
+            document.getElementById("ticket-detail-view").classList.add("hidden");
+            document.getElementById("ticket-detail-view").classList.remove("flex");
+          }
+        }
+      }
+    </script></body>
+</html>
+

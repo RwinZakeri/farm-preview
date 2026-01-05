@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html class="light" dir="rtl" lang="fa"><head><meta charset="utf-8" /><meta content="width=device-width, initial-scale=1.0" name="viewport" /><link rel="icon" type="image/svg+xml" href="/icon.svg" /><title>سفارش‌های من - فارمتو</title><link href="https://fonts.googleapis.com" rel="preconnect" /><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" /><link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&amp;family=Vazirmatn:wght@100..900&amp;display=swap"
+      rel="stylesheet"
+    /><link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    /><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#11d452",
+              "primary-dark": "#0ea640",
+              "background-light": "#f6f8f6",
+              "background-dark": "#102216",
+              gold: "#D4AF37",
+              "gold-light": "#F9F1D8",
+            },
+            fontFamily: {
+              display: ["Vazirmatn", "Manrope", "sans-serif"],
+              body: ["Vazirmatn", "Manrope", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.5rem",
+              lg: "1rem",
+              xl: "1.5rem",
+              "2xl": "2rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script><style>
+      body {
+        font-family: "Vazirmatn", "Manrope", sans-serif;
+      }
+      .scrollbar-hide::-webkit-scrollbar {
+        display: none;
+      }
+      ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #cbd5e1;
+        border-radius: 4px;
+      }
+      .scrollbar-left {
+        direction: ltr;
+      }
+      .scrollbar-left > div {
+        direction: rtl;
+      }
+    </style></head><body
+    class="bg-background-light dark:bg-background-dark text-[#111813] dark:text-white transition-colors duration-200"
+  ><div class="relative flex min-h-screen w-full flex-row overflow-x-hidden"><!-- Sidebar (Right in RTL) --><div id="sidebar-container"></div><!-- Main Content --><main
+        class="flex-1 flex flex-col min-w-0 lg:mr-72 bg-background-light dark:bg-background-dark"
+      ><div
+          class="flex-1 overflow-y-auto scrollbar-left"
+          style="direction: ltr"
+        ><div style="direction: rtl"><!-- Top Header --><div id="header-container"></div><!-- Scrollable Content --><div class="flex-1 overflow-y-auto p-4 lg:p-8 space-y-6 pb-20"><!-- Page Header --><div
+                class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4"
+              ><div><h1
+                    class="text-2xl lg:text-3xl font-bold text-[#111813] dark:text-white mb-2"
+                  >
+                    سفارش‌های من
+                  </h1><p class="text-gray-500 dark:text-gray-400">
+                    تمام سفارش‌های شما در یک مکان
+                  </p></div></div><!-- Filter Tabs --><div
+                class="flex items-center gap-2 bg-white dark:bg-[#1a2e22] p-1 rounded-xl border border-gray-100 dark:border-gray-700 shadow-sm"
+              ><button
+                  class="flex-1 px-4 py-2 rounded-lg bg-primary text-white font-bold text-sm transition-all"
+                  data-filter="all"
+                >
+                  همه
+                </button><button
+                  class="flex-1 px-4 py-2 rounded-lg text-gray-600 dark:text-gray-400 font-medium text-sm hover:bg-gray-50 dark:hover:bg-[#2a4030] transition-all"
+                  data-filter="processing"
+                >
+                  در حال پردازش
+                </button><button
+                  class="flex-1 px-4 py-2 rounded-lg text-gray-600 dark:text-gray-400 font-medium text-sm hover:bg-gray-50 dark:hover:bg-[#2a4030] transition-all"
+                  data-filter="ready"
+                >
+                  آماده تحویل
+                </button><button
+                  class="flex-1 px-4 py-2 rounded-lg text-gray-600 dark:text-gray-400 font-medium text-sm hover:bg-gray-50 dark:hover:bg-[#2a4030] transition-all"
+                  data-filter="delivered"
+                >
+                  تحویل شده
+                </button></div><!-- Orders List --><div class="space-y-4"><!-- Order 1 - Processing --><div
+                  class="bg-white dark:bg-[#1a2e22] rounded-2xl p-6 shadow-sm border border-gray-100 dark:border-gray-700 hover:shadow-md transition-all cursor-pointer"
+                  onclick="window.location.href='order-detail.html?id=FRM-8821-X90&status=processing'"
+                ><div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4"><div class="flex items-start gap-4 flex-1"><div
+                        class="w-16 h-16 rounded-xl bg-orange-50 dark:bg-orange-900/20 flex items-center justify-center text-orange-600 dark:text-orange-400 shrink-0"
+                      ><span class="material-symbols-outlined text-3xl"
+                          >pending</span
+                        ></div><div class="flex-1 min-w-0"><div class="flex items-center gap-3 mb-2"><h3
+                            class="font-bold text-lg text-[#111813] dark:text-white"
+                          >
+                            FRM-8821-X90
+                          </h3><span
+                            class="px-3 py-1 rounded-lg bg-orange-100 dark:bg-orange-900/30 text-orange-700 dark:text-orange-300 text-xs font-bold"
+                          >
+                            در حال پردازش
+                          </span></div><p class="text-sm text-gray-500 dark:text-gray-400 mb-2">
+                          ۱۰ شانه تخم مرغ
+                        </p><div class="flex items-center gap-4 text-xs text-gray-400"><span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm"
+                              >calendar_today</span
+                            >
+                            ۱۴۰۳/۰۸/۱۲
+                          </span><span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm"
+                              >location_on</span
+                            >
+                            انبار مرکزی تهران
+                          </span></div></div></div><div class="flex items-center gap-3"><div class="text-left"><p class="text-xs text-gray-500 dark:text-gray-400 mb-1">
+                          مبلغ کل
+                        </p><p
+                          class="text-lg font-bold text-[#111813] dark:text-white"
+                        >
+                          ۸۰۰,۰۰۰
+                          <span class="text-sm font-normal text-gray-400"
+                            >ریال</span
+                          ></p></div><span
+                        class="material-symbols-outlined text-gray-400 group-hover:text-primary transition-colors"
+                        >chevron_left</span
+                      ></div></div></div><!-- Order 2 - Ready --><div
+                  class="bg-white dark:bg-[#1a2e22] rounded-2xl p-6 shadow-sm border border-gray-100 dark:border-gray-700 hover:shadow-md transition-all cursor-pointer"
+                  onclick="window.location.href='order-detail.html?id=FRM-8756-Y45&status=ready'"
+                ><div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4"><div class="flex items-start gap-4 flex-1"><div
+                        class="w-16 h-16 rounded-xl bg-blue-50 dark:bg-blue-900/20 flex items-center justify-center text-blue-600 dark:text-blue-400 shrink-0"
+                      ><span class="material-symbols-outlined text-3xl"
+                          >inventory_2</span
+                        ></div><div class="flex-1 min-w-0"><div class="flex items-center gap-3 mb-2"><h3
+                            class="font-bold text-lg text-[#111813] dark:text-white"
+                          >
+                            FRM-8756-Y45
+                          </h3><span
+                            class="px-3 py-1 rounded-lg bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 text-xs font-bold"
+                          >
+                            آماده تحویل
+                          </span></div><p class="text-sm text-gray-500 dark:text-gray-400 mb-2">
+                          ۲۰ شانه تخم مرغ
+                        </p><div class="flex items-center gap-4 text-xs text-gray-400"><span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm"
+                              >calendar_today</span
+                            >
+                            ۱۴۰۳/۰۸/۱۰
+                          </span><span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm"
+                              >location_on</span
+                            >
+                            شعبه غرب (پونک)
+                          </span></div></div></div><div class="flex items-center gap-3"><div class="text-left"><p class="text-xs text-gray-500 dark:text-gray-400 mb-1">
+                          مبلغ کل
+                        </p><p
+                          class="text-lg font-bold text-[#111813] dark:text-white"
+                        >
+                          ۱,۶۰۰,۰۰۰
+                          <span class="text-sm font-normal text-gray-400"
+                            >ریال</span
+                          ></p></div><span
+                        class="material-symbols-outlined text-gray-400 group-hover:text-primary transition-colors"
+                        >chevron_left</span
+                      ></div></div></div><!-- Order 3 - Delivered --><div
+                  class="bg-white dark:bg-[#1a2e22] rounded-2xl p-6 shadow-sm border border-gray-100 dark:border-gray-700 hover:shadow-md transition-all cursor-pointer opacity-75"
+                  onclick="window.location.href='order-detail.html?id=FRM-8623-Z12&status=delivered'"
+                ><div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4"><div class="flex items-start gap-4 flex-1"><div
+                        class="w-16 h-16 rounded-xl bg-green-50 dark:bg-green-900/20 flex items-center justify-center text-green-600 dark:text-green-400 shrink-0"
+                      ><span class="material-symbols-outlined text-3xl"
+                          >check_circle</span
+                        ></div><div class="flex-1 min-w-0"><div class="flex items-center gap-3 mb-2"><h3
+                            class="font-bold text-lg text-[#111813] dark:text-white"
+                          >
+                            FRM-8623-Z12
+                          </h3><span
+                            class="px-3 py-1 rounded-lg bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 text-xs font-bold"
+                          >
+                            تحویل شده
+                          </span></div><p class="text-sm text-gray-500 dark:text-gray-400 mb-2">
+                          ۱۵ شانه تخم مرغ
+                        </p><div class="flex items-center gap-4 text-xs text-gray-400"><span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm"
+                              >calendar_today</span
+                            >
+                            ۱۴۰۳/۰۸/۰۵
+                          </span><span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm"
+                              >location_on</span
+                            >
+                            شعبه شرق (تهرانپارس)
+                          </span></div></div></div><div class="flex items-center gap-3"><div class="text-left"><p class="text-xs text-gray-500 dark:text-gray-400 mb-1">
+                          مبلغ کل
+                        </p><p
+                          class="text-lg font-bold text-[#111813] dark:text-white"
+                        >
+                          ۱,۲۰۰,۰۰۰
+                          <span class="text-sm font-normal text-gray-400"
+                            >ریال</span
+                          ></p></div><span
+                        class="material-symbols-outlined text-gray-400 group-hover:text-primary transition-colors"
+                        >chevron_left</span
+                      ></div></div></div><!-- Order 4 - Delivered --><div
+                  class="bg-white dark:bg-[#1a2e22] rounded-2xl p-6 shadow-sm border border-gray-100 dark:border-gray-700 hover:shadow-md transition-all cursor-pointer opacity-75"
+                  onclick="window.location.href='order-detail.html?id=FRM-8541-A78&status=delivered'"
+                ><div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4"><div class="flex items-start gap-4 flex-1"><div
+                        class="w-16 h-16 rounded-xl bg-green-50 dark:bg-green-900/20 flex items-center justify-center text-green-600 dark:text-green-400 shrink-0"
+                      ><span class="material-symbols-outlined text-3xl"
+                          >check_circle</span
+                        ></div><div class="flex-1 min-w-0"><div class="flex items-center gap-3 mb-2"><h3
+                            class="font-bold text-lg text-[#111813] dark:text-white"
+                          >
+                            FRM-8541-A78
+                          </h3><span
+                            class="px-3 py-1 rounded-lg bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 text-xs font-bold"
+                          >
+                            تحویل شده
+                          </span></div><p class="text-sm text-gray-500 dark:text-gray-400 mb-2">
+                          ۵ شانه تخم مرغ
+                        </p><div class="flex items-center gap-4 text-xs text-gray-400"><span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm"
+                              >calendar_today</span
+                            >
+                            ۱۴۰۳/۰۷/۲۸
+                          </span><span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm"
+                              >location_on</span
+                            >
+                            انبار مرکزی تهران
+                          </span></div></div></div><div class="flex items-center gap-3"><div class="text-left"><p class="text-xs text-gray-500 dark:text-gray-400 mb-1">
+                          مبلغ کل
+                        </p><p
+                          class="text-lg font-bold text-[#111813] dark:text-white"
+                        >
+                          ۴۰۰,۰۰۰
+                          <span class="text-sm font-normal text-gray-400"
+                            >ریال</span
+                          ></p></div><span
+                        class="material-symbols-outlined text-gray-400 group-hover:text-primary transition-colors"
+                        >chevron_left</span
+                      ></div></div></div></div></div></div></div></main></div><script src="header.js"></script><script src="sidebar.js"></script><script>
+      // Simple filter functionality
+      document.querySelectorAll('[data-filter]').forEach((button) => {
+        button.addEventListener("click", function () {
+          document
+            .querySelectorAll('[data-filter]')
+            .forEach((btn) => {
+              btn.classList.remove("bg-primary", "text-white", "font-bold");
+              btn.classList.add(
+                "text-gray-600",
+                "dark:text-gray-400",
+                "font-medium"
+              );
+            });
+          this.classList.add("bg-primary", "text-white", "font-bold");
+          this.classList.remove(
+            "text-gray-600",
+            "dark:text-gray-400",
+            "font-medium"
+          );
+        });
+      });
+    </script></body>
+</html>
+

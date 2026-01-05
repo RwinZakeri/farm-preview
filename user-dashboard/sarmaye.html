@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html class="light" dir="rtl" lang="fa"><head><meta charset="utf-8" /><meta content="width=device-width, initial-scale=1.0" name="viewport" /><link rel="icon" type="image/svg+xml" href="/icon.svg" /><title>تحلیل دارایی و توکن - فارمتو</title><link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;family=Vazirmatn:wght@400;500;700;900&amp;display=swap"
+      rel="stylesheet"
+    /><link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    /><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#11d452",
+              "primary-dark": "#0ea640",
+              "accent-yellow": "#FFC93C",
+              "background-light": "#f6f8f6",
+              "background-dark": "#102216",
+              "card-light": "#FFFFFF",
+              "surface-dark": "#1A2E20",
+              "text-main": "#111813",
+              "text-sub": "#61896f",
+              "text-dark": "#E5E7EB",
+              token: "#8B5CF6",
+              egg: "#F59E0B",
+            },
+            fontFamily: {
+              display: ["Vazirmatn", "Manrope", "sans-serif"],
+              body: ["Vazirmatn", "Manrope", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.5rem",
+              lg: "1rem",
+              xl: "1.5rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script><style>
+      body {
+        font-family: "Vazirmatn", sans-serif;
+      }
+      ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #cbd5e1;
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #94a3b8;
+      }
+      /* Force scrollbar to left side */
+      .scrollbar-left {
+        direction: ltr;
+      }
+      .scrollbar-left > div {
+        direction: rtl;
+      }
+    </style></head><body
+    class="bg-background-light dark:bg-background-dark text-[#111813] dark:text-white transition-colors duration-200"
+  ><div class="relative flex min-h-screen w-full flex-row overflow-x-hidden"><!-- Sidebar (Right in RTL) --><div id="sidebar-container"></div><main
+        class="flex-1 flex flex-col min-w-0 lg:mr-72 bg-background-light dark:bg-background-dark"
+      ><div
+          class="flex-1 overflow-y-auto scrollbar-left"
+          style="direction: ltr"
+        ><div style="direction: rtl"><div id="header-container"></div><div class="mx-auto max-w-7xl px-4 py-8 lg:px-10"><div
+                class="mb-8 flex flex-col justify-between gap-6 md:flex-row md:items-end"
+              ><div><h1
+                    class="mb-2 text-3xl font-black tracking-tight text-text-main dark:text-text-dark md:text-4xl"
+                  >
+                    تحلیل دارایی و توکن
+                  </h1><p class="text-text-sub dark:text-gray-400 text-lg">
+                    بررسی جامع وضعیت سرمایه‌گذاری، سود و زیان و رشد پورتفولیو
+                  </p></div><div class="flex gap-3"><button
+                    class="flex items-center gap-2 rounded-xl border border-gray-200 bg-white px-4 py-2.5 text-sm font-bold text-text-main shadow-sm hover:bg-gray-50 dark:border-white/10 dark:bg-white/5 dark:text-text-dark dark:hover:bg-white/10 transition-all"
+                  ><span class="material-symbols-outlined text-[20px]"
+                      >calendar_today</span
+                    ><span>بازه زمانی: ۱ ماهه</span></button><button
+                    class="flex items-center gap-2 rounded-xl bg-primary px-5 py-2.5 text-sm font-bold text-white shadow-lg shadow-primary/30 hover:bg-primary-dark transition-all"
+                  ><span class="material-symbols-outlined text-[20px]"
+                      >download</span
+                    ><span>دانلود گزارش</span></button></div></div><div class="grid grid-cols-1 gap-6 md:grid-cols-3 mb-8"><div
+                  class="group relative overflow-hidden rounded-2xl bg-card-light dark:bg-surface-dark p-6 shadow-sm border border-gray-100 dark:border-white/5"
+                ><div
+                    class="absolute right-0 top-0 h-24 w-24 rounded-bl-full bg-primary/5 transition-all group-hover:bg-primary/10"
+                  ></div><div
+                    class="relative z-10 flex flex-col justify-between h-full"
+                  ><div class="flex items-center gap-4 mb-4"><div
+                        class="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary dark:bg-primary/20 dark:text-primary"
+                      ><span class="material-symbols-outlined text-2xl"
+                          >account_balance</span
+                        ></div><div><p
+                          class="text-sm font-medium text-text-sub dark:text-gray-400"
+                        >
+                          ارزش کل دارایی‌ها
+                        </p></div></div><div class="flex items-end gap-2"><h3
+                        class="text-3xl font-black text-text-main dark:text-text-dark"
+                      >
+                        ۲۸۱,۸۴۰,۰۰۰
+                      </h3><span
+                        class="text-sm font-medium text-text-sub dark:text-gray-400 mb-1.5"
+                        >ریال</span
+                      ></div><div
+                      class="mt-4 flex items-center gap-2 text-sm text-green-600 dark:text-green-400"
+                    ><span
+                        class="flex items-center rounded bg-green-50 px-2 py-0.5 text-xs font-bold dark:bg-green-900/30"
+                        >+۱۲.۵٪</span
+                      ><span class="text-xs text-text-sub dark:text-gray-400"
+                        >رشد نسبت به ماه قبل</span
+                      ></div></div></div><div
+                  class="group relative overflow-hidden rounded-2xl bg-card-light dark:bg-surface-dark p-6 shadow-sm border border-gray-100 dark:border-white/5"
+                ><div
+                    class="absolute right-0 top-0 h-24 w-24 rounded-bl-full bg-accent-yellow/5 transition-all group-hover:bg-accent-yellow/10"
+                  ></div><div
+                    class="relative z-10 flex flex-col justify-between h-full"
+                  ><div class="flex items-center gap-4 mb-4"><div
+                        class="flex h-12 w-12 items-center justify-center rounded-xl bg-accent-yellow/10 text-accent-yellow dark:bg-accent-yellow/20 dark:text-accent-yellow"
+                      ><span class="material-symbols-outlined text-2xl"
+                          >egg</span
+                        ></div><div><p
+                          class="text-sm font-medium text-text-sub dark:text-gray-400"
+                        >
+                          موجودی توکن تخم‌مرغ
+                        </p></div></div><div class="flex items-end gap-2"><h3
+                        class="text-3xl font-black text-text-main dark:text-text-dark"
+                      >
+                        ۵,۴۲۰
+                      </h3><span
+                        class="text-sm font-medium text-text-sub dark:text-gray-400 mb-1.5"
+                        >توکن (عدد)</span
+                      ></div><div class="mt-4 flex items-center gap-2 text-sm"><span class="text-xs text-text-sub dark:text-gray-400"
+                        >معادل تقریبی</span
+                      ><span class="font-bold text-text-main dark:text-text-dark"
+                        >۴۵۰</span
+                      ><span class="text-xs text-text-sub dark:text-gray-400"
+                        >شانه تخم‌مرغ ۳۰ تایی</span
+                      ></div></div></div><div
+                  class="group relative overflow-hidden rounded-2xl bg-card-light dark:bg-surface-dark p-6 shadow-sm border border-gray-100 dark:border-white/5"
+                ><div
+                    class="absolute right-0 top-0 h-24 w-24 rounded-bl-full bg-token/5 transition-all group-hover:bg-token/10"
+                  ></div><div
+                    class="relative z-10 flex flex-col justify-between h-full"
+                  ><div class="flex items-center gap-4 mb-4"><div
+                        class="flex h-12 w-12 items-center justify-center rounded-xl bg-token/10 text-token dark:bg-token/20 dark:text-token"
+                      ><span class="material-symbols-outlined text-2xl"
+                          >monitoring</span
+                        ></div><div><p
+                          class="text-sm font-medium text-text-sub dark:text-gray-400"
+                        >
+                          سود و زیان خالص (P&amp;L)
+                        </p></div></div><div class="flex items-end gap-2"><h3
+                        class="text-3xl font-black text-text-main dark:text-text-dark"
+                      >
+                        +۴۲,۵۰۰,۰۰۰
+                      </h3><span
+                        class="text-sm font-medium text-text-sub dark:text-gray-400 mb-1.5"
+                        >ریال</span
+                      ></div><div
+                      class="mt-4 w-full bg-gray-100 dark:bg-white/10 rounded-full h-1.5 overflow-hidden"
+                    ><div
+                        class="bg-primary h-full rounded-full"
+                        style="width: 75%"
+                      ></div></div><div
+                      class="mt-2 flex justify-between text-[10px] text-text-sub dark:text-gray-400"
+                    ><span>سرمایه اولیه</span><span>سود محقق شده</span></div></div></div></div><div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8"><div
+                  class="lg:col-span-2 rounded-2xl bg-card-light dark:bg-surface-dark p-6 shadow-sm border border-gray-100 dark:border-white/5"
+                ><div
+                    class="flex flex-col sm:flex-row sm:items-center justify-between mb-6 gap-4"
+                  ><div><h3
+                        class="text-lg font-bold text-text-main dark:text-text-dark"
+                      >
+                        روند قیمت توکن
+                      </h3><p class="text-xs text-text-sub dark:text-gray-400">
+                        تغییرات ارزش هر توکن تخم‌مرغ در بازار
+                      </p></div><div
+                      class="flex items-center bg-gray-50 dark:bg-white/5 p-1 rounded-lg self-start"
+                    ><button
+                        class="px-3 py-1.5 text-xs font-bold text-primary bg-white dark:bg-white/10 dark:text-white rounded shadow-sm"
+                      >
+                        روزانه
+                      </button><button
+                        class="px-3 py-1.5 text-xs font-medium text-text-sub dark:text-gray-400 hover:text-text-main dark:hover:text-white transition-colors"
+                      >
+                        هفتگی
+                      </button><button
+                        class="px-3 py-1.5 text-xs font-medium text-text-sub dark:text-gray-400 hover:text-text-main dark:hover:text-white transition-colors"
+                      >
+                        ماهانه
+                      </button><button
+                        class="px-3 py-1.5 text-xs font-medium text-text-sub dark:text-gray-400 hover:text-text-main dark:hover:text-white transition-colors"
+                      >
+                        سالانه
+                      </button></div></div><div
+                    class="relative w-full h-[320px] bg-gradient-to-t from-gray-50/50 to-transparent dark:from-white/5 dark:to-transparent rounded-xl border border-dashed border-gray-200 dark:border-white/10 flex items-end justify-center p-4 overflow-hidden"
+                  ><div
+                      class="absolute right-2 top-2 bottom-8 flex flex-col justify-between text-[10px] text-text-sub dark:text-gray-500 font-mono"
+                    ><span>54,000</span><span>53,000</span><span>52,000</span><span>51,000</span><span>50,000</span></div><svg
+                      class="w-full h-[280px] overflow-visible"
+                      preserveAspectRatio="none"
+                      viewBox="0 0 1000 300"
+                    ><defs><linearGradient
+                          id="gradientPrimary"
+                          x1="0"
+                          x2="0"
+                          y1="0"
+                          y2="1"
+                        ><stop
+                            offset="0%"
+                            stop-color="#3E6E4A"
+                            stop-opacity="0.2"
+                          ></stop><stop
+                            offset="100%"
+                            stop-color="#3E6E4A"
+                            stop-opacity="0"
+                          ></stop></linearGradient></defs><path
+                        d="M0,250 C50,240 100,260 150,220 C200,180 250,200 300,190 C350,180 400,140 450,150 C500,160 550,120 600,100 C650,80 700,90 750,70 C800,50 850,60 900,40 C950,20 1000,30 1000,30 V300 H0 Z"
+                        fill="url(#gradientPrimary)"
+                      ></path><path
+                        d="M0,250 C50,240 100,260 150,220 C200,180 250,200 300,190 C350,180 400,140 450,150 C500,160 550,120 600,100 C650,80 700,90 750,70 C800,50 850,60 900,40 C950,20 1000,30 1000,30"
+                        fill="none"
+                        stroke="#3E6E4A"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="3"
+                      ></path><circle
+                        class="animate-pulse"
+                        cx="900"
+                        cy="40"
+                        fill="#FFFFFF"
+                        r="6"
+                        stroke="#3E6E4A"
+                        stroke-width="3"
+                      ></circle><rect
+                        fill="#3E6E4A"
+                        height="30"
+                        rx="4"
+                        width="140"
+                        x="830"
+                        y="0"
+                      ></rect><text
+                        fill="white"
+                        font-family="sans-serif"
+                        font-size="12"
+                        text-anchor="middle"
+                        x="900"
+                        y="20"
+                      >
+                        ۵۲,۳۰۰ ریال
+                      </text></svg><div
+                      class="absolute bottom-2 left-4 right-8 flex justify-between text-[10px] text-text-sub dark:text-gray-500"
+                    ><span>۰۱ آبان</span><span>۰۵ آبان</span><span>۱۰ آبان</span><span>۱۵ آبان</span><span>۲۰ آبان</span><span>۲۵ آبان</span><span>۳۰ آبان</span></div></div></div><div
+                  class="rounded-2xl bg-card-light dark:bg-surface-dark p-6 shadow-sm border border-gray-100 dark:border-white/5 flex flex-col"
+                ><h3
+                    class="text-lg font-bold text-text-main dark:text-text-dark mb-6"
+                  >
+                    ترکیب دارایی‌ها
+                  </h3><div
+                    class="flex-1 flex items-center justify-center relative min-h-[200px]"
+                  ><div
+                      class="relative w-48 h-48 rounded-full"
+                      style="
+                        background: conic-gradient(
+                          var(--tw-colors-primary) 0deg 240deg,
+                          var(--tw-colors-accent-yellow) 240deg 320deg,
+                          var(--tw-colors-token) 320deg 360deg
+                        );
+                      "
+                    ><div
+                        class="absolute inset-4 bg-white dark:bg-surface-dark rounded-full flex flex-col items-center justify-center"
+                      ><span
+                          class="text-2xl font-black text-text-main dark:text-text-dark"
+                          >۱۰۰٪</span
+                        ><span
+                          class="text-[10px] text-text-sub dark:text-gray-400"
+                          >تنوع سبد</span
+                        ></div></div></div><div class="mt-6 space-y-4"><div class="flex items-center justify-between"><div class="flex items-center gap-2"><div class="w-3 h-3 rounded-full bg-primary"></div><span class="text-sm text-text-sub dark:text-gray-300"
+                          >توکن تخم‌مرغ</span
+                        ></div><span
+                        class="text-sm font-bold text-text-main dark:text-text-dark"
+                        >۶۵٪</span
+                      ></div><div class="flex items-center justify-between"><div class="flex items-center gap-2"><div
+                          class="w-3 h-3 rounded-full bg-accent-yellow"
+                        ></div><span class="text-sm text-text-sub dark:text-gray-300"
+                          >سهام مرغ مولد</span
+                        ></div><span
+                        class="text-sm font-bold text-text-main dark:text-text-dark"
+                        >۲۵٪</span
+                      ></div><div class="flex items-center justify-between"><div class="flex items-center gap-2"><div class="w-3 h-3 rounded-full bg-token"></div><span class="text-sm text-text-sub dark:text-gray-300"
+                          >نقدینگی / تتر</span
+                        ></div><span
+                        class="text-sm font-bold text-text-main dark:text-text-dark"
+                        >۱۰٪</span
+                      ></div></div></div></div><div
+                class="rounded-2xl border border-gray-100 bg-card-light p-6 shadow-sm dark:border-white/5 dark:bg-surface-dark"
+              ><div class="mb-6 flex items-center justify-between"><h3
+                    class="text-lg font-bold text-text-main dark:text-text-dark"
+                  >
+                    جزئیات پورتفولیو
+                  </h3><button
+                    class="text-sm font-medium text-primary hover:text-primary-dark transition-colors"
+                  >
+                    مشاهده تاریخچه تراکنش‌ها
+                  </button></div><div class="overflow-x-auto"><table
+                    class="w-full min-w-[700px] border-collapse text-right"
+                  ><thead><tr
+                        class="border-b border-gray-100 text-xs text-text-sub dark:border-white/5 dark:text-gray-400"
+                      ><th class="py-4 pr-4 font-medium">نام دارایی</th><th class="py-4 font-medium">دسته‌بندی</th><th class="py-4 font-medium">تعداد کل</th><th class="py-4 font-medium">قیمت میانگین خرید</th><th class="py-4 font-medium">ارزش فعلی (ریال)</th><th class="py-4 font-medium">سود/زیان</th><th class="py-4 pl-4 font-medium">جزئیات</th></tr></thead><tbody class="text-sm"><tr
+                        class="group border-b border-gray-50 hover:bg-gray-50 dark:border-white/5 dark:hover:bg-white/5 transition-colors"
+                      ><td class="py-4 pr-4"><div class="flex items-center gap-3"><div
+                              class="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/10 text-primary"
+                            ><span
+                                class="material-symbols-outlined text-[20px]"
+                                >egg</span
+                              ></div><div><p
+                                class="font-bold text-text-main dark:text-text-dark"
+                              >
+                                تخم‌مرغ محلی
+                              </p><p
+                                class="text-[10px] text-text-sub dark:text-gray-400"
+                              >
+                                EGG-STD-22
+                              </p></div></div></td><td class="py-4 text-text-sub dark:text-gray-400">
+                          توکن مصرفی
+                        </td><td
+                          class="py-4 font-bold text-text-main dark:text-gray-200"
+                        >
+                          ۵,۴۲۰
+                        </td><td class="py-4 text-text-sub dark:text-gray-400">
+                          ۴۸,۰۰۰ ریال
+                        </td><td
+                          class="py-4 font-bold text-text-main dark:text-gray-200"
+                        >
+                          ۲۸۱,۸۴۰,۰۰۰
+                        </td><td class="py-4"><div
+                            class="flex items-center gap-1 text-green-600 dark:text-green-400"
+                          ><span class="material-symbols-outlined text-sm"
+                              >trending_up</span
+                            ><span class="font-bold">۱۲٪+</span></div></td><td class="py-4 pl-4"><a
+                            href="portfolio-detail.html?asset=EGG-STD-22&type=token"
+                            class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-primary/10 hover:bg-primary text-primary hover:text-white dark:bg-primary/20 dark:text-primary dark:hover:bg-primary dark:hover:text-white transition-colors text-sm font-medium"
+                          ><span class="material-symbols-outlined text-sm"
+                              >visibility</span
+                            >
+                            مشاهده جزئیات
+                          </a></td></tr><tr
+                        class="group border-b border-gray-50 hover:bg-gray-50 dark:border-white/5 dark:hover:bg-white/5 transition-colors"
+                      ><td class="py-4 pr-4"><div class="flex items-center gap-3"><div
+                              class="flex h-10 w-10 items-center justify-center rounded-xl bg-accent-yellow/10 text-accent-yellow"
+                            ><span
+                                class="material-symbols-outlined text-[20px]"
+                                >pest_control</span
+                              ></div><div><p
+                                class="font-bold text-text-main dark:text-text-dark"
+                              >
+                                مرغ مولد (لگهورن)
+                              </p><p
+                                class="text-[10px] text-text-sub dark:text-gray-400"
+                              >
+                                CHICK-LGH-01
+                              </p></div></div></td><td class="py-4 text-text-sub dark:text-gray-400">
+                          سهام تولیدی
+                        </td><td
+                          class="py-4 font-bold text-text-main dark:text-gray-200"
+                        >
+                          ۵۰
+                        </td><td class="py-4 text-text-sub dark:text-gray-400">
+                          ۲,۰۰۰,۰۰۰ ریال
+                        </td><td
+                          class="py-4 font-bold text-text-main dark:text-gray-200"
+                        >
+                          ۱۲۰,۰۰۰,۰۰۰
+                        </td><td class="py-4"><div
+                            class="flex items-center gap-1 text-green-600 dark:text-green-400"
+                          ><span class="material-symbols-outlined text-sm"
+                              >trending_up</span
+                            ><span class="font-bold">۲۰٪+</span></div></td><td class="py-4 pl-4"><a
+                            href="portfolio-detail.html?asset=CHICK-LGH-01&type=share"
+                            class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-primary/10 hover:bg-primary text-primary hover:text-white dark:bg-primary/20 dark:text-primary dark:hover:bg-primary dark:hover:text-white transition-colors text-sm font-medium"
+                          ><span class="material-symbols-outlined text-sm"
+                              >visibility</span
+                            >
+                            مشاهده جزئیات
+                          </a></td></tr></tbody></table></div></div></div></div></div></main></div><script src="header.js"></script><script src="sidebar.js"></script></body>
+</html>

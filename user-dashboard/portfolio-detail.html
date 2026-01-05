@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html class="light" dir="rtl" lang="fa"><head><meta charset="utf-8" /><meta content="width=device-width, initial-scale=1.0" name="viewport" /><link rel="icon" type="image/svg+xml" href="/icon.svg" /><title>جزئیات پورتفولیو - فارمتو</title><link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;family=Vazirmatn:wght@400;500;700;900&amp;display=swap"
+      rel="stylesheet"
+    /><link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    /><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#11d452",
+              "primary-dark": "#0ea640",
+              "accent-yellow": "#FFC93C",
+              "background-light": "#f6f8f6",
+              "background-dark": "#102216",
+              "card-light": "#FFFFFF",
+              "surface-dark": "#1A2E20",
+              "text-main": "#111813",
+              "text-sub": "#61896f",
+              "text-dark": "#E5E7EB",
+              token: "#8B5CF6",
+              egg: "#F59E0B",
+            },
+            fontFamily: {
+              display: ["Vazirmatn", "Manrope", "sans-serif"],
+              body: ["Vazirmatn", "Manrope", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.5rem",
+              lg: "1rem",
+              xl: "1.5rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script><style>
+      body {
+        font-family: "Vazirmatn", sans-serif;
+      }
+      .scrollbar-left {
+        direction: ltr;
+      }
+      .scrollbar-left > div {
+        direction: rtl;
+      }
+      ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #cbd5e1;
+        border-radius: 4px;
+      }
+    </style></head><body
+    class="bg-background-light dark:bg-background-dark text-[#111813] dark:text-white transition-colors duration-200"
+  ><div class="relative flex min-h-screen w-full flex-row overflow-x-hidden"><!-- Sidebar (Right in RTL) --><div id="sidebar-container"></div><main
+        class="flex-1 flex flex-col min-w-0 lg:mr-72 bg-background-light dark:bg-background-dark"
+      ><div
+          class="flex-1 overflow-y-auto scrollbar-left"
+          style="direction: ltr"
+        ><div style="direction: rtl"><div id="header-container"></div><div class="mx-auto max-w-7xl px-4 py-8 lg:px-10"><!-- Back Button --><button
+                onclick="window.location.href='sarmaye.html'"
+                class="flex items-center gap-2 text-gray-500 dark:text-gray-400 hover:text-primary transition-colors text-sm font-medium mb-6"
+              ><span class="material-symbols-outlined text-lg">arrow_forward</span>
+                بازگشت به سبد دارایی
+              </button><!-- Header --><div
+                class="mb-8 flex flex-col justify-between gap-6 md:flex-row md:items-end"
+              ><div class="flex items-center gap-4"><div
+                    id="asset-icon"
+                    class="w-16 h-16 rounded-xl flex items-center justify-center text-3xl shrink-0"
+                  ><!-- Icon will be set by JavaScript --></div><div><h1
+                      id="asset-name"
+                      class="mb-2 text-3xl font-black tracking-tight text-text-main dark:text-text-dark md:text-4xl"
+                    ><!-- Name will be set by JavaScript --></h1><p
+                      id="asset-code"
+                      class="text-text-sub dark:text-gray-400 text-sm"
+                    ><!-- Code will be set by JavaScript --></p></div></div><a
+                  href="#"
+                  class="text-sm font-medium text-primary hover:text-primary-dark transition-colors"
+                >
+                  مشاهده تاریخچه تراکنش‌ها
+                </a></div><!-- Stats Cards --><div class="grid grid-cols-1 gap-6 md:grid-cols-4 mb-8"><div
+                  class="rounded-2xl bg-card-light dark:bg-surface-dark p-5 shadow-sm border border-gray-100 dark:border-white/5"
+                ><p class="text-xs text-text-sub dark:text-gray-400 mb-2">
+                    تعداد کل
+                  </p><p
+                    id="total-count"
+                    class="text-2xl font-black text-text-main dark:text-text-dark"
+                  ><!-- Will be set by JavaScript --></p></div><div
+                  class="rounded-2xl bg-card-light dark:bg-surface-dark p-5 shadow-sm border border-gray-100 dark:border-white/5"
+                ><p class="text-xs text-text-sub dark:text-gray-400 mb-2">
+                    قیمت میانگین خرید
+                  </p><p
+                    id="avg-price"
+                    class="text-2xl font-black text-text-main dark:text-text-dark"
+                  ><!-- Will be set by JavaScript --></p></div><div
+                  class="rounded-2xl bg-card-light dark:bg-surface-dark p-5 shadow-sm border border-gray-100 dark:border-white/5"
+                ><p class="text-xs text-text-sub dark:text-gray-400 mb-2">
+                    ارزش فعلی (ریال)
+                  </p><p
+                    id="current-value"
+                    class="text-2xl font-black text-text-main dark:text-text-dark"
+                  ><!-- Will be set by JavaScript --></p></div><div
+                  class="rounded-2xl bg-card-light dark:bg-surface-dark p-5 shadow-sm border border-gray-100 dark:border-white/5"
+                ><p class="text-xs text-text-sub dark:text-gray-400 mb-2">
+                    سود / زیان
+                  </p><div
+                    id="profit-loss"
+                    class="flex items-center gap-2"
+                  ><!-- Will be set by JavaScript --></div></div></div><!-- Main Content Grid --><div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8"><!-- Chart Section --><div
+                  class="lg:col-span-2 rounded-2xl bg-card-light dark:bg-surface-dark p-6 shadow-sm border border-gray-100 dark:border-white/5"
+                ><div
+                    class="flex flex-col sm:flex-row sm:items-center justify-between mb-6 gap-4"
+                  ><div><h3
+                        class="text-lg font-bold text-text-main dark:text-text-dark"
+                      >
+                        نمودار سود و ضرر
+                      </h3><p class="text-xs text-text-sub dark:text-gray-400">
+                        تغییرات ارزش دارایی در ۳۰ روز گذشته
+                      </p></div><div
+                      class="flex items-center bg-gray-50 dark:bg-white/5 p-1 rounded-lg"
+                    ><button
+                        class="px-3 py-1.5 text-xs font-bold text-primary bg-white dark:bg-white/10 dark:text-white rounded shadow-sm"
+                      >
+                        ماهانه
+                      </button><button
+                        class="px-3 py-1.5 text-xs font-medium text-text-sub dark:text-gray-400 hover:text-text-main dark:hover:text-white transition-colors"
+                      >
+                        سالانه
+                      </button></div></div><div
+                    class="relative w-full h-[300px] bg-gradient-to-t from-gray-50/50 to-transparent dark:from-white/5 dark:to-transparent rounded-xl border border-dashed border-gray-200 dark:border-white/10 flex items-end justify-center p-4 overflow-hidden"
+                  ><div
+                      class="absolute right-2 top-2 bottom-8 flex flex-col justify-between text-[10px] text-text-sub dark:text-gray-500 font-mono"
+                    ><span>60M</span><span>50M</span><span>40M</span><span>30M</span><span>20M</span></div><svg
+                      class="w-full h-[260px] overflow-visible"
+                      preserveAspectRatio="none"
+                      viewBox="0 0 1000 300"
+                    ><defs><linearGradient
+                          id="gradientChart"
+                          x1="0"
+                          x2="0"
+                          y1="0"
+                          y2="1"
+                        ><stop
+                            offset="0%"
+                            stop-color="#11d452"
+                            stop-opacity="0.3"
+                          ></stop><stop
+                            offset="100%"
+                            stop-color="#11d452"
+                            stop-opacity="0"
+                          ></stop></linearGradient></defs><path
+                        d="M0,280 C50,270 100,250 150,240 C200,230 250,200 300,190 C350,180 400,160 450,150 C500,140 550,130 600,120 C650,110 700,100 750,90 C800,80 850,70 900,60 C950,50 1000,40 1000,40 V300 H0 Z"
+                        fill="url(#gradientChart)"
+                      ></path><path
+                        d="M0,280 C50,270 100,250 150,240 C200,230 250,200 300,190 C350,180 400,160 450,150 C500,140 550,130 600,120 C650,110 700,100 750,90 C800,80 850,70 900,60 C950,50 1000,40 1000,40"
+                        fill="none"
+                        stroke="#11d452"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="3"
+                      ></path><circle
+                        class="animate-pulse"
+                        cx="1000"
+                        cy="40"
+                        fill="#FFFFFF"
+                        r="6"
+                        stroke="#11d452"
+                        stroke-width="3"
+                      ></circle></svg><div
+                      class="absolute bottom-2 left-4 right-8 flex justify-between text-[10px] text-text-sub dark:text-gray-500"
+                    ><span>هفته ۱</span><span>هفته ۲</span><span>هفته ۳</span><span>هفته ۴</span></div></div></div><!-- Latest News Section --><div
+                  class="rounded-2xl bg-card-light dark:bg-surface-dark p-6 shadow-sm border border-gray-100 dark:border-white/5"
+                ><h3
+                    class="text-lg font-bold text-text-main dark:text-text-dark mb-4"
+                  >
+                    آخرین اعلان
+                  </h3><div
+                    id="latest-news"
+                    class="space-y-4"
+                  ><!-- News will be set by JavaScript --></div></div></div><!-- Description Section --><div
+                class="rounded-2xl bg-card-light dark:bg-surface-dark p-6 shadow-sm border border-gray-100 dark:border-white/5"
+              ><h3
+                  class="text-lg font-bold text-text-main dark:text-text-dark mb-4"
+                >
+                  توضیحات طرح
+                </h3><div
+                  id="description"
+                  class="prose prose-sm max-w-none text-text-sub dark:text-gray-400 leading-relaxed"
+                ><!-- Description will be set by JavaScript --></div></div></div></div></div></main></div><script src="header.js"></script><script src="sidebar.js"></script><script>
+      // Get asset details from URL
+      const urlParams = new URLSearchParams(window.location.search);
+      const assetCode = urlParams.get("asset") || "EGG-STD-22";
+      const assetType = urlParams.get("type") || "token";
+
+      // Asset data
+      const assets = {
+        "EGG-STD-22": {
+          name: "تخم‌مرغ محلی",
+          code: "EGG-STD-22",
+          type: "توکن مصرفی",
+          icon: "egg",
+          iconColor: "bg-primary/10 text-primary",
+          totalCount: "۵,۴۲۰",
+          avgPrice: "۴۸,۰۰۰ ریال",
+          currentValue: "۲۸۱,۸۴۰,۰۰۰",
+          profitLoss: "+۱۲٪",
+          profitLossColor: "text-green-600 dark:text-green-400",
+          description: `
+            <p class="mb-4">
+              این طرح شامل سرمایه‌گذاری در تولید و توزیع تخم‌مرغ محلی با کیفیت بالا است. 
+              توکن‌های این طرح معادل تعداد مشخصی تخم‌مرغ هستند که می‌توانید در هر زمان 
+              به محصول فیزیکی تبدیل کنید.
+            </p><p class="mb-4"><strong class="text-text-main dark:text-white">مزایای این طرح:</strong></p><ul class="list-disc list-inside space-y-2 mr-4"><li>دسترسی به تخم‌مرغ تازه و با کیفیت</li><li>قابلیت تبدیل به محصول فیزیکی در هر زمان</li><li>سود روزشمار بر اساس ارزش بازار</li><li>امکان تحویل از نزدیک‌ترین انبار</li></ul>
+          `,
+          latestNews: `
+            <div class="p-4 bg-primary/5 dark:bg-primary/10 rounded-xl border-r-4 border-primary"><div class="flex items-start gap-3"><span class="material-symbols-outlined text-primary text-xl">campaign</span><div><p class="text-xs text-text-sub dark:text-gray-400 mb-1">امروز، ۱۰:۳۰</p><p class="text-sm font-bold text-text-main dark:text-white mb-1">
+                    افزایش تولید در سالن A
+                  </p><p class="text-xs text-text-sub dark:text-gray-400">
+                    تولید روزانه تخم‌مرغ در سالن A به ۱۵,۰۰۰ عدد افزایش یافت. 
+                    این افزایش باعث بهبود سوددهی طرح شده است.
+                  </p></div></div></div>
+          `,
+        },
+        "CHICK-LGH-01": {
+          name: "مرغ مولد (لگهورن)",
+          code: "CHICK-LGH-01",
+          type: "سهام تولیدی",
+          icon: "pest_control",
+          iconColor: "bg-accent-yellow/10 text-accent-yellow",
+          totalCount: "۵۰",
+          avgPrice: "۲,۰۰۰,۰۰۰ ریال",
+          currentValue: "۱۲۰,۰۰۰,۰۰۰",
+          profitLoss: "+۲۰٪",
+          profitLossColor: "text-green-600 dark:text-green-400",
+          description: `
+            <p class="mb-4">
+              این طرح شامل سرمایه‌گذاری در مرغ‌های مولد از نژاد لگهورن است که 
+              یکی از بهترین نژادها برای تولید تخم‌مرغ محسوب می‌شود. هر سهم معادل 
+              یک قطعه مرغ مولد است.
+            </p><p class="mb-4"><strong class="text-text-main dark:text-white">مزایای این طرح:</strong></p><ul class="list-disc list-inside space-y-2 mr-4"><li>بازدهی بالا در تولید تخم‌مرغ</li><li>سود ماهانه از فروش تخم‌مرغ تولیدی</li><li>امکان فروش سهام در بازار ثانویه</li><li>مدیریت حرفه‌ای توسط تیم متخصص</li></ul>
+          `,
+          latestNews: `
+            <div class="p-4 bg-accent-yellow/5 dark:bg-accent-yellow/10 rounded-xl border-r-4 border-accent-yellow"><div class="flex items-start gap-3"><span class="material-symbols-outlined text-accent-yellow text-xl">info</span><div><p class="text-xs text-text-sub dark:text-gray-400 mb-1">دیروز، ۱۴:۲۰</p><p class="text-sm font-bold text-text-main dark:text-white mb-1">
+                    واریز سود ماهانه
+                  </p><p class="text-xs text-text-sub dark:text-gray-400">
+                    سود ماهانه طرح لگهورن به حساب سرمایه‌گذاران واریز شد. 
+                    مبلغ سود: ۲,۴۰۰,۰۰۰ ریال به ازای هر سهم.
+                  </p></div></div></div>
+          `,
+        },
+      };
+
+      // Set asset data
+      const asset = assets[assetCode] || assets["EGG-STD-22"];
+
+      document.getElementById("asset-name").textContent = asset.name;
+      document.getElementById("asset-code").textContent = asset.code;
+      document.getElementById("asset-icon").className = `w-16 h-16 rounded-xl flex items-center justify-center text-3xl shrink-0 ${asset.iconColor}`;
+      document.getElementById("asset-icon").innerHTML = `<span class="material-symbols-outlined">${asset.icon}</span>`;
+      document.getElementById("total-count").textContent = asset.totalCount;
+      document.getElementById("avg-price").textContent = asset.avgPrice;
+      document.getElementById("current-value").textContent = asset.currentValue;
+      document.getElementById("profit-loss").innerHTML = `
+        <span class="material-symbols-outlined text-sm">trending_up</span><span class="font-bold ${asset.profitLossColor}">${asset.profitLoss}</span>
+      `;
+      document.getElementById("description").innerHTML = asset.description;
+      document.getElementById("latest-news").innerHTML = asset.latestNews;
+    </script></body>
+</html>
+

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html class="light" dir="rtl" lang="fa"><head><meta charset="utf-8" /><meta content="width=device-width, initial-scale=1.0" name="viewport" /><link rel="icon" type="image/svg+xml" href="/icon.svg" /><title>فارمتو | سفارش موفق</title><!-- Google Fonts: Manrope & Vazirmatn (for Persian support) --><link href="https://fonts.googleapis.com" rel="preconnect" /><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" /><link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;family=Vazirmatn:wght@400;500;700;900&amp;display=swap"
+      rel="stylesheet"
+    /><!-- Material Symbols --><link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    /><!-- Tailwind CSS --><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><!-- Theme Configuration --><script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#11d452",
+              "primary-dark": "#0ea640",
+              "background-light": "#f6f8f6",
+              "background-dark": "#102216",
+              "accent-gold": "#D4AF37",
+              "accent-dark-green": "#0A3F23",
+            },
+            fontFamily: {
+              display: ["Vazirmatn", "Manrope", "sans-serif"],
+              body: ["Vazirmatn", "Manrope", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.5rem",
+              lg: "1rem",
+              xl: "1.5rem",
+              "2xl": "2rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script></head><body
+    class="bg-white text-slate-900 font-display min-h-screen flex flex-col"
+  ><!-- Main Content --><main class="flex-1 w-full flex items-center justify-center px-4 py-8"><div
+        class="max-w-md w-full bg-white rounded-3xl overflow-hidden shadow-2xl border border-slate-100 relative"
+      ><!-- Decorative top gradient strip --><div class="h-3 bg-gradient-to-r from-primary to-accent-gold"></div><!-- Content --><div class="p-8 text-center flex flex-col items-center"><!-- Success Icon --><div
+            class="size-16 rounded-full bg-green-100 flex items-center justify-center text-primary mb-4"
+          ><span class="material-symbols-outlined text-4xl">check_circle</span></div><!-- Success Message --><h2 class="text-2xl font-black text-[#111813] mb-1">
+            سفارش موفق!
+          </h2><p class="text-slate-500 text-sm mb-6">
+            کد زیر را به مسئول انبار نشان دهید
+          </p><!-- QR Code Card --><div
+            class="bg-white p-4 rounded-xl border-2 border-[#111813] mb-6 w-full"
+          ><!-- QR Code Placeholder --><div
+              class="size-48 mx-auto bg-slate-100 flex items-center justify-center rounded-lg overflow-hidden relative mb-2"
+            ><div
+                class="absolute inset-0 opacity-10"
+                style="
+                  background-image: radial-gradient(
+                    #000 1px,
+                    transparent 1px
+                  );
+                  background-size: 10px 10px;
+                "
+              ></div><span class="material-symbols-outlined text-6xl text-[#111813]"
+                >qr_code_2</span
+              ></div><!-- Order ID --><p
+              class="mt-2 font-mono font-bold text-lg tracking-widest text-[#111813]"
+            >
+              FRM-8821-X90
+            </p></div><!-- Order Details --><div
+            class="w-full bg-slate-50 rounded-xl p-4 text-right mb-6"
+          ><div class="flex justify-between text-sm mb-2"><span class="text-slate-500">تاریخ انقضا:</span><span class="font-bold text-[#111813]"
+                >۱۸:۰۰ - ۱۴۰۳/۰۸/۱۲</span
+              ></div><div class="flex justify-between text-sm"><span class="text-slate-500">محصول:</span><span class="font-bold text-[#111813]">۱۰ شانه تخم مرغ</span></div></div><!-- Action Buttons --><div class="flex gap-3 w-full"><button
+              onclick="saveImage()"
+              class="flex-1 py-3 px-4 rounded-xl border border-slate-200 hover:bg-slate-50 text-sm font-bold transition-colors"
+            >
+              ذخیره تصویر
+            </button><button
+              onclick="goToHome()"
+              class="flex-1 py-3 px-4 rounded-xl bg-[#111813] text-white text-sm font-bold hover:bg-black transition-colors"
+            >
+              بازگشت به خانه
+            </button></div></div></div></main><script>
+      // Get order details from URL parameters if available
+      const urlParams = new URLSearchParams(window.location.search);
+      const orderId = urlParams.get('orderId') || 'FRM-8821-X90';
+      const product = urlParams.get('product') || '۱۰ شانه تخم مرغ';
+      const expiryDate = urlParams.get('expiryDate') || '۱۸:۰۰ - ۱۴۰۳/۰۸/۱۲';
+
+      // Update order details if provided
+      if (urlParams.get('orderId')) {
+        document.querySelector('.font-mono').textContent = orderId;
+      }
+      if (urlParams.get('product')) {
+        const productElements = document.querySelectorAll('.text-right .font-bold');
+        if (productElements.length > 1) {
+          productElements[1].textContent = product;
+        }
+      }
+      if (urlParams.get('expiryDate')) {
+        const dateElements = document.querySelectorAll('.text-right .font-bold');
+        if (dateElements.length > 0) {
+          dateElements[0].textContent = expiryDate;
+        }
+      }
+
+      function saveImage() {
+        // TODO: Implement image saving functionality
+        alert('قابلیت ذخیره تصویر به زودی اضافه خواهد شد');
+      }
+
+      function goToHome() {
+        window.location.href = '/dashboard/index.html';
+      }
+    </script></body>
+</html>
+
